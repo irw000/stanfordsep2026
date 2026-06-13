@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stanford SEP 2026 — Reading List</title>
+<meta name="description" content="Stanford Executive Program SEP 2026 reading list: 15 books on leadership, strategy, and organizations with summaries, frameworks, and sources.">
+<style>
+  :root{
+    --cardinal:#8C1515;
+    --cardinal-dark:#5e0e0e;
+    --ink:#2e2d29;
+    --muted:#5f5b53;
+    --line:#e3ddd1;
+    --paper:#ffffff;
+    --bg:#faf8f3;
+    --tag:#f1ece1;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  header.hero{
+    background:var(--cardinal);
+    color:#fff;
+    padding:54px 24px 46px;
+    text-align:center;
+    border-bottom:5px solid var(--cardinal-dark);
+  }
+  header.hero .kicker{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.22em;font-size:12px;font-weight:600;
+    opacity:.85;margin:0 0 14px;
+  }
+  header.hero h1{margin:0;font-size:42px;font-weight:700;letter-spacing:-.5px;}
+  header.hero p{margin:14px auto 0;max-width:620px;font-size:17px;opacity:.92;}
+
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+
+  .controls{
+    position:sticky;top:0;z-index:20;background:var(--bg);
+    padding:22px 0 14px;border-bottom:1px solid var(--line);margin-bottom:26px;
+  }
+  .searchbar{
+    display:flex;align-items:center;gap:10px;background:var(--paper);
+    border:1px solid var(--line);border-radius:8px;padding:12px 16px;
+    box-shadow:0 1px 2px rgba(0,0,0,.03);
+  }
+  .searchbar svg{flex:none;}
+  .searchbar input{border:none;outline:none;width:100%;font-size:16px;font-family:inherit;color:var(--ink);background:transparent;}
+  .meta-row{
+    display:flex;justify-content:space-between;align-items:center;margin-top:12px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:13px;color:var(--muted);
+  }
+  .actions button{font-family:inherit;font-size:13px;background:none;border:none;color:var(--cardinal);cursor:pointer;padding:4px 6px;}
+  .actions button:hover{text-decoration:underline;}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding-bottom:60px;}
+  @media(max-width:720px){.grid{grid-template-columns:1fr;}}
+
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+    display:flex;flex-direction:column;transition:box-shadow .18s ease, transform .18s ease;
+  }
+  .card:hover{box-shadow:0 6px 22px rgba(0,0,0,.07);transform:translateY(-1px);}
+  .card.hidden{display:none;}
+
+  .card-head{padding:20px 22px 18px;cursor:pointer;display:flex;gap:18px;}
+  .cover-wrap{flex:none;width:84px;}
+  .cover{
+    width:84px;height:124px;border-radius:4px;object-fit:cover;display:block;
+    box-shadow:0 2px 8px rgba(0,0,0,.18);background:var(--tag);
+  }
+  /* styled fallback spine when no cover image is available */
+  .cover-fallback{
+    width:84px;height:124px;border-radius:4px;display:none;
+    flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    padding:8px;color:#fff;background:linear-gradient(135deg,var(--cardinal),var(--cardinal-dark));
+    box-shadow:0 2px 8px rgba(0,0,0,.18);
+    font-family:Georgia,serif;font-size:11px;line-height:1.25;
+  }
+  .cover-fallback span{font-weight:700;}
+  .cover-fallback small{display:block;margin-top:6px;opacity:.8;font-size:9px;letter-spacing:.05em;}
+
+  .head-text{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0;}
+  .num{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--cardinal);
+  }
+  .card h2{margin:0;font-size:19px;line-height:1.25;font-weight:700;}
+  .subtitle{font-size:13.5px;color:var(--muted);font-style:italic;margin:0;}
+  .byline{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:13px;color:var(--muted);margin:2px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+  }
+  .year{
+    background:var(--tag);color:var(--cardinal-dark);border-radius:20px;
+    padding:1px 9px;font-weight:600;font-size:12px;
+  }
+  .concept{font-size:14.5px;margin:8px 0 0;}
+
+  .expand-row{
+    display:flex;align-items:center;gap:6px;margin-top:10px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:13px;font-weight:600;color:var(--cardinal);
+  }
+  .chev{transition:transform .2s ease;}
+  .card.open .chev{transform:rotate(90deg);}
+
+  .card-body{max-height:0;overflow:hidden;transition:max-height .35s ease;border-top:1px solid transparent;}
+  .card.open .card-body{max-height:4000px;border-top:1px solid var(--line);}
+  .card-body-inner{padding:18px 22px 22px;}
+
+  .section-label{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.13em;font-size:11px;font-weight:700;color:var(--cardinal);margin:18px 0 8px;
+  }
+  .section-label:first-child{margin-top:0;}
+  .card-body p{margin:0 0 10px;font-size:15px;}
+  .card-body strong{color:var(--ink);}
+  .card-body ul{margin:6px 0 12px;padding-left:20px;}
+  .card-body li{margin:0 0 6px;font-size:14.5px;}
+  .card-body em{color:var(--cardinal-dark);font-style:italic;}
+
+  .sources a{
+    display:block;color:var(--cardinal);text-decoration:none;font-size:14px;padding:5px 0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  .sources a:hover{text-decoration:underline;}
+  .sources a::before{content:"↗  ";opacity:.6;}
+
+  .no-results{grid-column:1/-1;text-align:center;color:var(--muted);padding:50px 0;font-size:16px;}
+  footer{
+    text-align:center;padding:30px 24px 50px;color:var(--muted);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:13px;border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <p class="kicker">Stanford Executive Program · SEP 2026</p>
+  <h1>Reading List</h1>
+  <p>Fifteen books on leadership, strategy, and the systems that shape modern organizations — with core concepts, frameworks, and source links.</p>
+</header>
+
+<div class="wrap">
+  <div class="controls">
+    <div class="searchbar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C1515" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="search" type="text" placeholder="Search by title, author, year, concept, or framework…" autocomplete="off">
+    </div>
+    <div class="meta-row">
+      <span id="count"></span>
+      <span class="actions">
+        <button id="expandAll">Expand all</button>·
+        <button id="collapseAll">Collapse all</button>
+      </span>
+    </div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</div>
+
+<footer>Stanford SEP 2026 Reading List · Compiled reference notes · Cover images via Open Library</footer>
+
+<script>
+const books = [
+{
+  num:1, year:2025, isbn:"9780593800041",
+  title:"The Systems Leader",
+  subtitle:"Mastering the Cross-Pressures That Make or Break Today's Companies",
+  author:"Robert E. Siegel",
+  concept:"Modern executive leadership is no longer about managing an isolated corporate kingdom; it requires navigating a fluid, complex ecosystem shaped by competing internal and external “cross-pressures.”",
+  summary:"Robert E. Siegel argues that today's enterprise leaders face an unprecedented barrage of conflicting demands from capital markets, regulatory bodies, and internal workforces. Traditional corporate functions fail when leaders optimize departments in silos. True systems leadership requires an executive to hold multiple conflicting priorities simultaneously, using structural empathy and systems thinking to convert operational friction into competitive clarity.",
+  frameworks:`<p><strong>The Five Cross-Pressures Matrix</strong> — a diagnostic tool analyzing tension points across five axes where systems leaders must hold multiple positions at once:</p>
+  <ul>
+    <li><em>Priorities:</em> succeeding at both short-term execution and long-term innovation.</li>
+    <li><em>People:</em> projecting both authoritative strength and deep empathy.</li>
+    <li><em>Sphere of Influence:</em> balancing internal mechanics vs. external market ecosystems.</li>
+    <li><em>Geography:</em> thinking and operating both locally and globally.</li>
+    <li><em>Purpose:</em> pursuing aggressive ambition alongside broader statesmanship.</li>
+  </ul>
+  <p><strong>The Systems Leader's Scorecard</strong> — an internal audit across seven behavioral domains: Managing Context, Risk Positioning, Intellectual Humility, Relational Credibility, Calendar Allocation, Skill vs. Luck Assessment, and The Rehire Metric (“Would we rehire ourselves today for our current role?”).</p>`,
+  sources:[
+    ["Stanford GSBooks Lecture with Robert Siegel","https://www.youtube.com/watch?v=v085nRsapyI"],
+    ["unSILOed Podcast Systems Leadership Interview","https://www.youtube.com/watch?v=gk--hCSOLlo"]
+  ]
+},
+{
+  num:2, year:2021, isbn:"9780063064881",
+  title:"System Error",
+  subtitle:"Where Big Tech Went Wrong and How We Can Reboot",
+  author:"Rob Reich, Mehran Sahami & Jeremy Weinstein",
+  concept:"The engineering ethos of “optimization” treats societal, political, and ethical challenges as mere code glitches to be solved, inadvertently eroding democratic values and personal autonomy.",
+  summary:"Written by a trio of Stanford professors spanning philosophy, computer science, and political science, System Error deconstructs the systemic externalities of the tech sector. When optimization becomes an organization's primary value, core human values like privacy, fair play, and democratic deliberation are treated as inefficient drag. The text presents a framework for reintroducing institutional guardrails, collective governance, and deliberate ethical choices into tech-driven business models.",
+  frameworks:`<p><strong>The Optimization Mindset Dilemma</strong> — an operational warning system mapping how maximizing a single algorithmic indicator (engagement, click-through, short-term conversion) predictably generates toxic social, economic, and organizational side effects.</p>
+  <p><strong>The Triumvirate Framework</strong> — a matrix requiring multi-stakeholder decisions to balance three conflicting forces before scaling any technology:</p>
+  <ul>
+    <li><em>Technical Engineering Capability:</em> what <em>can</em> be built through code and data science.</li>
+    <li><em>Philosophical Ethics:</em> what <em>should</em> be built, weighing privacy, autonomy, and fairness.</li>
+    <li><em>Political Economy &amp; Public Policy:</em> how institutions and regulation place structural constraints on corporate systems.</li>
+  </ul>`,
+  sources:[
+    ["Stanford Freeman Spogli Institute Panel","https://cddrl.fsi.stanford.edu/events/system-error-live-rob-reich-mehran-sahami-and-jeremy-weinstein"],
+    ["Duke Sanford School Fireside Chat","https://sanford.duke.edu/event/system-error-where-big-tech-went-wrong-and-how-we-can-reboot/"]
+  ]
+},
+{
+  num:3, year:2005, isbn:"9780060582746",
+  title:"Stress Free for Good",
+  subtitle:"10 Scientifically Proven Life Skills for Health and Happiness",
+  author:"Fred Luskin & Kenneth R. Pelletier",
+  concept:"Chronic stress can be systematically down-regulated through targeted physiological and cognitive micro-interventions that interrupt the autonomic nervous system's fight-or-flight response.",
+  summary:"Grounded in clinical research at the Stanford University School of Medicine, this text addresses the physiological baseline of executive performance. Chronic stress is not an unavoidable byproduct of high-stakes roles, but a learned, habit-based physiological response that impairs executive function, memory, and long-term health. The book details ten specific “LifeSkills” engineered to act as immediate circuit breakers, shifting the body from sympathetic arousal into parasympathetic calm within seconds.",
+  frameworks:`<p><strong>The 10 LifeSkills Architecture</strong> — a sequential portfolio of micro-interventions for immediate down-regulation:</p>
+  <ul>
+    <li><em>1. Belly Breathing:</em> deep abdominal inhalation engaging the vagus nerve.</li>
+    <li><em>2. Positive Emotion Refocusing Technique (PERT):</em> a 3-step breath-plus-redirect sequence.</li>
+    <li><em>3. Cognitive Restructuring:</em> moving from “wanting things different” to acceptance to halt cortisol.</li>
+    <li><em>4. Daily Gratitude Journaling:</em> tracking assets rather than scarcity.</li>
+    <li><em>5. Sharing Highlights:</em> verbalizing positive daily events to build connection.</li>
+    <li><em>6. The HEAL Forgiveness Method:</em> a 4-step process to dismantle grudges.</li>
+    <li><em>7. Slowing Down &amp; Simplifying:</em> planned micro/mezzo/macro breaks and firm refusals.</li>
+    <li><em>8. Mindful Awareness:</em> halting perseverative thoughts about past or future.</li>
+    <li><em>9. Creating a Rejuvenation Inventory:</em> a personalized menu of relaxing experiences.</li>
+    <li><em>10. Intentional Somatic Relaxation:</em> conscious release of muscular tension.</li>
+  </ul>`,
+  sources:[
+    ["Everand Clinical Framework Overview","https://www.everand.com/book/714772169/Stress-Free-for-Good-10-Scientifically-Proven-Life-Skills-for-Health-and-Happiness"],
+    ["Apple Books Academic Profile","https://books.apple.com/us/book/stress-free-for-good/id6479662525"]
+  ]
+},
+{
+  num:4, year:2024, isbn:"9780593714232",
+  title:"The Venture Mindset",
+  subtitle:"How to Make Smarter Bets and Achieve Extraordinary Growth",
+  author:"Ilya Strebulaev & Alex Dang",
+  concept:"Traditional corporate governance is structured to minimize failure rates, which systematically causes established companies to miss out on highly asymmetrical, industry-defining innovation waves.",
+  summary:"Drawing from research at the Stanford Graduate School of Business, Strebulaev and Dang isolate the operating differences between corporate executives and venture capitalists. While corporations rely on predictable forecasting, linear budgets, and consensus, VCs build models designed to survive extreme uncertainty. To drive outlier growth, leaders must manage risk like an early-stage investor — shifting from corporate project management to an explicit portfolio approach.",
+  frameworks:`<p><strong>The Nine Principles of Venture Thinking:</strong></p>
+  <ul>
+    <li><em>1. Home Runs Matter, Strikeouts Don't:</em> optimize for asymmetrical upside, not lower failure rates.</li>
+    <li><em>2. Get Outside the Four Walls:</em> source ideas from external innovation networks.</li>
+    <li><em>3. Prepare Your Mind:</em> build mental models that thrive under uncertainty.</li>
+    <li><em>4. Say No 100 Times:</em> rapid filtering to keep a high-signal pipeline.</li>
+    <li><em>5. Bet on the Jockey:</em> prioritize team vision and flexibility over résumés.</li>
+    <li><em>6. Agree to Disagree:</em> welcome dissent; uniformity kills performance.</li>
+    <li><em>7. Double Down or Quit:</em> deploy capital in stages; scale wins, cut dead ends cleanly.</li>
+    <li><em>8. Make the Pie Bigger:</em> shift from zero-sum extraction to collaborative value creation.</li>
+    <li><em>9. Great Things Take Time:</em> extend horizons so breakthroughs can develop.</li>
+  </ul>
+  <p><strong>The Critical Flaw Approach</strong> — hunt for the single automatic deal-breaker early instead of building multi-page pro/con lists.</p>`,
+  sources:[
+    ["IVY Executive Learning Module","https://www.ivy.com/learning-modules/the-venture-mindset-how-to-make-smarter-bets-and-achieve-extraordinary-growth-with-ilya-strebulaev-alex-dang-1"],
+    ["SnapTale Media Overview","https://www.youtube.com/watch?v=6UUtRbE_yMY"]
+  ]
+},
+{
+  num:5, year:2024, isbn:"9781250284419",
+  title:"The Friction Project",
+  subtitle:"How Smart Leaders Make the Right Things Easier and the Wrong Things Harder",
+  author:"Robert I. Sutton & Huggy Rao",
+  concept:"Elite leaders act as “friction fixers” who clear out organizational sludge to save their teams' time, while selectively introducing helpful hurdles to prevent impulsive, bad decisions.",
+  summary:"Sutton and Rao present a multi-year research project into why organizations become bogged down by bureaucracy, meetings, and confusing communication. Well-intentioned executives suffer from an “addition bias” — constantly adding new rules, tools, and committees without ever subtracting old ones. The book offers a blueprint for eliminating unproductive friction, while reminding leaders that “good friction” is still needed to slow down high-stakes thinking.",
+  frameworks:`<p><strong>The Friction-as-Cholesterol Matrix</strong> — separating obstacles into two functional categories:</p>
+  <ul>
+    <li><em>Bad Friction (Sludge):</em> red tape, status meetings, duplicate approvals, administrative debt.</li>
+    <li><em>Good Friction (Strategic Speedbumps):</em> intentional pause points and sign-offs that slow high-stakes or ethical choices.</li>
+  </ul>
+  <p><strong>The Subtraction Mindset Toolkit:</strong></p>
+  <ul>
+    <li><em>The Rule of Two-for-One:</em> eliminate two legacy rules/meetings/metrics for every new one introduced.</li>
+    <li><em>Sludge Audits:</em> time-mapping of hours spent on compliance vs. direct value creation.</li>
+  </ul>`,
+  sources:[
+    ["Stanford GSB Insights: Fixing Bad Friction, Finding Good Friction","https://www.gsb.stanford.edu/insights/fixing-bad-friction-finding-good-friction"],
+    ["Stanford GSB YouTube: The Art of Friction","https://www.youtube.com/watch?v=79wHCuuqmHo"]
+  ]
+},
+{
+  num:6, year:2023, isbn:"9781668010303",
+  title:"Think Faster, Talk Smarter",
+  subtitle:"How to Speak Successfully When You're Put on the Spot",
+  author:"Matt Abrahams",
+  concept:"Spontaneous communication is not an innate gift; it is a systematic skill mastered by managing performance anxiety and using structured response models.",
+  summary:"Most business communication happens in real time — Q&A, status updates, high-pressure meetings — not in choreographed keynotes. Abrahams shows that the primary bottleneck to impromptu speaking is the anxiety-induced desire for a perfect response, which floods short-term cognitive capacity. By shifting from a perfectionist to a contribution mindset, and using predictable structures, leaders deliver concise, memorable answers under pressure.",
+  frameworks:`<p><strong>The Six-Step Spontaneous Speaking Methodology:</strong> Acknowledge &amp; Manage Anxiety (an “ABC” plan for Affective, Behavioral, Cognitive symptoms) → Prevent Perfectionism → Reframe the Situation → Listen Actively → Intentionally Structure Content → Remain Succinct and Focused.</p>
+  <p><strong>The Impromptu Structural Toolkit</strong> — plug-and-play templates:</p>
+  <ul>
+    <li><em>General:</em> What? → So What? → Now What?</li>
+    <li><em>Pitching:</em> Problem → Solution → Benefit.</li>
+    <li><em>Q&amp;A (ADD):</em> Answer directly → Detail examples → Describe the value.</li>
+    <li><em>Feedback (4I):</em> Information → Impact → Invitation → Implications.</li>
+    <li><em>Executive Apology (AAA):</em> Acknowledge → Appreciate the impact → Amend the strategy.</li>
+  </ul>`,
+  sources:[
+    ["Simon & Schuster Official Book Hub","https://www.simonandschuster.com/books/Think-Faster-Talk-Smarter/Matt-Abrahams/9781668010303"],
+    ["Stanford GSB Think Fast, Talk Smart Podcast","https://www.gsb.stanford.edu/business-podcasts/think-fast-talk-smart"]
+  ]
+},
+{
+  num:7, year:2022, isbn:"9781108841191",
+  title:"Leading With Values",
+  subtitle:"Strategies for Making Ethical Decisions in Business and Life",
+  author:"Neil Malhotra & Ken Shotts",
+  concept:"Effective ethical leadership requires moving past basic legal compliance to resolve value conflicts using a systematic blend of philosophy, psychology, and political economy.",
+  summary:"Malhotra and Shotts confront leading in a polarized environment where stakeholders demand clear organizational values. Moving past moral platitudes, they show the hardest part of leadership is managing legitimate, deep-seated disagreements over what the “right” course of action actually is. The book reveals how psychological biases distort ethical decisions and teaches leaders to design internal systems that protect values amid political and market forces.",
+  frameworks:`<p><strong>The Three-Tradition Integration Model</strong> — evaluating high-stakes decisions through three disciplines at once:</p>
+  <ul>
+    <li><em>Philosophical Ethics:</em> balancing duties (Deontology), consequences (Consequentialism), and integrity (Virtue Ethics).</li>
+    <li><em>Behavioral Psychology:</em> pinpointing rationalizations, self-serving biases, and incentives that cause ethical drift.</li>
+    <li><em>Political Economy:</em> analyzing market structures, regulation, and stakeholder pressures to execute ethics viably.</li>
+  </ul>
+  <p><strong>Ethical Bias Audits</strong> — checking whether internal metrics, quotas, or compensation loops unintentionally encourage teams to cut ethical corners.</p>`,
+  sources:[
+    ["Cambridge University Press Book Page","https://www.cambridge.org/9781108841191"],
+    ["Stanford GSB Faculty Book Hub","https://www.gsb.stanford.edu/faculty-research/books/leading-values-strategies-making-ethical-decisions-business-life"]
+  ]
+},
+{
+  num:8, year:2016, isbn:"9780804798655",
+  title:"Lead and Disrupt",
+  subtitle:"How to Solve the Innovator's Dilemma",
+  author:"Charles A. O'Reilly & Michael L. Tushman",
+  concept:"Incumbent organizations survive continuous disruption only by developing “ambidexterity” — the structural ability to exploit mature cash cows while exploring speculative future markets.",
+  summary:"O'Reilly and Tushman offer a battle-tested solution to Clayton Christensen's Innovator's Dilemma. Legacy companies fail not because they are lazy, but because their existing execution models kill radical new concepts. A single corporation can host completely different cultures under one roof by structurally separating exploratory units from operational ones, while keeping them tightly integrated at the senior executive level. (First edition 2016; second edition 2021.)",
+  frameworks:`<p><strong>The Organizational Ambidexterity Matrix</strong> — running two structurally isolated models under one enterprise:</p>
+  <ul>
+    <li><em>The Exploit Division:</em> cost reduction, optimization, incremental innovation — control, low variance, predictability.</li>
+    <li><em>The Explore Division:</em> speed, autonomy, radical prototyping — high risk tolerance, decentralization, milestone-based financing.</li>
+  </ul>
+  <p><strong>The Senior Executive Integration Model</strong> — three protocols to keep the explore unit from being starved: a Shared Vision, Separate Structural Designs (distinct talent, KPIs, comp), and Aligned Senior Governance (top leaders settle resource disputes, bypassing defensive middle management).</p>`,
+  sources:[
+    ["Stanford University Press Book Page","https://www.sup.org/books/business/lead-and-disrupt"],
+    ["Stanford GSB Insights: Ambidextrous Leadership Guide","https://www.gsb.stanford.edu/insights/how-ambidextrous-leaders-manage-present-future"]
+  ]
+},
+{
+  num:9, year:2021, isbn:"9780231199483",
+  title:"Making Great Strategy",
+  subtitle:"Arguing for Organizational Advantage",
+  author:"Jesper B. Sørensen & Glenn R. Carroll",
+  concept:"A great strategy is not a laundry list of objectives or a fill-in-the-blank matrix; it is a logically coherent argument linking an organization's capabilities to its desired outcomes under uncertainty.",
+  summary:"Sørensen and Carroll demystify strategy formulation. Most corporate strategies fail because they are built on buzzwords rather than logic. Strategy is an ongoing theory of success: leaders must state their underlying assumptions clearly and debate them like a rigorous argument, allowing the whole team to see the connection between daily resource allocation and long-term advantage.",
+  frameworks:`<p><strong>The Strategy-as-Argument System</strong> — a 3-step logical protocol to build and stress-test strategy:</p>
+  <ul>
+    <li><em>1. Visualization:</em> mapping explicit cause-and-effect paths and dependencies in the business model.</li>
+    <li><em>2. Formalization:</em> translating maps into deductive premises to verify resources actually produce the claimed advantage.</li>
+    <li><em>3. Constructive Argumentation:</em> structured debate that attacks logical assumptions without descending into politics.</li>
+  </ul>
+  <p><strong>The “Arguing Blue” Metric</strong> — a communication protocol that eliminates hand-waving and buzzwords, forcing claims to be backed by clear logic and data.</p>`,
+  sources:[
+    ["Stanford GSB Strategy Masterclass with Jesper Sørensen","https://www.gsb.stanford.edu/insights/making-great-strategy-masterclass-jesper-sorensen"],
+    ["Stanford GSB Faculty Book Profile","https://www.gsb.stanford.edu/faculty-research/books/making-great-strategy-arguing-organizational-advantage"]
+  ]
+},
+{
+  num:10, year:2023, isbn:"9780062913005",
+  title:"Selfless",
+  subtitle:"The Social Creation of “You”",
+  author:"Brian Lowery",
+  concept:"Human identity is not a fixed, independent inner core; our sense of self is a dynamic creation shaped continually by our relationships and the social systems we inhabit.",
+  summary:"Lowery challenges the Western model of absolute individualism. Blending sociology and social psychology, he shows that who we are depends heavily on our social environment. For executives: managers do not simply direct employees; they actively co-create their team members' identities, psychological boundaries, and perceived capabilities. Recognizing how social contexts shape behavior lets leaders design environments that bring out higher performance and collaboration.",
+  frameworks:`<p><strong>Relational Identity Mapping</strong> — an assessment matrix tracking how an executive's behavior, decision style, and risk tolerance shift when moving between different functional peer groups or board compositions.</p>
+  <p><strong>Social Tuning Assessment</strong> — a diagnostic measuring how a leader's unspoken cues, status indicators, and micro-behaviors shape the psychological safety and self-worth of direct reports.</p>`,
+  sources:[
+    ["Brian Lowery PhD Official Website","https://www.brianloweryphd.com/writing"],
+    ["Stanford GSB Insights: You May Not Be Who You Think You Are","https://www.gsb.stanford.edu/insights/you-may-not-be-who-you-think-you-are"]
+  ]
+},
+{
+  num:11, year:2020, isbn:"9781101903957",
+  title:"Acting with Power",
+  subtitle:"Why We Are More Powerful Than We Believe",
+  author:"Deborah Gruenfeld",
+  concept:"Power is not an inherent personal trait or a fixed hierarchy status; it is a collaborative social role that anyone can learn to play based on situational needs.",
+  summary:"Gruenfeld demystifies how power works in organizations. Leaders often misuse power — becoming overly dominant, or freezing and under-using authority due to imposter syndrome. Using theater metaphors, she shows authority is an on-stage performance. Effective leadership requires switching between “playing high” (asserting direction, control, structure) and “playing low” (showing vulnerability, lifting others, building connection) depending on what the team needs.",
+  frameworks:`<p><strong>The High/Low Power Behavioral Matrix</strong> — adjusting verbal and non-verbal signals to fit the moment:</p>
+  <ul>
+    <li><em>Playing High:</em> spreading out physically, steady declarative sentences, stepping forward — critical for settling a crisis or providing structure.</li>
+    <li><em>Playing Low:</em> relaxed posture, sharing vulnerability, close listening, stepping back — essential for elevating subordinates and encouraging innovation.</li>
+  </ul>
+  <p><strong>The Actor's Executive Mindset Protocol</strong> — a rehearsal technique that separates personal self-worth from the professional role a leader must step into.</p>`,
+  sources:[
+    ["Penguin Random House Book Page","https://www.penguinrandomhouse.com/books/253096/acting-with-power-by-deborah-gruenfeld/"],
+    ["Stanford GSB YouTube: Deborah Gruenfeld on Power & Influence","https://www.youtube.com/watch?v=KdQHAeAnHmw"]
+  ]
+},
+{
+  num:12, year:2018, isbn:"9781501152931",
+  title:"Rule Makers, Rule Breakers",
+  subtitle:"How Tight and Loose Cultures Wire Our World",
+  author:"Michele Gelfand",
+  concept:"Human societies and corporate organizations vary along a predictable “Tight vs. Loose” spectrum based on how strictly they enforce social norms and tolerate dissent.",
+  summary:"Gelfand reveals the hidden social coding that dictates coordination and conflict. A culture's position on the spectrum is driven by historical exposure to threats (scarcity, pandemics, environmental crises). Tight cultures value order, uniformity, and self-regulation, making them efficient at execution; loose cultures tolerate deviation, yielding creativity and rapid adaptation. Managing this friction is critical for cross-border mergers, international teams, and injecting innovation into rigid cultures.",
+  frameworks:`<p><strong>The Tight–Loose Diagnostic Axis</strong> — benchmarking an organization across four indicators: Norm Strength (rigidity of rules), Sanctioning Severity (how fast deviations are penalized), Institutional Consensus (shared alignment on values), and Variance Tolerance (freedom to customize daily tasks).</p>
+  <p><strong>The Goldilocks Principle of Norm Strength:</strong></p>
+  <ul>
+    <li><em>Structured Looseness:</em> targeted autonomy and flexible boundaries to keep a rigid (Tight) group from stalling.</li>
+    <li><em>Structured Tightness:</em> accountability checks and standardized playbooks to keep a chaotic (Loose) team focused.</li>
+  </ul>`,
+  sources:[
+    ["Michele Gelfand Official Book Site","https://www.michelegelfand.com/rule-makers-rule-breakers"],
+    ["Behavioral Scientist: A Conversation with Michele Gelfand","https://behavioralscientist.org/tight-and-loose-cultures-a-conversation-with-michele-gelfand/"]
+  ]
+},
+{
+  num:13, year:2015, isbn:"9780465050727",
+  title:"Getting (More of) What You Want",
+  subtitle:"How the Secrets of Economics and Psychology Can Help You Negotiate Anything",
+  author:"Margaret A. Neale & Thomas Z. Lys",
+  concept:"World-class negotiation requires combining economic game theory (maximizing structural value) with behavioral psychology (managing interpersonal perceptions and biases).",
+  summary:"Neale and Lys move past basic “win-win” clichés, offering an analytical framework for complex corporate deals. Negotiation is not a zero-sum battle of wills but an exercise in collaborative problem-solving. Success depends on mapping out the economic alternatives of all parties while managing psychological traps like anchoring, framing, and irrational escalation.",
+  frameworks:`<p><strong>The Negotiation Threshold Architecture</strong> — three boundary points to establish before any discussion:</p>
+  <ul>
+    <li><em>BATNA:</em> the objective fallback reality if the deal collapses.</li>
+    <li><em>Reservation Price:</em> the line — derived from BATNA — where walking away beats signing.</li>
+    <li><em>Aspiration Value:</em> an aggressive, data-backed goal for the maximum realistically capturable value.</li>
+  </ul>
+  <p><strong>The Anchoring and Adjustment Paradigm:</strong></p>
+  <ul>
+    <li><em>The Strategic First Offer:</em> using information asymmetry to plant an early anchor.</li>
+    <li><em>Anchor Neutralization:</em> ignoring aggressive opening offers, reframing, and resetting around your target metrics.</li>
+  </ul>`,
+  sources:[
+    ["Hachette Book Group Official Page","https://www.hachettebookgroup.com/titles/margaret-a-neale/getting-more-of-what-you-want/9780465040636/"],
+    ["Stanford GSB Faculty Insights: Five Steps to Better Negotiation","https://www.gsb.stanford.edu/insights/margaret-neale-five-steps-better-negotiation"]
+  ]
+},
+{
+  num:14, year:2014, isbn:"9780385347020",
+  title:"Scaling Up Excellence",
+  subtitle:"Getting to More Without Settling for Less",
+  author:"Robert I. Sutton & Huggy Rao",
+  concept:"Scaling an organization is not just a challenge of geographic footprint expansion; it is a ground-level battle to spread a specific mental footprint while actively eliminating toxic behaviors.",
+  summary:"Sutton and Rao investigate the hidden friction encountered when organizations try to replicate local successes globally. Scaling often fails because companies focus purely on moving fast, which dilutes talent and multiplies bloat. Leaders must consciously choose between a cookie-cutter approach and a localized philosophy, and recognize that identifying and eliminating destructive behaviors matters more than celebrating small wins.",
+  frameworks:`<p><strong>The Catholicism vs. Buddhism Scaling Continuum:</strong></p>
+  <ul>
+    <li><em>The Catholic Approach:</em> replicating an exact, unvarying blueprint across every geography — zero room for local variance.</li>
+    <li><em>The Buddhist Approach:</em> disseminating core principles and design criteria while granting local teams autonomy over tactical execution.</li>
+  </ul>
+  <p><strong>The Bad-to-Good Subtraction Ratio</strong> — a single toxic teammate, complex rule, or inefficient process destroys value far faster than multiple good ones create it. Scaling requires actively pruning negative traits, not just amplifying wins.</p>`,
+  sources:[
+    ["Stanford GSB Insights: Seven Mantras of Scaling","https://www.gsb.stanford.edu/insights/robert-sutton-seven-mantras-scaling-up-excellence"],
+    ["Bob Sutton Official Book Portal","https://www.bobsutton.net/book/scaling-up-excellence/"]
+  ]
+},
+{
+  num:15, year:2008, isbn:"9780691131146",
+  title:"The Red Queen among Organizations",
+  subtitle:"How Competitiveness Evolves",
+  author:"William P. Barnett",
+  concept:"Long-term corporate viability is a relative metric forged through continuous market competition, but winning inside a specific historical niche can create “competency traps” when the market shifts.",
+  summary:"Rooted in evolutionary biology's Red Queen hypothesis (“it takes all the running you can do to keep in the same place”), Barnett challenges traditional strategy assumptions. Organizations cannot become competitive in a vacuum or a protected incubator; they develop resilience only by surviving real market threats. But this creates a paradox: the more an organization adapts to win a specific historic race, the more specialized, rigid, and exposed it becomes to sudden disruption.",
+  frameworks:`<p><strong>The Red Queen Evolution Loop</strong> — a cyclical model of rising industry benchmarks: Competition → Triggered Search/Learning → Increased Capability → Heightened Industry Pressures. This self-reinforcing loop forces all surviving players to burn resources just to protect existing share.</p>
+  <p><strong>The Competency Trap Identification Matrix</strong> — a diagnostic helping leadership audit whether current strengths, optimized systems, and historic victories have made the company too rigid to survive macro-environment changes.</p>`,
+  sources:[
+    ["Princeton University Press Catalog Page","https://press.princeton.edu/books/paperback/9780691173689/the-red-queen-among-organizations"],
+    ["Stanford GSB Faculty Book Archive","https://www.gsb.stanford.edu/faculty-research/books/red-queen-among-organizations-how-competitiveness-evolves"]
+  ]
+}
+];
+
+const grid = document.getElementById('grid');
+const search = document.getElementById('search');
+const count = document.getElementById('count');
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+// Try cover sources in order; show the styled placeholder only if all fail.
+function coverSources(isbn){
+  return [
+    `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg?default=false`,
+    `https://books.google.com/books/content?vid=ISBN:${isbn}&printsec=frontcover&img=1&zoom=1`
+  ];
+}
+function handleCoverError(img){
+  let i = parseInt(img.dataset.srcIdx||'0',10) + 1;
+  const sources = JSON.parse(img.dataset.sources);
+  if(i < sources.length){
+    img.dataset.srcIdx = i;
+    img.src = sources[i];
+  } else {
+    img.style.display='none';
+    img.nextElementSibling.style.display='flex';
+  }
+}
+
+books.forEach(b=>{
+  const card = document.createElement('article');
+  card.className='card';
+  card.dataset.text = (b.title+' '+b.subtitle+' '+b.author+' '+b.year+' '+b.concept+' '+b.summary+' '+b.frameworks).toLowerCase();
+  const sources = coverSources(b.isbn);
+  card.innerHTML = `
+    <div class="card-head">
+      <div class="cover-wrap">
+        <img class="cover" src="${sources[0]}" alt="Cover of ${esc(b.title)}" loading="lazy"
+             data-src-idx="0" data-sources='${esc(JSON.stringify(sources))}'
+             onerror="handleCoverError(this)">
+        <div class="cover-fallback"><span>${esc(b.title)}</span><small>${b.year}</small></div>
+      </div>
+      <div class="head-text">
+        <span class="num">No. ${String(b.num).padStart(2,'0')}</span>
+        <h2>${esc(b.title)}</h2>
+        <p class="subtitle">${esc(b.subtitle)}</p>
+        <p class="byline"><span>${esc(b.author)}</span><span class="year">${b.year}</span></p>
+        <p class="concept">${esc(b.concept)}</p>
+        <span class="expand-row">
+          <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8C1515" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+          <span class="expand-label">Read summary &amp; frameworks</span>
+        </span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-body-inner">
+        <div class="section-label">Executive Summary</div>
+        <p>${esc(b.summary)}</p>
+        <div class="section-label">Frameworks, Tools &amp; Methodologies</div>
+        ${b.frameworks}
+        <div class="section-label">Sources &amp; Media</div>
+        <div class="sources">
+          ${b.sources.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${esc(s[0])}</a>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  const head = card.querySelector('.card-head');
+  head.addEventListener('click', e=>{
+    if(e.target.tagName==='A') return;
+    card.classList.toggle('open');
+    const lbl = card.querySelector('.expand-label');
+    lbl.textContent = card.classList.contains('open') ? 'Hide details' : 'Read summary & frameworks';
+  });
+  grid.appendChild(card);
+});
+
+const cards = Array.from(document.querySelectorAll('.card'));
+const noRes = document.createElement('div');
+noRes.className='no-results';
+noRes.textContent='No books match your search.';
+noRes.style.display='none';
+grid.appendChild(noRes);
+
+function updateCount(n){
+  count.textContent = n === books.length ? `${books.length} books` : `${n} of ${books.length} books`;
+}
+updateCount(books.length);
+
+search.addEventListener('input', ()=>{
+  const q = search.value.trim().toLowerCase();
+  let visible=0;
+  cards.forEach(c=>{
+    const match = !q || c.dataset.text.includes(q);
+    c.classList.toggle('hidden', !match);
+    if(match) visible++;
+  });
+  noRes.style.display = visible===0 ? 'block' : 'none';
+  updateCount(visible);
+});
+
+document.getElementById('expandAll').addEventListener('click',()=>{
+  cards.forEach(c=>{ if(!c.classList.contains('hidden')){ c.classList.add('open'); const l=c.querySelector('.expand-label'); if(l) l.textContent='Hide details'; }});
+});
+document.getElementById('collapseAll').addEventListener('click',()=>{
+  cards.forEach(c=>{ c.classList.remove('open'); const l=c.querySelector('.expand-label'); if(l) l.textContent='Read summary & frameworks'; });
+});
+</script>
+</body>
+</html>
