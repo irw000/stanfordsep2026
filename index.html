@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stanford SEP 2026 — Reading List · 史丹佛 SEP 2026 閱讀書單</title>
+<meta name="description" content="Stanford Executive Program SEP 2026 reading list — bilingual (English / 繁體中文): 15 books on leadership, strategy, and organizations with summaries, frameworks, discussion questions, and purchase links.">
+<style>
+  :root{
+    --cardinal:#8C1515; --cardinal-dark:#5e0e0e; --ink:#2e2d29; --muted:#5f5b53;
+    --line:#e3ddd1; --paper:#ffffff; --bg:#faf8f3; --tag:#f1ece1; --green:#3f6b4f; --blue:#1f4e79;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",Helvetica,Arial,sans-serif;
+    --serif:Georgia,"Times New Roman","Songti TC","PingFang TC",serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  body.zh{font-family:var(--sans);}
+
+  header.hero{position:relative;background:var(--cardinal);color:#fff;padding:50px 24px 44px;text-align:center;border-bottom:5px solid var(--cardinal-dark);}
+  header.hero .kicker{font-family:var(--sans);text-transform:uppercase;letter-spacing:.22em;font-size:12px;font-weight:600;opacity:.85;margin:0 0 14px;}
+  header.hero h1{margin:0;font-size:40px;font-weight:700;letter-spacing:-.5px;}
+  header.hero p{margin:14px auto 0;max-width:640px;font-size:16px;opacity:.92;}
+  .langtoggle{position:absolute;top:18px;right:18px;font-family:var(--sans);font-size:14px;font-weight:700;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.5);border-radius:30px;padding:7px 16px;cursor:pointer;transition:background .15s ease;}
+  .langtoggle:hover{background:rgba(255,255,255,.26);}
+  @media(max-width:480px){.langtoggle{top:14px;right:14px;padding:6px 13px;font-size:13px;}header.hero h1{font-size:32px;}}
+
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
+  @media(max-width:760px){.wrap{padding:0 16px;}}
+
+  .controls{position:sticky;top:0;z-index:30;background:var(--bg);padding:18px 0 12px;border-bottom:1px solid var(--line);margin-bottom:24px;}
+  .searchbar{display:flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px 16px;box-shadow:0 1px 2px rgba(0,0,0,.03);}
+  .searchbar svg{flex:none;}
+  .searchbar input{border:none;outline:none;width:100%;font-size:16px;font-family:inherit;color:var(--ink);background:transparent;}
+  .filters{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
+  .chip{font-family:var(--sans);font-size:12.5px;border:1px solid var(--line);background:var(--paper);color:var(--muted);border-radius:30px;padding:5px 12px;cursor:pointer;transition:all .15s ease;user-select:none;}
+  .chip:hover{border-color:var(--cardinal);color:var(--cardinal);}
+  .chip.active{background:var(--cardinal);border-color:var(--cardinal);color:#fff;}
+  .meta-row{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-family:var(--sans);font-size:13px;color:var(--muted);gap:12px;flex-wrap:wrap;}
+  .actions button{font-family:inherit;font-size:13px;background:none;border:none;color:var(--cardinal);cursor:pointer;padding:4px 6px;}
+  .actions button:hover{text-decoration:underline;}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;padding-bottom:60px;}
+  @media(max-width:880px){.grid{grid-template-columns:1fr;}}
+
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .18s ease, transform .18s ease;}
+  .card:hover{box-shadow:0 6px 22px rgba(0,0,0,.07);transform:translateY(-1px);}
+  .card.hidden{display:none;}
+
+  .card-head{padding:20px 22px 18px;display:flex;gap:18px;}
+  @media(max-width:480px){.card-head{padding:16px 16px 14px;gap:14px;}}
+  .cover-wrap{flex:none;width:88px;}
+  .cover{width:88px;height:130px;border-radius:5px;object-fit:cover;display:block;box-shadow:0 2px 8px rgba(0,0,0,.18);background:var(--tag);}
+  .cover-fallback{width:88px;height:130px;border-radius:5px;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8px;color:#fff;background:linear-gradient(135deg,var(--cardinal),var(--cardinal-dark));box-shadow:0 2px 8px rgba(0,0,0,.18);font-family:var(--serif);font-size:11px;line-height:1.25;}
+  .cover-fallback span{font-weight:700;}
+  .cover-fallback small{display:block;margin-top:6px;opacity:.8;font-size:9px;letter-spacing:.05em;}
+  @media(max-width:480px){.cover-wrap{width:66px;}.cover,.cover-fallback{width:66px;height:98px;}}
+
+  .head-text{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0;}
+  .num{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--cardinal);}
+  .card h2{margin:0;font-size:19px;line-height:1.25;font-weight:700;}
+  @media(max-width:480px){.card h2{font-size:17px;}}
+  .title-en-sm{font-family:var(--sans);font-size:12px;color:var(--muted);margin:0;font-style:italic;}
+  .subtitle{font-size:13px;color:var(--muted);font-style:italic;margin:0;}
+  body.zh .subtitle{font-style:normal;}
+  .byline{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin:2px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
+  .year{background:var(--tag);color:var(--cardinal-dark);border-radius:20px;padding:1px 9px;font-weight:600;font-size:12px;}
+  .tagrow{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px;}
+  .tagrow .t{font-family:var(--sans);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--cardinal);background:var(--tag);border-radius:4px;padding:2px 7px;font-weight:600;}
+  .takeaway{font-size:14px;margin:8px 0 0;padding:9px 12px;background:#fbf6ef;border-left:3px solid var(--cardinal);border-radius:0 6px 6px 0;color:var(--ink);}
+  .takeaway b{font-family:var(--sans);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cardinal);display:block;margin-bottom:2px;font-weight:700;}
+
+  .buyrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+  .buy{font-family:var(--sans);font-size:12.5px;font-weight:600;text-decoration:none;padding:7px 13px;border-radius:6px;display:inline-flex;align-items:center;gap:6px;}
+  .buy.en{background:var(--cardinal);color:#fff;}
+  .buy.en:hover{background:var(--cardinal-dark);}
+  .buy.zh{background:var(--paper);color:var(--cardinal);border:1px solid var(--cardinal);}
+  .buy.zh:hover{background:#fbf4f4;}
+  .buy.none{font-family:var(--sans);font-size:12px;color:var(--muted);padding:7px 0;}
+
+  .expand-row{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--cardinal);cursor:pointer;width:fit-content;}
+  .chev{transition:transform .2s ease;}
+  .card.open .chev{transform:rotate(90deg);}
+
+  .card-body{max-height:0;overflow:hidden;transition:max-height .4s ease;border-top:1px solid transparent;}
+  .card.open .card-body{max-height:9000px;border-top:1px solid var(--line);}
+  .card-body-inner{padding:20px 22px 24px;}
+  @media(max-width:480px){.card-body-inner{padding:18px 16px 20px;}}
+
+  .section-label{font-family:var(--sans);text-transform:uppercase;letter-spacing:.13em;font-size:11px;font-weight:700;color:var(--cardinal);margin:22px 0 8px;}
+  .section-label:first-child{margin-top:0;}
+  .card-body p{margin:0 0 10px;font-size:15px;}
+  .card-body strong{color:var(--ink);}
+  .card-body ul{margin:6px 0 12px;padding-left:20px;}
+  .card-body li{margin:0 0 6px;font-size:14.5px;}
+  .card-body em{color:var(--cardinal-dark);font-style:italic;}
+  body.zh .card-body em{font-style:normal;font-weight:600;}
+  .authorbio{font-size:14.5px;color:var(--ink);background:#faf7f1;border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin:0;}
+
+  .figure{margin:16px 0 4px;}
+  .figure svg,.figure img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:zoom-in;}
+  .figure figcaption{font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:7px;font-style:italic;}
+
+  .subtoggle{border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:4px;}
+  .subtoggle summary{font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ink);padding:11px 14px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;background:#fcfaf6;}
+  .subtoggle summary::-webkit-details-marker{display:none;}
+  .subtoggle summary .tw{margin-left:auto;font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+  .subtoggle[open] summary{border-bottom:1px solid var(--line);}
+  .subtoggle .sub-inner{padding:12px 16px 14px;}
+  .subtoggle ol,.subtoggle ul{margin:0;padding-left:20px;}
+  .subtoggle li{font-size:14px;margin:0 0 6px;}
+  .verified-badge{font-family:var(--sans);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--green);background:#eef4ef;border-radius:4px;padding:2px 6px;margin-left:2px;}
+  .outline-note{font-family:var(--sans);font-size:11.5px;color:var(--muted);font-style:italic;margin:0 0 10px;}
+  .preview-link{font-family:var(--sans);font-size:12.5px;color:var(--cardinal);text-decoration:none;display:inline-block;margin-top:6px;}
+  .preview-link:hover{text-decoration:underline;}
+
+  .discussion{margin:0;padding-left:0;list-style:none;counter-reset:dq;}
+  .discussion li{position:relative;padding:9px 0 9px 34px;font-size:14.5px;border-bottom:1px dashed var(--line);counter-increment:dq;}
+  .discussion li:last-child{border-bottom:none;}
+  .discussion li::before{content:counter(dq);position:absolute;left:0;top:8px;width:22px;height:22px;background:var(--tag);color:var(--cardinal);border-radius:50%;font-family:var(--sans);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+
+  .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#000;cursor:pointer;border:1px solid var(--line);}
+  .video img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9;}
+  .video .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+  .video .play svg{width:62px;height:62px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4));}
+  .video:hover img{opacity:1;}
+  .video iframe{width:100%;height:100%;border:0;display:block;}
+  .watch-note{font-family:var(--sans);font-size:12px;color:var(--muted);margin:7px 0 0;}
+
+  .sources a{display:block;color:var(--cardinal);text-decoration:none;font-size:14px;padding:5px 0;font-family:var(--sans);}
+  .sources a:hover{text-decoration:underline;}
+  .sources a::before{content:"↗  ";opacity:.6;}
+
+  .lightbox{position:fixed;inset:0;z-index:100;background:rgba(24,20,18,.84);display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out;}
+  .lightbox.show{display:flex;}
+  .lightbox-inner{background:#fff;border-radius:12px;padding:26px;max-width:920px;width:100%;max-height:90vh;overflow:auto;cursor:default;box-shadow:0 20px 60px rgba(0,0,0,.4);}
+  .lightbox-inner svg,.lightbox-inner img{width:100%;height:auto;}
+  .lightbox-close{position:absolute;top:18px;right:24px;color:#fff;background:none;border:none;font-size:30px;line-height:1;cursor:pointer;font-family:Georgia,serif;}
+
+  .no-results{grid-column:1/-1;text-align:center;color:var(--muted);padding:50px 0;font-size:16px;}
+  footer{text-align:center;padding:30px 24px 50px;color:var(--muted);font-family:var(--sans);font-size:13px;border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+<header class="hero">
+  <button class="langtoggle" id="langtoggle">中文</button>
+  <p class="kicker" id="hKicker"></p>
+  <h1 id="hTitle"></h1>
+  <p id="hIntro"></p>
+</header>
+
+<div class="wrap">
+  <div class="controls">
+    <div class="searchbar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C1515" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="search" type="text" autocomplete="off">
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="meta-row">
+      <span id="count"></span>
+      <span class="actions">
+        <button id="expandAll"></button>·
+        <button id="collapseAll"></button>·
+        <button id="clearFilters"></button>
+      </span>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<footer id="footer"></footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+  <div class="lightbox-inner" id="lightboxInner"></div>
+</div>
+
+<script>
+const BUY = isbn => `https://search.books.com.tw/search/query/key/${isbn}/`;
+const PREVIEW = isbn => `https://books.google.com/books?vid=ISBN${isbn}`;
+
+const UI = {
+  en:{ kicker:"Stanford Executive Program · SEP 2026", h1:"Reading List",
+    intro:"Fifteen books on leadership, strategy, and organizations — summaries, frameworks, discussion questions, talks, and where to buy. Built for a reading & study group.",
+    searchPh:"Search title, author, year, concept, framework…",
+    expandAll:"Expand all", collapseAll:"Collapse all", clearFilters:"Clear filters",
+    booksWord:n=>`${n} books`, ofBooks:(n,t)=>`${n} of ${t} books`,
+    readMore:"Read more", showLess:"Show less", keyTakeaway:"Key takeaway",
+    about:"About the author", concept:"Core concept", summary:"Executive summary",
+    frameworks:"Frameworks, tools & methodologies", contents:"Contents",
+    discussion:"Discussion questions", watch:"Watch & listen", learn:"Learn more",
+    buyEn:"English · 博客來", buyZh:"中文版 · 博客來", buyNone:"No Chinese edition yet",
+    verified:"Verified ToC", toc:"Table of Contents", whatsInside:"What’s inside",
+    outlineNote:"Thematic outline of the book’s structure (not the verbatim chapter list).",
+    previewLink:"View official contents / preview ↗", show:"show",
+    noVideo:"No embedded talk for this title — see the links below.",
+    noResults:"No books match your search and filters.",
+    footer:"Stanford SEP 2026 Reading List · Compiled reference notes · Covers via Open Library · Buy links via 博客來",
+    langBtn:"中文" },
+  zh:{ kicker:"史丹佛高階主管課程 · SEP 2026", h1:"閱讀書單",
+    intro:"十五本關於領導、策略與組織的書 — 內容摘要、架構、討論題、演講與購買連結。為讀書與研討小組打造。",
+    searchPh:"搜尋書名、作者、年份、概念、架構…",
+    expandAll:"全部展開", collapseAll:"全部收合", clearFilters:"清除篩選",
+    booksWord:n=>`${n} 本書`, ofBooks:(n,t)=>`${n} / ${t} 本書`,
+    readMore:"展開更多", showLess:"收合", keyTakeaway:"重點啟示",
+    about:"關於作者", concept:"核心概念", summary:"內容摘要",
+    frameworks:"架構、工具與方法", contents:"目錄",
+    discussion:"討論題", watch:"影音", learn:"延伸資源",
+    buyEn:"英文版 · 博客來", buyZh:"中文版 · 博客來", buyNone:"暫無中文版",
+    verified:"已核實目錄", toc:"目錄", whatsInside:"內容綱要",
+    outlineNote:"本書結構的主題式大綱（非逐章原始目錄）。",
+    previewLink:"查看官方目錄／試閱 ↗", show:"展開",
+    noVideo:"此書無內嵌演講，請見下方連結。",
+    noResults:"沒有符合搜尋與篩選的書籍。",
+    footer:"史丹佛 SEP 2026 閱讀書單 · 整理筆記 · 書封來自 Open Library · 購買連結來自 博客來",
+    langBtn:"EN" }
+};
+
+const TAGS = {
+  "Leadership":{en:"Leadership",zh:"領導"},
+  "Strategy":{en:"Strategy",zh:"策略"},
+  "Innovation":{en:"Innovation",zh:"創新"},
+  "Org Design":{en:"Org Design",zh:"組織設計"},
+  "Culture":{en:"Culture",zh:"文化"},
+  "Power & Influence":{en:"Power & Influence",zh:"權力與影響力"},
+  "Ethics":{en:"Ethics",zh:"倫理"},
+  "Communication":{en:"Communication",zh:"溝通"},
+  "Negotiation":{en:"Negotiation",zh:"談判"},
+  "Wellbeing":{en:"Wellbeing",zh:"身心健康"}
+};
+
+const books = [
+{
+  num:1, year:2025, isbn:"9780593800041",
+  title:{en:"The Systems Leader",zh:"系統領導者"},
+  subtitle:{en:"Mastering the Cross-Pressures That Make or Break Today's Companies",zh:"駕馭決定當今企業成敗的交叉壓力"},
+  author:"Robert E. Siegel",
+  tags:["Leadership","Strategy"],
+  authorBio:{en:"Robert E. Siegel is a lecturer in management at Stanford Graduate School of Business and a venture investor who has also served as an operating executive in technology. His case-based research and popular GSB course focus on how leaders navigate competing internal and external pressures.",
+    zh:"Robert E. Siegel 是史丹佛商學院（GSB）的管理學講師，也是一位創投家，並曾在科技業擔任營運主管。他以個案為基礎的研究與廣受歡迎的課程，聚焦於領導者如何同時駕馭內部與外部相互衝突的壓力。"},
+  takeaway:{en:"Great leaders don't pick a side in a tension — they learn to hold both ends at once.",
+    zh:"優秀的領導者不會在張力中選邊站，而是學會同時握住兩端。"},
+  concept:{en:"Modern executive leadership is no longer about managing an isolated corporate kingdom; it requires navigating a fluid, complex ecosystem shaped by competing internal and external “cross-pressures.”",
+    zh:"現代高階領導不再是治理一座孤立的企業王國，而是要在內部與外部「交叉壓力」交織而成、流動且複雜的生態系中前行。"},
+  summary:{en:"Robert E. Siegel argues that today's enterprise leaders face an unprecedented barrage of conflicting demands from capital markets, regulatory bodies, and internal workforces. Traditional corporate functions fail when leaders optimize departments in silos. True systems leadership requires holding multiple conflicting priorities simultaneously, using structural empathy and systems thinking to convert operational friction into competitive clarity.",
+    zh:"Robert E. Siegel 指出，今日的企業領導者面對來自資本市場、監理機構與內部員工前所未有的衝突要求。當領導者只在各自部門的穀倉裡做局部最佳化，傳統職能便會失靈。真正的系統領導必須同時握住多項相互衝突的優先順序，運用結構性同理與系統思考，把營運上的摩擦轉化為競爭上的清晰。"},
+  frameworks:{en:`<p><strong>The Five Cross-Pressures Matrix</strong> — five axes where systems leaders must hold both positions at once:</p>
+  <ul><li><em>Priorities:</em> short-term execution and long-term innovation.</li><li><em>People:</em> authoritative strength and deep empathy.</li><li><em>Sphere of Influence:</em> internal mechanics and external ecosystems.</li><li><em>Geography:</em> local and global.</li><li><em>Purpose:</em> aggressive ambition and broader statesmanship.</li></ul>
+  <p><strong>The Systems Leader's Scorecard</strong> — a self-audit across seven behaviors: Managing Context, Risk Positioning, Intellectual Humility, Relational Credibility, Calendar Allocation, Skill vs. Luck, and the Rehire Metric (“Would we rehire ourselves today?”).</p>`,
+    zh:`<p><strong>五大交叉壓力矩陣</strong> — 系統領導者必須同時兼顧兩端的五條軸線：</p>
+  <ul><li><em>優先順序：</em>短期執行與長期創新。</li><li><em>人員：</em>權威強勢與深度同理。</li><li><em>影響範疇：</em>內部運作與外部生態。</li><li><em>地理：</em>在地與全球。</li><li><em>目的：</em>積極企圖心與更宏觀的治理格局。</li></ul>
+  <p><strong>系統領導者計分卡</strong> — 針對七項行為的自我檢核：經營脈絡、風險定位、知識上的謙遜、關係上的可信度、行事曆配置、實力與運氣之辨，以及「重新聘用」標準（「今天我們還會聘用現在的自己嗎？」）。</p>`},
+  figure:{caption:{en:"Each axis is a tension to hold simultaneously — not a binary choice between extremes.",zh:"每一條軸線都是要同時兼顧的張力，而非二選一。"},
+    svg:{en:`<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" role="img" aria-label="The Five Cross-Pressures"><rect width="720" height="320" fill="#ffffff"/><text x="360" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">The Five Cross-Pressures</text><text x="360" y="50" text-anchor="middle" font-size="11.5" fill="#5f5b53">Systems leaders operate at both ends of each tension</text><g fill="#2e2d29" font-size="12.5"><text x="20" y="86" font-size="12" font-weight="700" fill="#8C1515">Priorities</text><line x1="185" y1="90" x2="690" y2="90" stroke="#e3ddd1" stroke-width="6" stroke-linecap="round"/><circle cx="185" cy="90" r="6.5" fill="#8C1515"/><circle cx="690" cy="90" r="6.5" fill="#8C1515"/><text x="185" y="110">Short-term execution</text><text x="690" y="110" text-anchor="end">Long-term innovation</text><text x="20" y="134" font-size="12" font-weight="700" fill="#8C1515">People</text><line x1="185" y1="138" x2="690" y2="138" stroke="#e3ddd1" stroke-width="6" stroke-linecap="round"/><circle cx="185" cy="138" r="6.5" fill="#8C1515"/><circle cx="690" cy="138" r="6.5" fill="#8C1515"/><text x="185" y="158">Authoritative strength</text><text x="690" y="158" text-anchor="end">Deep empathy</text><text x="20" y="182" font-size="12" font-weight="700" fill="#8C1515">Sphere of Influence</text><line x1="185" y1="186" x2="690" y2="186" stroke="#e3ddd1" stroke-width="6" stroke-linecap="round"/><circle cx="185" cy="186" r="6.5" fill="#8C1515"/><circle cx="690" cy="186" r="6.5" fill="#8C1515"/><text x="185" y="206">Internal mechanics</text><text x="690" y="206" text-anchor="end">External ecosystems</text><text x="20" y="230" font-size="12" font-weight="700" fill="#8C1515">Geography</text><line x1="185" y1="234" x2="690" y2="234" stroke="#e3ddd1" stroke-width="6" stroke-linecap="round"/><circle cx="185" cy="234" r="6.5" fill="#8C1515"/><circle cx="690" cy="234" r="6.5" fill="#8C1515"/><text x="185" y="254">Local</text><text x="690" y="254" text-anchor="end">Global</text><text x="20" y="278" font-size="12" font-weight="700" fill="#8C1515">Purpose</text><line x1="185" y1="282" x2="690" y2="282" stroke="#e3ddd1" stroke-width="6" stroke-linecap="round"/><circle cx="185" cy="282" r="6.5" fill="#8C1515"/><circle cx="690" cy="282" r="6.5" fill="#8C1515"/><text x="185" y="302">Corporate ambition</text><text x="690" y="302" text-anchor="end">Statesmanship</text></g></svg>`,
+    zh:`<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" font-family="PingFang TC,Microsoft JhengHei,sans-serif" role="img" aria-label="五大交叉壓力"><rect width="720" height="320" fill="#ffffff"/><text x="360" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">五大交叉壓力</text><text x="360" y="50" text-anchor="middle" font-size="11.5" fill="#5f5b53">系統領導者必須同時站在每組張力的兩端</text><g fill="#2e2d29" font-size="12.5"><text x="20" y="86" font-size="12" font-weight="700" fill="#8C1515">優先順序</text><line x1="200" y1="90" x2="690" y2="90" stroke="#e3ddd1" stroke-width="6" stroke-linecap="round"/><circle cx="200" cy="90" r="6.5" fill="#8C1515"/><circle cx="690" cy="90" r="6.5" fill="#8C1515"/><text x="200" y="110">短期執行</text><text x="690" y="110" text-anchor="end">長期創新</text><text x="20" y="134" font-size="12" font-weight="700" fill="#8C1515">人員</text><line x1="200" y1="138" x2="690" y2="138" stroke="#e3ddd1" stroke-width="6" stroke-linecap="round"/><circle cx="200" cy="138" r="6.5" fill="#8C1515"/><circle cx="690" cy="138" r="6.5" fill="#8C1515"/><text x="200" y="158">權威強勢</text><text x="690" y="158" text-anchor="end">深度同理</text><text x="20" y="182" font-size="12" font-weight="700" fill="#8C1515">影響範疇</text><line x1="200" y1="186" x2="690" y2="186" stroke="#e3ddd1" stroke-width="6" stroke-linecap="round"/><circle cx="200" cy="186" r="6.5" fill="#8C1515"/><circle cx="690" cy="186" r="6.5" fill="#8C1515"/><text x="200" y="206">內部運作</text><text x="690" y="206" text-anchor="end">外部生態系</text><text x="20" y="230" font-size="12" font-weight="700" fill="#8C1515">地理</text><line x1="200" y1="234" x2="690" y2="234" stroke="#e3ddd1" stroke-width="6" stroke-linecap="round"/><circle cx="200" cy="234" r="6.5" fill="#8C1515"/><circle cx="690" cy="234" r="6.5" fill="#8C1515"/><text x="200" y="254">在地</text><text x="690" y="254" text-anchor="end">全球</text><text x="20" y="278" font-size="12" font-weight="700" fill="#8C1515">目的</text><line x1="200" y1="282" x2="690" y2="282" stroke="#e3ddd1" stroke-width="6" stroke-linecap="round"/><circle cx="200" cy="282" r="6.5" fill="#8C1515"/><circle cx="690" cy="282" r="6.5" fill="#8C1515"/><text x="200" y="302">企業企圖心</text><text x="690" y="302" text-anchor="end">治理格局</text></g></svg>`}},
+  contents:{verified:false,items:{en:["The perfect storm of cross-pressures, and why silos fail","Priorities · People · Sphere of Influence · Geography · Purpose","The Systems Leader's Scorecard (seven behaviors)","Putting systems leadership into daily practice"],
+    zh:["交叉壓力的完美風暴，以及穀倉為何失靈","優先順序 · 人員 · 影響範疇 · 地理 · 目的","系統領導者計分卡（七項行為）","把系統領導落實到日常實務"]}},
+  video:"v085nRsapyI",
+  discussion:{en:["Which of the five cross-pressures is hardest for you to hold both ends of, and why?","Think of a leader you admire — where do they sit on the Scorecard's seven behaviors?","Where in your organization is a department being optimized in a silo at the expense of the whole?"],
+    zh:["五大交叉壓力中，哪一組讓你最難同時握住兩端？為什麼？","想一位你欣賞的領導者 — 他們在計分卡的七項行為上落在哪裡？","你的組織中，哪個部門正在穀倉裡做局部最佳化，卻犧牲了整體？"]},
+  buyZH:null,
+  sources:[{label:{en:"Stanford GSBooks Lecture with Robert Siegel",zh:"史丹佛 GSBooks：Robert Siegel 講座"},url:"https://www.youtube.com/watch?v=v085nRsapyI"},{label:{en:"unSILOed Podcast Systems Leadership Interview",zh:"unSILOed Podcast：系統領導訪談"},url:"https://www.youtube.com/watch?v=gk--hCSOLlo"}]
+},
+{
+  num:2, year:2021, isbn:"9780063064881",
+  title:{en:"System Error",zh:"系統錯誤"},
+  subtitle:{en:"Where Big Tech Went Wrong and How We Can Reboot",zh:"大型科技公司哪裡走錯了，我們如何重啟"},
+  author:"Rob Reich, Mehran Sahami & Jeremy Weinstein",
+  tags:["Ethics","Innovation"],
+  authorBio:{en:"Three Stanford professors from different disciplines: Rob Reich (political philosopher and ethics scholar), Mehran Sahami (computer scientist and former Google engineer), and Jeremy Weinstein (political scientist). They co-teach Stanford's course on ethics, public policy, and technology.",
+    zh:"三位來自不同領域的史丹佛教授：Rob Reich（政治哲學與倫理學者）、Mehran Sahami（電腦科學家、前 Google 工程師）與 Jeremy Weinstein（政治學者）。三人共同開設史丹佛關於倫理、公共政策與科技的課程。"},
+  takeaway:{en:"When optimization becomes the only goal, human values get quietly treated as bugs.",
+    zh:"當最佳化成為唯一目標，人的價值就被悄悄當成需要修掉的程式錯誤。"},
+  concept:{en:"The engineering ethos of “optimization” treats societal, political, and ethical challenges as mere code glitches to be solved, inadvertently eroding democratic values and personal autonomy.",
+    zh:"工程上的「最佳化」信念，把社會、政治與倫理難題當成只是待修的程式錯誤，無形中侵蝕了民主價值與個人自主。"},
+  summary:{en:"Written by a trio of Stanford professors spanning philosophy, computer science, and political science, System Error deconstructs the systemic externalities of the tech sector. When optimization becomes an organization's primary value, core human values like privacy, fair play, and democratic deliberation are treated as inefficient drag. The book offers a framework for reintroducing institutional guardrails, collective governance, and deliberate ethical choices into tech-driven business models.",
+    zh:"本書由橫跨哲學、電腦科學與政治學的三位史丹佛教授合著，拆解科技業的系統性外部成本。當最佳化成為組織首要價值，隱私、公平與民主審議等核心人性價值便被視為沒有效率的阻力。書中提出一套框架，把制度性護欄、集體治理與審慎的倫理抉擇重新帶回以科技驅動的商業模式。"},
+  frameworks:{en:`<p><strong>The Optimization Mindset Dilemma</strong> — maximizing a single metric (engagement, click-through, short-term conversion) predictably generates toxic social, economic, and organizational side effects.</p>
+  <p><strong>The Triumvirate Framework</strong> — balance three forces before scaling any technology:</p>
+  <ul><li><em>Technical capability:</em> what <em>can</em> be built.</li><li><em>Philosophical ethics:</em> what <em>should</em> be built.</li><li><em>Political economy &amp; policy:</em> how institutions constrain corporate systems.</li></ul>`,
+    zh:`<p><strong>最佳化心態的兩難</strong> — 一味極大化單一指標（互動率、點擊率、短期轉換）必然帶來有害的社會、經濟與組織副作用。</p>
+  <p><strong>三方框架</strong> — 在任何技術規模化之前，先平衡三股力量：</p>
+  <ul><li><em>技術能力：</em>什麼<em>做得到</em>。</li><li><em>哲學倫理：</em>什麼<em>應該</em>做。</li><li><em>政治經濟與政策：</em>制度如何約束企業系統。</li></ul>`},
+  contents:{verified:false,items:{en:["The optimization mindset and its externalities","Algorithms, data, and the erosion of privacy","Automation, work, and human dignity","Free speech, platforms, and democracy","Rebooting: guardrails, governance, and ethical choice"],
+    zh:["最佳化心態及其外部成本","演算法、資料與隱私的侵蝕","自動化、工作與人的尊嚴","言論自由、平台與民主","重啟：護欄、治理與倫理抉擇"]}},
+  video:"RC30ZcjQRuQ",
+  discussion:{en:["Where in your own work do you optimize a single metric that quietly creates side effects?","Who should decide the trade-offs — engineers, ethicists, or regulators — and in what mix?","What's one 'guardrail' your organization could adopt before scaling its next technology?"],
+    zh:["在你的工作中，哪裡正為了單一指標做最佳化，卻悄悄製造了副作用？","這些取捨該由誰決定 — 工程師、倫理學者，還是監理機關？比例又該如何？","在下一項技術規模化之前，你的組織可以先採用哪一道「護欄」？"]},
+  buyZH:null,
+  sources:[{label:{en:"System Error, Live! (Stanford, YouTube)",zh:"System Error, Live!（史丹佛，YouTube）"},url:"https://www.youtube.com/watch?v=RC30ZcjQRuQ"},{label:{en:"Duke Sanford School Fireside Chat",zh:"杜克 Sanford 學院爐邊對談"},url:"https://sanford.duke.edu/event/system-error-where-big-tech-went-wrong-and-how-we-can-reboot/"}]
+},
+{
+  num:3, year:2005, isbn:"9780060582746",
+  title:{en:"Stress Free for Good",zh:"永久擺脫壓力"},
+  subtitle:{en:"10 Scientifically Proven Life Skills for Health and Happiness",zh:"通往健康與幸福、經科學實證的 10 項生活技能"},
+  author:"Fred Luskin & Kenneth R. Pelletier",
+  tags:["Wellbeing"],
+  authorBio:{en:"Fred Luskin directs the Stanford Forgiveness Projects and researches forgiveness, stress, and wellbeing. Kenneth R. Pelletier is a clinical professor of medicine and a pioneer of mind-body medicine. The ten skills come from their clinical work at the Stanford University School of Medicine.",
+    zh:"Fred Luskin 主持史丹佛寬恕計畫（Stanford Forgiveness Projects），研究寬恕、壓力與身心健康。Kenneth R. Pelletier 是臨床醫學教授，也是身心醫學的先驅。這十項技能源自兩人在史丹佛醫學院的臨床工作。"},
+  takeaway:{en:"Stress is a learnable habit you can interrupt in seconds — not a fixed cost of the job.",
+    zh:"壓力是一種可以學會、能在數秒內中斷的習慣，而不是這份工作必然要付的代價。"},
+  concept:{en:"Chronic stress can be systematically down-regulated through targeted physiological and cognitive micro-interventions that interrupt the autonomic nervous system's fight-or-flight response.",
+    zh:"透過針對性的生理與認知微介入，中斷自律神經的「戰或逃」反應，慢性壓力是可以被有系統地下調的。"},
+  summary:{en:"Grounded in clinical research at the Stanford University School of Medicine, this book addresses the physiological baseline of executive performance. Chronic stress is not an unavoidable byproduct of high-stakes roles but a learned, habit-based response that impairs executive function, memory, and long-term health. The ten “LifeSkills” act as immediate circuit breakers, shifting the body from sympathetic arousal into parasympathetic calm within seconds.",
+    zh:"本書立基於史丹佛醫學院的臨床研究，談的是高階表現的生理基礎。慢性壓力並非高風險職位無可避免的副產品，而是一種習得、以習慣為基礎的反應，會損害執行功能、記憶與長期健康。書中十項「生活技能」如同即時的斷路器，能在數秒內把身體從交感神經的亢奮切換到副交感神經的平靜。"},
+  frameworks:{en:`<p><strong>The 10 LifeSkills Architecture</strong> — a sequential portfolio of micro-interventions for immediate down-regulation, from diaphragmatic breathing to forgiveness and intentional somatic relaxation. Each is a fast, repeatable circuit-breaker for the stress response.</p>`,
+    zh:`<p><strong>十項生活技能架構</strong> — 一套循序漸進的微介入組合，用於即時下調壓力，從腹式呼吸到寬恕，再到刻意的身體放鬆。每一項都是面對壓力反應、可快速反覆使用的斷路器。</p>`},
+  contents:{verified:true,items:{en:["Belly Breathing (diaphragmatic breathing)","Positive Emotion Refocusing Technique (PERT)","Cognitive Restructuring (reframe stressful thoughts)","Daily Gratitude Journaling","Sharing Highlights (emotional expressiveness)","The HEAL Forgiveness Method","Slowing Down and Simplifying","Mindful Awareness (being in the moment)","Creating a Rejuvenation Inventory","Intentional Physical / Somatic Relaxation"],
+    zh:["腹式呼吸","正向情緒再聚焦技巧（PERT）","認知重構（重新框定壓力思緒）","每日感恩日記","分享美好時刻（情緒表達）","HEAL 寬恕法","放慢與簡化","正念覺察（活在當下）","建立自我充電清單","刻意的身體放鬆"]}},
+  video:"ERIiCiQyKxY",
+  discussion:{en:["Which of the ten skills could you realistically build into a daily routine this week?","Where does chronic low-grade stress show up in your team — and what triggers it?","How might 'reframing' a recurring stressor at work change how you respond to it?"],
+    zh:["這十項技能中，本週你能實際排進日常的有哪一項？","在你的團隊裡，長期的低度壓力出現在哪些地方？又是什麼引發的？","把工作中反覆出現的壓力源「重新框定」，會如何改變你的反應？"]},
+  buyZH:null,
+  sources:[{label:{en:"Dr. Fred Luskin on stress & happiness (YouTube)",zh:"Fred Luskin 談壓力與幸福（YouTube）"},url:"https://www.youtube.com/watch?v=ERIiCiQyKxY"},{label:{en:"Apple Books Academic Profile",zh:"Apple Books 書籍頁面"},url:"https://books.apple.com/us/book/stress-free-for-good/id6479662525"}]
+},
+{
+  num:4, year:2024, isbn:"9780593714232",
+  title:{en:"The Venture Mindset",zh:"試錯策略"},
+  subtitle:{en:"How to Make Smarter Bets and Achieve Extraordinary Growth",zh:"史丹佛天使投資人的決斷心法，在高風險世界正確止損、掌握勝算"},
+  author:"Ilya Strebulaev & Alex Dang",
+  tags:["Innovation","Strategy"],
+  authorBio:{en:"Ilya Strebulaev is a finance professor at Stanford GSB and founder of the Stanford Venture Capital Initiative, among the most-cited researchers on venture capital. Alex Dang is a technology executive (Amazon, McKinsey) who has built and scaled corporate innovation programs.",
+    zh:"Ilya Strebulaev 是史丹佛商學院的財務學教授，也是史丹佛創投計畫（Stanford Venture Capital Initiative）的創辦人，為創投領域被引用最多的研究者之一。Alex Dang 是科技業高階主管（曾任職 Amazon、McKinsey），長期打造並擴展企業創新計畫。"},
+  takeaway:{en:"Bet for the home run — in a real portfolio, the strikeouts don't sink you.",
+    zh:"為全壘打而揮棒 — 在真正的投資組合裡，三振不會擊沉你。"},
+  concept:{en:"Traditional corporate governance is structured to minimize failure rates, which systematically causes established companies to miss highly asymmetrical, industry-defining innovation waves.",
+    zh:"傳統公司治理的設計是為了把失敗率降到最低，這也系統性地讓成熟企業錯過高度不對稱、足以定義產業的創新浪潮。"},
+  summary:{en:"Drawing on research at Stanford GSB, Strebulaev and Dang isolate the operating differences between corporate executives and venture capitalists. While corporations rely on forecasting, linear budgets, and consensus, VCs build models designed to survive extreme uncertainty. To drive outlier growth, leaders must manage risk like an early-stage investor — shifting from project management to an explicit portfolio approach.",
+    zh:"Strebulaev 與 Dang 以史丹佛商學院的研究為基礎，釐清企業高管與創投家在運作上的差異。企業仰賴預測、線性預算與共識；創投則打造能在極端不確定中存活的模式。要驅動異數般的成長，領導者必須像早期投資人那樣管理風險 — 從專案管理轉向明確的投資組合思維。"},
+  frameworks:{en:`<p><strong>The Nine Principles of Venture Thinking</strong> contrast venture and corporate practice: optimize for asymmetric upside, source ideas outside the four walls, prepare your mind for uncertainty, say no 100 times, bet on the jockey, welcome dissent, double down or quit, make the pie bigger, and give great things time.</p>
+  <p><strong>The Critical Flaw Approach</strong> — hunt for the single automatic deal-breaker early, instead of building multi-page pro/con lists.</p>`,
+    zh:`<p><strong>創投思維九原則</strong>對比創投與企業的做法：為不對稱的上檔做最佳化、到圍牆之外尋找點子、為不確定做好心理準備、勇於拒絕一百次、賭騎師（看團隊）、歡迎異議、加碼或退場、把餅做大、給偉大的事情時間。</p>
+  <p><strong>致命缺陷法</strong> — 及早找出那個會直接讓案子出局的關鍵缺陷，而不是寫好幾頁的優缺點清單。</p>`},
+  contents:{verified:true,items:{en:["1. Home Runs Matter, Strikeouts Don't","2. Get Outside the Four Walls","3. Prepare Your Mind","4. Say No 100 Times","5. Bet on the Jockey","6. Agree to Disagree","7. Double Down or Quit","8. Make the Pie Bigger","9. Great Things Take Time"],
+    zh:["1. 全壘打才重要，三振無妨","2. 走出圍牆之外","3. 預備好你的心態","4. 勇於拒絕一百次","5. 賭騎師（看團隊）","6. 容許彼此不同意","7. 加碼或退場","8. 把餅做大","9. 偉大的事情需要時間"]}},
+  video:"6UUtRbE_yMY",
+  discussion:{en:["Where does your organization optimize to avoid failure rather than to capture upside?","Recall a decision made by consensus — would 'agree to disagree' have produced a better one?","What's a current initiative you should either double down on or kill cleanly?"],
+    zh:["你的組織在哪些地方為了避免失敗、而非掌握上檔，而做最佳化？","回想一個靠共識做出的決定 — 若「容許不同意」，結果會更好嗎？","目前有哪一項計畫，你應該果斷加碼、或乾脆收掉？"]},
+  buyZH:"https://www.books.com.tw/products/0011047300", buyZHtitle:"試錯策略",
+  sources:[{label:{en:"The Venture Mindset talk (YouTube)",zh:"The Venture Mindset 演講（YouTube）"},url:"https://www.youtube.com/watch?v=6UUtRbE_yMY"},{label:{en:"Penguin Random House Book Page",zh:"Penguin Random House 書籍頁面"},url:"https://www.penguinrandomhouse.com/books/734114/the-venture-mindset-by-ilya-strebulaev-and-alex-dang/"}]
+},
+{
+  num:5, year:2024, isbn:"9781250284419",
+  title:{en:"The Friction Project",zh:"摩擦計畫"},
+  subtitle:{en:"How Smart Leaders Make the Right Things Easier and the Wrong Things Harder",zh:"史丹佛教授的零內耗管理，讓正確的事變簡單、錯誤的事變難"},
+  author:"Robert I. Sutton & Huggy Rao",
+  tags:["Leadership","Org Design"],
+  authorBio:{en:"Robert I. Sutton is an organizational psychologist and Stanford engineering professor, author of The No Asshole Rule and Good Boss, Bad Boss. Huggy Rao is a professor of organizational behavior at Stanford GSB. The two are long-time collaborators on how organizations actually change.",
+    zh:"Robert I. Sutton 是組織心理學家、史丹佛工學院教授，著有《拒絕混蛋守則》與《好老闆，壞老闆》。Huggy Rao 是史丹佛商學院組織行為學教授。兩人長期合作研究組織如何真正改變。"},
+  takeaway:{en:"Subtract the sludge; add friction only where it stops a costly mistake.",
+    zh:"減去淤泥；只在能擋下高代價錯誤的地方加入摩擦。"},
+  concept:{en:"Elite leaders act as “friction fixers” who clear out organizational sludge to save their teams' time, while selectively introducing helpful hurdles to prevent impulsive, bad decisions.",
+    zh:"頂尖領導者扮演「摩擦修復者」，清除組織淤泥以省下團隊的時間，同時有選擇地加入有益的阻礙，避免衝動且糟糕的決策。"},
+  summary:{en:"Drawing on seven years of research, Sutton and Rao explain why organizations get bogged down by bureaucracy, meetings, and confusing communication. Well-intentioned executives suffer from an “addition bias,” constantly adding rules, tools, and committees without subtracting old ones. The book is a blueprint for eliminating unproductive friction while preserving the “good friction” that slows down high-stakes thinking.",
+    zh:"Sutton 與 Rao 以七年研究為基礎，解釋組織為何被官僚、會議與含糊的溝通拖垮。立意良善的主管常患有「加法偏誤」，不斷加上新規則、工具與委員會，卻從不刪去舊的。本書提供一張藍圖，教你消除無益的摩擦，同時保留能讓高風險思考慢下來的「好摩擦」。"},
+  frameworks:{en:`<p><strong>The Friction-as-Cholesterol Matrix</strong> separates obstacles into <em>bad friction</em> (sludge: red tape, status meetings, duplicate approvals) and <em>good friction</em> (strategic speedbumps: pause points and sign-offs on high-stakes choices).</p>
+  <p><strong>The Subtraction Mindset Toolkit</strong> — the Rule of Two-for-One (remove two legacy rules for every new one) and Sludge Audits (time-map compliance vs. value creation).</p>`,
+    zh:`<p><strong>「摩擦如膽固醇」矩陣</strong>把障礙分成<em>壞摩擦</em>（淤泥：繁文縟節、進度會議、重複簽核）與<em>好摩擦</em>（策略性減速丘：在高風險決策上的停頓點與簽核）。</p>
+  <p><strong>減法心態工具箱</strong> — 二減一原則（每新增一條規則就刪去兩條舊規則）與淤泥稽核（盤點花在合規與創造價值上的時間）。</p>`},
+  figure:{caption:{en:"Friction fixers subtract sludge while adding good friction where the stakes are high.",zh:"摩擦修復者減去淤泥，並在高風險處刻意加入好摩擦。"},
+    svg:{en:`<svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" role="img" aria-label="Friction as Cholesterol"><rect width="720" height="290" fill="#ffffff"/><text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">Friction as Cholesterol</text><text x="360" y="48" text-anchor="middle" font-size="11.5" fill="#5f5b53">Fix the harmful kind; keep the helpful kind</text><rect x="30" y="66" width="305" height="200" rx="10" fill="#fbf4f4" stroke="#e3ddd1"/><text x="50" y="96" font-size="13.5" font-weight="700" fill="#8C1515">BAD FRICTION — “Sludge”</text><line x1="50" y1="106" x2="315" y2="106" stroke="#e3ddd1"/><g font-size="12.5" fill="#2e2d29"><circle cx="56" cy="130" r="3" fill="#8C1515"/><text x="68" y="134">Red tape &amp; duplicate approvals</text><circle cx="56" cy="158" r="3" fill="#8C1515"/><text x="68" y="162">Status-meeting overload</text><circle cx="56" cy="186" r="3" fill="#8C1515"/><text x="68" y="190">Confusing communication</text><circle cx="56" cy="214" r="3" fill="#8C1515"/><text x="68" y="218">Administrative debt</text></g><text x="50" y="252" font-size="12" font-weight="700" fill="#8C1515">→ Subtract it</text><rect x="385" y="66" width="305" height="200" rx="10" fill="#f1f6f2" stroke="#e3ddd1"/><text x="405" y="96" font-size="13.5" font-weight="700" fill="#3f6b4f">GOOD FRICTION — “Speedbumps”</text><line x1="405" y1="106" x2="670" y2="106" stroke="#e3ddd1"/><g font-size="12.5" fill="#2e2d29"><circle cx="411" cy="130" r="3" fill="#3f6b4f"/><text x="423" y="134">Intentional pause points</text><circle cx="411" cy="158" r="3" fill="#3f6b4f"/><text x="423" y="162">Safety &amp; ethics checks</text><circle cx="411" cy="186" r="3" fill="#3f6b4f"/><text x="423" y="190">Multi-person sign-off on big bets</text></g><text x="405" y="252" font-size="12" font-weight="700" fill="#3f6b4f">→ Add it deliberately</text></svg>`,
+    zh:`<svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" font-family="PingFang TC,Microsoft JhengHei,sans-serif" role="img" aria-label="摩擦如膽固醇"><rect width="720" height="290" fill="#ffffff"/><text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">摩擦如膽固醇</text><text x="360" y="48" text-anchor="middle" font-size="11.5" fill="#5f5b53">修掉有害的摩擦，保留有益的摩擦</text><rect x="30" y="66" width="305" height="200" rx="10" fill="#fbf4f4" stroke="#e3ddd1"/><text x="50" y="96" font-size="13" font-weight="700" fill="#8C1515">壞摩擦 —「淤泥」</text><line x1="50" y1="106" x2="315" y2="106" stroke="#e3ddd1"/><g font-size="12.5" fill="#2e2d29"><circle cx="56" cy="130" r="3" fill="#8C1515"/><text x="68" y="134">繁文縟節與重複簽核</text><circle cx="56" cy="158" r="3" fill="#8C1515"/><text x="68" y="162">過多的進度會議</text><circle cx="56" cy="186" r="3" fill="#8C1515"/><text x="68" y="190">含糊不清的溝通</text><circle cx="56" cy="214" r="3" fill="#8C1515"/><text x="68" y="218">行政負債</text></g><text x="50" y="252" font-size="12" font-weight="700" fill="#8C1515">→ 把它減去</text><rect x="385" y="66" width="305" height="200" rx="10" fill="#f1f6f2" stroke="#e3ddd1"/><text x="405" y="96" font-size="13" font-weight="700" fill="#3f6b4f">好摩擦 —「減速丘」</text><line x1="405" y1="106" x2="670" y2="106" stroke="#e3ddd1"/><g font-size="12.5" fill="#2e2d29"><circle cx="411" cy="130" r="3" fill="#3f6b4f"/><text x="423" y="134">刻意設置的停頓點</text><circle cx="411" cy="158" r="3" fill="#3f6b4f"/><text x="423" y="162">安全與倫理檢核</text><circle cx="411" cy="186" r="3" fill="#3f6b4f"/><text x="423" y="190">重大決策的多人簽核</text></g><text x="405" y="252" font-size="12" font-weight="700" fill="#3f6b4f">→ 刻意加入</text></svg>`}},
+  contents:{verified:false,items:{en:["Friction fixers as trustees of others' time","Friction forensics: telling good friction from bad","The help pyramid: how fixers do their work","Five friction troubles: oblivious leaders, addition sickness, broken connections, jargon monoxide, fast &amp; frenzied","Leading your own friction project"],
+    zh:["摩擦修復者：把別人的時間當作受託資產","摩擦鑑識：分辨好摩擦與壞摩擦","幫助金字塔：修復者如何工作","五種摩擦難題：盲目的領導者、加法上癮、斷裂的連結、術語廢氣、又快又慌","領導你自己的摩擦計畫"]}},
+  video:"79wHCuuqmHo",
+  discussion:{en:["What's one recurring meeting or approval your team could remove this month (Rule of Two-for-One)?","Where is 'good friction' missing — a high-stakes decision that happens too fast?","Run a quick sludge audit: how many hours a week go to internal compliance vs. real work?"],
+    zh:["依「二減一原則」，本月你的團隊可以拿掉哪一個固定會議或簽核？","哪裡缺了「好摩擦」 — 有哪個高風險決策做得太快了？","做一次快速的淤泥稽核：每週有多少小時花在內部合規、而非真正的工作？"]},
+  buyZH:"https://www.books.com.tw/products/0011003759", buyZHtitle:"摩擦計畫",
+  sources:[{label:{en:"Stanford GSB: The Art of Friction (YouTube)",zh:"史丹佛 GSB：摩擦的藝術（YouTube）"},url:"https://www.youtube.com/watch?v=79wHCuuqmHo"},{label:{en:"Stanford GSB Insights: Fixing Bad Friction",zh:"史丹佛 GSB Insights：修復壞摩擦"},url:"https://www.gsb.stanford.edu/insights/fixing-bad-friction-finding-good-friction"}]
+},
+{
+  num:6, year:2023, isbn:"9781668010303",
+  title:{en:"Think Faster, Talk Smarter",zh:"思考更敏捷，說話更機智"},
+  subtitle:{en:"How to Speak Successfully When You're Put on the Spot",zh:"史丹佛 MBA 必修溝通課"},
+  author:"Matt Abrahams",
+  tags:["Communication"],
+  authorBio:{en:"Matt Abrahams is a lecturer in organizational behavior at Stanford GSB and a communication coach. He hosts the hit podcast “Think Fast, Talk Smart” and teaches widely-viewed methods for speaking confidently under pressure.",
+    zh:"Matt Abrahams 是史丹佛商學院組織行為學講師，也是溝通教練。他主持熱門 Podcast「Think Fast, Talk Smart」，教授廣受歡迎、能在壓力下自信表達的方法。"},
+  takeaway:{en:"You don't need the perfect answer — a structure and a calm mind beat improvisation.",
+    zh:"你不需要完美的答案 — 一套結構加上平穩的心，勝過臨場硬撐。"},
+  concept:{en:"Spontaneous communication is not an innate gift; it is a systematic skill mastered by managing performance anxiety and using structured response models.",
+    zh:"即興溝通並非天賦，而是一項可以精通的系統化技能 — 靠管理臨場焦慮與運用結構化的回應模型。"},
+  summary:{en:"Most business communication happens in real time — Q&A, status updates, high-pressure meetings — not in choreographed keynotes. Abrahams shows that the bottleneck to impromptu speaking is the anxiety-induced desire for a perfect response, which floods short-term cognitive capacity. By shifting from a perfectionist to a contribution mindset and using predictable structures, leaders deliver concise, memorable answers under pressure.",
+    zh:"多數商業溝通發生在即時當下 — 問答、進度回報、高壓會議 — 而非排練好的主題演講。Abrahams 指出，即興表達的瓶頸在於焦慮引發的「想給出完美答案」，這會塞滿短期認知容量。只要從完美主義轉為「貢獻」心態，並運用可預期的結構，領導者就能在壓力下給出簡潔、好記的回答。"},
+  frameworks:{en:`<p><strong>The Six-Step Method:</strong> manage anxiety → prevent perfectionism → reframe the situation → listen actively → structure your content → stay concise.</p>
+  <p><strong>The Impromptu Structural Toolkit</strong> — plug-and-play templates: What? / So What? / Now What?; Problem → Solution → Benefit; the Q&amp;A “ADD” model; the “4I” feedback loop; and the “AAA” executive apology.</p>`,
+    zh:`<p><strong>六步驟法：</strong>管理焦慮 → 防止完美主義 → 重新框定情境 → 積極聆聽 → 為內容建立結構 → 保持精簡。</p>
+  <p><strong>即興結構工具箱</strong> — 隨插即用的範本：是什麼？／所以呢？／接下來？；問題 → 解方 → 益處；問答「ADD」模型；「4I」回饋迴圈；以及「AAA」主管道歉法。</p>`},
+  contents:{verified:false,items:{en:["Part 1 — A method for speaking in the moment","Manage anxiety · prevent perfectionism · reframe · listen · structure · be concise","Part 2 — Structures for specific situations","Small talk, toasts, feedback, pitches, Q&amp;A, and apologies"],
+    zh:["第一部 — 臨場開口的一套方法","管理焦慮 · 防止完美主義 · 重新框定 · 聆聽 · 建立結構 · 保持精簡","第二部 — 各種情境的結構","閒聊、致詞、回饋、提案、問答與道歉"]}},
+  video:"o3K_HbpWNpg",
+  discussion:{en:["What physically happens to you under speaking pressure — and which anxiety tactic could help?","Pick a recent tough question you faced; how would the ADD or What/So What/Now What structure have helped?","Where does chasing the 'perfect' answer get in the way of simply contributing?"],
+    zh:["在說話壓力下，你的身體會出現什麼反應？哪一種管理焦慮的方法能幫上忙？","選一個你最近遇到的難題；ADD 或「是什麼／所以呢／接下來」的結構會如何幫你？","追求「完美」答案，在哪些時候反而妨礙了你單純地做出貢獻？"]},
+  buyZH:"https://www.books.com.tw/products/0010982920", buyZHtitle:"思考更敏捷，說話更機智",
+  sources:[{label:{en:"Matt Abrahams TEDx: Think Fast, Talk Smart (YouTube)",zh:"Matt Abrahams TEDx：Think Fast, Talk Smart（YouTube）"},url:"https://www.youtube.com/watch?v=o3K_HbpWNpg"},{label:{en:"Stanford GSB Think Fast, Talk Smart Podcast",zh:"史丹佛 GSB「Think Fast, Talk Smart」Podcast"},url:"https://www.gsb.stanford.edu/business-podcasts/think-fast-talk-smart"}]
+},
+{
+  num:7, year:2022, isbn:"9781108841191",
+  title:{en:"Leading With Values",zh:"以價值領導"},
+  subtitle:{en:"Strategies for Making Ethical Decisions in Business and Life",zh:"在商業與人生中做出合乎倫理決策的策略"},
+  author:"Neil Malhotra & Ken Shotts",
+  tags:["Ethics","Leadership"],
+  authorBio:{en:"Neil Malhotra and Ken Shotts are political-economy professors at Stanford GSB who co-teach the school's required ethics course. Malhotra studies political economy and ethics; Shotts studies political institutions and leadership.",
+    zh:"Neil Malhotra 與 Ken Shotts 都是史丹佛商學院的政治經濟學教授，共同開設學院的必修倫理課程。Malhotra 研究政治經濟與倫理；Shotts 研究政治制度與領導。"},
+  takeaway:{en:"Ethical leadership is about managing real disagreement, not reciting values.",
+    zh:"倫理領導是處理真實的歧見，而不是背誦價值口號。"},
+  concept:{en:"Effective ethical leadership requires moving past basic legal compliance to resolve value conflicts using a systematic blend of philosophy, psychology, and political economy.",
+    zh:"有效的倫理領導，必須超越基本的法律合規，運用哲學、心理學與政治經濟學的系統性整合，去化解價值衝突。"},
+  summary:{en:"Malhotra and Shotts confront leading in a polarized environment where stakeholders demand clear organizational values. Moving past moral platitudes, they show the hardest part of leadership is managing legitimate, deep-seated disagreements over what the “right” course of action actually is. The book reveals how psychological biases distort ethical decisions and teaches leaders to design internal systems that protect values amid political and market forces.",
+    zh:"Malhotra 與 Shotts 直面在高度分化環境中領導的難題 — 各方利害關係人都要求組織展現明確價值。他們跳脫道德口號，指出領導最困難的部分，是處理對於「什麼才是正確做法」根深柢固而又合理的歧見。書中揭示心理偏誤如何扭曲倫理決策，並教領導者在政治與市場壓力下，設計能守護價值的內部制度。"},
+  frameworks:{en:`<p><strong>The Three-Tradition Integration Model</strong> — evaluate high-stakes decisions through three disciplines at once: <em>philosophical ethics</em> (duties, consequences, virtue), <em>behavioral psychology</em> (the biases that cause ethical drift), and <em>political economy</em> (market and stakeholder pressures).</p>
+  <p><strong>Ethical Bias Audits</strong> — check whether metrics, quotas, or compensation loops are quietly encouraging teams to cut corners.</p>`,
+    zh:`<p><strong>三大傳統整合模型</strong> — 同時用三個學科評估高風險決策：<em>哲學倫理</em>（義務、後果、德行）、<em>行為心理學</em>（造成倫理漂移的偏誤），以及<em>政治經濟</em>（市場與利害關係人的壓力）。</p>
+  <p><strong>倫理偏誤稽核</strong> — 檢視指標、配額或獎酬機制，是否正悄悄鼓勵團隊抄捷徑、走偏門。</p>`},
+  contents:{verified:false,items:{en:["Why values are hard: legitimate disagreement","Philosophical ethics: duties, consequences, virtue","Behavioral psychology and ethical drift","Political economy and stakeholder pressure","Designing systems that protect values"],
+    zh:["價值為何困難：合理的歧見","哲學倫理：義務、後果與德行","行為心理學與倫理漂移","政治經濟與利害關係人壓力","設計能守護價值的制度"]}},
+  video:null,
+  discussion:{en:["Describe a workplace dilemma where two 'right' answers genuinely conflicted — how was it resolved?","Which cognitive biases most often push teams toward cutting ethical corners?","Do any of your current metrics or incentives unintentionally reward the wrong behavior?"],
+    zh:["描述一個職場兩難：兩個「都對」的答案真正相互衝突 — 後來怎麼解決？","哪些認知偏誤最常把團隊推向倫理上的抄捷徑？","你現有的指標或誘因，有沒有在無意間獎勵了錯誤的行為？"]},
+  buyZH:null,
+  sources:[{label:{en:"Cambridge University Press Book Page",zh:"劍橋大學出版社書籍頁面"},url:"https://www.cambridge.org/9781108841191"},{label:{en:"Stanford GSB Faculty Book Hub",zh:"史丹佛 GSB 教師著作頁面"},url:"https://www.gsb.stanford.edu/faculty-research/books/leading-values-strategies-making-ethical-decisions-business-life"}]
+},
+{
+  num:8, year:2016, isbn:"9780804798655",
+  title:{en:"Lead and Disrupt",zh:"領導與顛覆"},
+  subtitle:{en:"How to Solve the Innovator's Dilemma",zh:"如何解決創新者的兩難"},
+  author:"Charles A. O'Reilly & Michael L. Tushman",
+  tags:["Innovation","Org Design"],
+  authorBio:{en:"Charles A. O'Reilly is a management professor at Stanford GSB; Michael L. Tushman is a professor emeritus at Harvard Business School. Together they pioneered the theory of organizational “ambidexterity.”",
+    zh:"Charles A. O'Reilly 是史丹佛商學院管理學教授；Michael L. Tushman 是哈佛商學院榮譽教授。兩人共同開創了組織「雙元能力」（ambidexterity）的理論。"},
+  takeaway:{en:"Run the core business and the risky future side by side — separate, but joined at the top.",
+    zh:"讓核心事業與高風險的未來並行 — 結構分立，但在高層整合。"},
+  concept:{en:"Incumbent organizations survive continuous disruption only by developing “ambidexterity” — the structural ability to exploit mature cash cows while exploring speculative future markets.",
+    zh:"既有企業要在持續的顛覆中存活，唯一的路是發展「雙元能力」 — 一種既能深耕成熟金牛、又能探索高度不確定未來市場的結構性能力。"},
+  summary:{en:"O'Reilly and Tushman offer a battle-tested solution to Clayton Christensen's Innovator's Dilemma. Legacy companies fail not because they are lazy, but because their existing execution models kill radical new concepts. A single corporation can host completely different cultures under one roof by structurally separating exploratory units from operational ones, while keeping them tightly integrated at the senior executive level. (First edition 2016; revised second edition 2021.)",
+    zh:"O'Reilly 與 Tushman 為克里斯汀生（Clayton Christensen）的「創新者的兩難」提出經得起實戰檢驗的解方。老牌企業之所以失敗，不是因為懶惰，而是因為既有的執行模式扼殺了激進的新構想。一家公司其實可以在同一個屋簷下容納截然不同的文化 — 把探索單位與營運單位在結構上分開，同時在高層緊密整合。（初版 2016；修訂二版 2021。）"},
+  frameworks:{en:`<p><strong>The Organizational Ambidexterity Matrix</strong> — the <em>exploit</em> division (optimization, control, predictable margins) runs alongside the <em>explore</em> division (prototyping, autonomy, milestone-based funding).</p>
+  <p><strong>The Senior Executive Integration Model</strong> — a shared vision, separate structural designs (distinct talent, KPIs, comp), and aligned senior governance that settles resource disputes at the top.</p>`,
+    zh:`<p><strong>組織雙元能力矩陣</strong> — <em>深耕</em>部門（最佳化、控制、可預期利潤）與<em>探索</em>部門（原型開發、自主、里程碑式投資）並行運作。</p>
+  <p><strong>高層整合模型</strong> — 共同願景、分立的結構設計（不同的人才、KPI 與獎酬），以及在高層化解資源爭議的一致治理。</p>`},
+  figure:{caption:{en:"The senior team resources and legitimizes both tracks while keeping them structurally separate.",zh:"高層為兩條路線提供資源與正當性，同時維持結構上的分立。"},
+    svg:{en:`<svg viewBox="0 0 720 310" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" role="img" aria-label="Organizational Ambidexterity"><rect width="720" height="310" fill="#ffffff"/><defs><marker id="arr8e" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8C1515"/></marker></defs><text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">Organizational Ambidexterity</text><text x="360" y="48" text-anchor="middle" font-size="11.5" fill="#5f5b53">One enterprise, two operating models, integrated at the top</text><rect x="140" y="66" width="440" height="50" rx="8" fill="#8C1515"/><text x="360" y="89" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Senior Executive Integration</text><text x="360" y="107" text-anchor="middle" font-size="10.5" fill="#f1ece1">Shared vision · Separate designs · Aligned governance</text><line x1="250" y1="116" x2="200" y2="160" stroke="#8C1515" stroke-width="2" marker-end="url(#arr8e)"/><line x1="470" y1="116" x2="520" y2="160" stroke="#8C1515" stroke-width="2" marker-end="url(#arr8e)"/><rect x="55" y="164" width="270" height="126" rx="10" fill="#fbf4f4" stroke="#e3ddd1"/><text x="75" y="190" font-size="13.5" font-weight="700" fill="#8C1515">EXPLOIT</text><g font-size="12" fill="#2e2d29"><text x="75" y="216">Optimize the mature business</text><text x="75" y="240">Control · low variance</text><text x="75" y="264">Predictable margins</text></g><rect x="395" y="164" width="270" height="126" rx="10" fill="#f1f4f6" stroke="#e3ddd1"/><text x="415" y="190" font-size="13.5" font-weight="700" fill="#1f4e79">EXPLORE</text><g font-size="12" fill="#2e2d29"><text x="415" y="216">Radical prototyping</text><text x="415" y="240">Autonomy · high risk tolerance</text><text x="415" y="264">Milestone-based funding</text></g></svg>`,
+    zh:`<svg viewBox="0 0 720 310" xmlns="http://www.w3.org/2000/svg" font-family="PingFang TC,Microsoft JhengHei,sans-serif" role="img" aria-label="組織雙元能力"><rect width="720" height="310" fill="#ffffff"/><defs><marker id="arr8z" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8C1515"/></marker></defs><text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">組織雙元能力</text><text x="360" y="48" text-anchor="middle" font-size="11.5" fill="#5f5b53">一個企業，兩種運作模式，於高層整合</text><rect x="140" y="66" width="440" height="50" rx="8" fill="#8C1515"/><text x="360" y="89" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">高層主管整合</text><text x="360" y="107" text-anchor="middle" font-size="10.5" fill="#f1ece1">共同願景 · 分立設計 · 治理一致</text><line x1="250" y1="116" x2="200" y2="160" stroke="#8C1515" stroke-width="2" marker-end="url(#arr8z)"/><line x1="470" y1="116" x2="520" y2="160" stroke="#8C1515" stroke-width="2" marker-end="url(#arr8z)"/><rect x="55" y="164" width="270" height="126" rx="10" fill="#fbf4f4" stroke="#e3ddd1"/><text x="75" y="190" font-size="13.5" font-weight="700" fill="#8C1515">深耕</text><g font-size="12" fill="#2e2d29"><text x="75" y="216">優化成熟事業</text><text x="75" y="240">控制 · 低變異</text><text x="75" y="264">可預期的利潤</text></g><rect x="395" y="164" width="270" height="126" rx="10" fill="#f1f4f6" stroke="#e3ddd1"/><text x="415" y="190" font-size="13.5" font-weight="700" fill="#1f4e79">探索</text><g font-size="12" fill="#2e2d29"><text x="415" y="216">激進原型開發</text><text x="415" y="240">自主 · 高風險容忍</text><text x="415" y="264">里程碑式投資</text></g></svg>`}},
+  contents:{verified:false,items:{en:["The innovator's dilemma, revisited","Exploit vs. explore","Building organizational ambidexterity","The role of culture (2nd edition)","Ideation, incubation, and scaling","Leading change"],
+    zh:["重探創新者的兩難","深耕 vs. 探索","建立組織雙元能力","文化的角色（二版新增）","發想、孵化與規模化","領導變革"]}},
+  video:null,
+  discussion:{en:["Does your organization protect its 'explore' efforts, or starve them to feed the core business?","What distinct KPIs and incentives would an exploratory unit need to survive?","Where has past success made your company too rigid to try something genuinely new?"],
+    zh:["你的組織是保護「探索」的努力，還是把資源抽去餵養核心事業？","一個探索單位要存活，需要哪些不同的 KPI 與誘因？","過去的成功，在哪裡讓你的公司僵化到無法嘗試真正全新的事？"]},
+  buyZH:null,
+  sources:[{label:{en:"Stanford University Press Book Page",zh:"史丹佛大學出版社書籍頁面"},url:"https://www.sup.org/books/business/lead-and-disrupt"},{label:{en:"Stanford GSB Insights: Ambidextrous Leadership",zh:"史丹佛 GSB Insights：雙元領導"},url:"https://www.gsb.stanford.edu/insights/how-ambidextrous-leaders-manage-present-future"}]
+},
+{
+  num:9, year:2021, isbn:"9780231199483",
+  title:{en:"Making Great Strategy",zh:"打造卓越策略"},
+  subtitle:{en:"Arguing for Organizational Advantage",zh:"為組織優勢進行論證"},
+  author:"Jesper B. Sørensen & Glenn R. Carroll",
+  tags:["Strategy"],
+  authorBio:{en:"Jesper B. Sørensen and Glenn R. Carroll are professors of organizational behavior at Stanford GSB who study organizational change and strategy and co-teach the school's strategy courses.",
+    zh:"Jesper B. Sørensen 與 Glenn R. Carroll 都是史丹佛商學院組織行為學教授，研究組織變革與策略，並共同開設學院的策略課程。"},
+  takeaway:{en:"A strategy is an argument you can test — not a list of aspirations.",
+    zh:"策略是一個可以被檢驗的論證 — 而不是一張願望清單。"},
+  concept:{en:"A great strategy is not a laundry list of objectives or a fill-in-the-blank matrix; it is a logically coherent argument linking an organization's capabilities to its desired outcomes under uncertainty.",
+    zh:"卓越的策略不是一長串目標，也不是填空式的矩陣；它是一個邏輯連貫的論證，在不確定中把組織的能力連結到它想要的結果。"},
+  summary:{en:"Sørensen and Carroll demystify strategy formulation. Most corporate strategies fail because they rest on buzzwords rather than logic. Strategy is an ongoing theory of success: leaders must state their assumptions clearly and debate them like a rigorous argument, so the whole team can see the connection between daily resource allocation and long-term advantage.",
+    zh:"Sørensen 與 Carroll 把策略制定去神秘化。多數企業策略之所以失敗，是因為建立在流行術語、而非邏輯之上。策略是一套持續演進的「成功理論」：領導者必須清楚說出自己的假設，並像嚴謹的論證一樣加以辯證，讓整個團隊都能看見日常資源配置與長期優勢之間的連結。"},
+  frameworks:{en:`<p><strong>The Strategy-as-Argument System</strong> — visualize the cause-and-effect logic, formalize it into testable premises, then stress-test through constructive argumentation that attacks assumptions without descending into politics.</p>
+  <p><strong>The “Arguing Blue” Metric</strong> — a protocol that strips out hand-waving and buzzwords, forcing claims to be backed by clear logic and data.</p>`,
+    zh:`<p><strong>「策略即論證」系統</strong> — 把因果邏輯視覺化、形式化為可檢驗的前提，再透過建設性的辯論去壓力測試 — 攻擊假設，但不淪為辦公室政治。</p>
+  <p><strong>「就事論事」原則</strong> — 一套去除空話與術語的規範，逼每個主張都要有清楚的邏輯與數據支撐。</p>`},
+  contents:{verified:false,items:{en:["Strategy as a logical argument","Visualization: mapping cause and effect","Formalization: testing the logic","Constructive argumentation","Building a strategy-making organization"],
+    zh:["策略作為一個邏輯論證","視覺化：描繪因果關係","形式化：檢驗邏輯","建設性的辯論","打造能制定策略的組織"]}},
+  video:"RxcGLCbaqm0",
+  discussion:{en:["Can you state your team's strategy as a logical argument — 'because X, we will win at Y'?","Where does your current plan rely on buzzwords instead of testable premises?","How do you create space to attack a strategy's assumptions without it turning political?"],
+    zh:["你能把團隊的策略講成一個邏輯論證嗎 —「因為 X，所以我們會在 Y 上勝出」？","你目前的計畫，在哪裡靠的是術語、而不是可檢驗的前提？","你如何營造空間去攻擊策略的假設，而不讓它變成辦公室政治？"]},
+  buyZH:null,
+  sources:[{label:{en:"Jesper Sørensen: Making Great Strategy (YouTube)",zh:"Jesper Sørensen：Making Great Strategy（YouTube）"},url:"https://www.youtube.com/watch?v=RxcGLCbaqm0"},{label:{en:"Stanford GSB Faculty Book Profile",zh:"史丹佛 GSB 教師著作頁面"},url:"https://www.gsb.stanford.edu/faculty-research/books/making-great-strategy-arguing-organizational-advantage"}]
+},
+{
+  num:10, year:2023, isbn:"9780062913005",
+  title:{en:"Selfless",zh:"無我"},
+  subtitle:{en:"The Social Creation of “You”",zh:"「你」是一種社會建構"},
+  author:"Brian Lowery",
+  tags:["Culture","Power & Influence"],
+  authorBio:{en:"Brian Lowery is a social psychologist and senior associate dean at Stanford GSB, co-director of the Stanford Institute on Race, and host of the podcast “Know What You See.” His research focuses on identity, inequality, and the self.",
+    zh:"Brian Lowery 是社會心理學家、史丹佛商學院資深副院長，也是史丹佛種族研究中心（Stanford Institute on Race）共同主任，並主持 Podcast「Know What You See」。他的研究聚焦於身分認同、不平等與自我。"},
+  takeaway:{en:"Who you are is built in your relationships — and leaders co-create their people.",
+    zh:"你是誰，是在關係中被建構出來的 — 而領導者其實共同創造了他的部屬。"},
+  concept:{en:"Human identity is not a fixed, independent inner core; our sense of self is a dynamic creation shaped continually by our relationships and the social systems we inhabit.",
+    zh:"人的身分並非固定、獨立的內在核心；我們的自我感是一種動態的創造，持續被我們的關係與所處的社會系統所形塑。"},
+  summary:{en:"Lowery challenges the Western model of absolute individualism. Blending sociology and social psychology, he shows that who we are depends heavily on our social environment. For executives: managers do not simply direct employees; they actively co-create their team members' identities, boundaries, and perceived capabilities. Recognizing how social contexts shape behavior lets leaders design environments that bring out higher performance and collaboration.",
+    zh:"Lowery 挑戰西方絕對個人主義的模型。他融合社會學與社會心理學，指出「我們是誰」在很大程度上取決於社會環境。對主管而言：管理者並不只是在指揮員工，他們其實主動共同創造了部屬的身分、界線與被認定的能力。認清社會脈絡如何形塑行為，領導者就能設計出激發更高績效與協作的環境。"},
+  frameworks:{en:`<p><strong>Relational Identity Mapping</strong> — track how an executive's behavior, decision style, and risk tolerance shift across different peer groups or board compositions.</p>
+  <p><strong>Social Tuning Assessment</strong> — measure how a leader's unspoken cues and status signals shape the psychological safety and self-worth of direct reports.</p>`,
+    zh:`<p><strong>關係身分映射</strong> — 追蹤一位主管的行為、決策風格與風險容忍度，如何隨著不同的同儕群體或董事會組成而改變。</p>
+  <p><strong>社會調頻評估</strong> — 衡量領導者未明說的暗示與地位訊號，如何形塑部屬的心理安全感與自我價值。</p>`},
+  contents:{verified:false,items:{en:["The illusion of the independent self","The self as a social creation","Relationships and the shaping of identity","Groups, inequality, and power","Implications for leaders"],
+    zh:["獨立自我的錯覺","自我作為一種社會建構","關係與身分的形塑","群體、不平等與權力","對領導者的啟示"]}},
+  video:"qRPVjBbs0JA",
+  discussion:{en:["How does your behavior change across different groups — team, peers, board? What does that reveal?","In what ways might you be co-creating a direct report's sense of their own capability?","If identity is social, what does that imply for how you design a team's environment?"],
+    zh:["在不同群體中 — 團隊、同儕、董事會 — 你的行為如何改變？這透露了什麼？","你可能正以哪些方式，共同塑造一位部屬對自己能力的看法？","若身分是社會性的，這對你如何設計團隊環境有什麼啟示？"]},
+  buyZH:null,
+  sources:[{label:{en:"Brian Lowery: Selfless (YouTube)",zh:"Brian Lowery：Selfless（YouTube）"},url:"https://www.youtube.com/watch?v=qRPVjBbs0JA"},{label:{en:"Stanford GSB Insights: You May Not Be Who You Think You Are",zh:"史丹佛 GSB Insights：你或許不是你以為的那個人"},url:"https://www.gsb.stanford.edu/insights/you-may-not-be-who-you-think-you-are"}]
+},
+{
+  num:11, year:2020, isbn:"9781101903957",
+  title:{en:"Acting with Power",zh:"懂權力，在每個角色上發光"},
+  subtitle:{en:"Why We Are More Powerful Than We Believe",zh:"史丹佛 MBA 爆棚選修課，讓你被需要就能自信發揮影響力"},
+  author:"Deborah Gruenfeld",
+  tags:["Power & Influence","Leadership"],
+  authorBio:{en:"Deborah Gruenfeld is a social psychologist and professor (emerita) at Stanford GSB whose research on power and influence underpins her popular course. She has advised leaders and lawyers on presence and authority.",
+    zh:"Deborah Gruenfeld 是社會心理學家、史丹佛商學院榮譽教授，她關於權力與影響力的研究是其熱門課程的基礎。她曾為領導者與律師提供關於氣場與權威的指導。"},
+  takeaway:{en:"Power is a role you can learn to play — sometimes high, sometimes low.",
+    zh:"權力是一個你可以學會扮演的角色 — 有時要演高，有時要演低。"},
+  concept:{en:"Power is not an inherent personal trait or a fixed hierarchy status; it is a collaborative social role that anyone can learn to play based on situational needs.",
+    zh:"權力不是與生俱來的人格特質，也不是固定的階層地位；它是一種協作性的社會角色，任何人都能依情境需要學會扮演。"},
+  summary:{en:"Gruenfeld demystifies how power works in organizations. Leaders often misuse power — becoming overly dominant, or freezing and under-using authority due to imposter syndrome. Using theater metaphors, she shows authority is an on-stage performance. Effective leadership requires switching between “playing high” (asserting direction and structure) and “playing low” (showing vulnerability and lifting others) depending on what the team needs.",
+    zh:"Gruenfeld 把組織中權力的運作去神秘化。領導者常誤用權力 — 不是過度強勢，就是因冒牌者症候群而僵住、不敢善用權威。她以劇場為喻，指出權威其實是一場舞台演出。有效的領導需要依團隊所需，在「演高」（確立方向與結構）與「演低」（展現脆弱、抬舉他人）之間切換。"},
+  frameworks:{en:`<p><strong>The High/Low Power Behavioral Matrix</strong> — <em>playing high</em> (spreading out, steady declarative sentences, stepping forward) settles a crisis and provides structure; <em>playing low</em> (relaxed posture, vulnerability, close listening) elevates others and encourages innovation.</p>
+  <p><strong>The Actor's Executive Mindset Protocol</strong> — a rehearsal technique that separates personal self-worth from the professional role a leader must step into.</p>`,
+    zh:`<p><strong>高／低權力行為矩陣</strong> — <em>演高</em>（身體張開、句句篤定、向前一步）能穩住危機、提供結構；<em>演低</em>（姿態放鬆、展現脆弱、仔細聆聽）能抬舉他人、鼓勵創新。</p>
+  <p><strong>演員式主管心法</strong> — 一種把個人自我價值與必須扮演的專業角色分開的排練技巧。</p>`},
+  contents:{verified:false,items:{en:["Power as a role, not a trait","Playing high","Playing low","Using power well","Power, status, and presence"],
+    zh:["權力是角色，不是特質","演高","演低","善用權力","權力、地位與氣場"]}},
+  video:"KdQHAeAnHmw",
+  discussion:{en:["Do you tend to over-play high or freeze and play too low? In which situations?","Recall a moment that called for 'playing low' — did you take it, and what happened?","How could separating your self-worth from your role change how you show up under pressure?"],
+    zh:["你比較容易「演過頭的高」，還是僵住而「演得太低」？在哪些情境？","回想一個需要「演低」的時刻 — 你做到了嗎？結果如何？","把自我價值與角色分開，會如何改變你在壓力下的表現？"]},
+  buyZH:"https://www.books.com.tw/products/0010900521", buyZHtitle:"懂權力，在每個角色上發光",
+  sources:[{label:{en:"Deborah Gruenfeld on Power & Influence (YouTube)",zh:"Deborah Gruenfeld 談權力與影響力（YouTube）"},url:"https://www.youtube.com/watch?v=KdQHAeAnHmw"},{label:{en:"Penguin Random House Book Page",zh:"Penguin Random House 書籍頁面"},url:"https://www.penguinrandomhouse.com/books/253096/acting-with-power-by-deborah-gruenfeld/"}]
+},
+{
+  num:12, year:2018, isbn:"9781501152931",
+  title:{en:"Rule Makers, Rule Breakers",zh:"規則制定者，規則打破者"},
+  subtitle:{en:"How Tight and Loose Cultures Wire Our World",zh:"緊與鬆的文化如何形塑我們的世界"},
+  author:"Michele Gelfand",
+  tags:["Culture"],
+  authorBio:{en:"Michele Gelfand is a cultural psychologist and professor at Stanford GSB (previously University of Maryland). Her cross-cultural research on “tight” and “loose” social norms spans dozens of nations.",
+    zh:"Michele Gelfand 是文化心理學家、史丹佛商學院教授（曾任教於馬里蘭大學）。她關於「緊」與「鬆」社會規範的跨文化研究，涵蓋數十個國家。"},
+  takeaway:{en:"Tight or loose: a culture's rules are a response to how much threat it has faced.",
+    zh:"緊或鬆：一個文化的規則，是它對所面臨威脅多寡的回應。"},
+  concept:{en:"Human societies and corporate organizations vary along a predictable “tight vs. loose” spectrum based on how strictly they enforce social norms and tolerate dissent.",
+    zh:"人類社會與企業組織會沿著一條可預測的「緊 vs. 鬆」光譜分布，差別在於它們執行社會規範有多嚴、容忍異議有多大。"},
+  summary:{en:"Gelfand reveals the hidden social coding that dictates coordination and conflict. A culture's position on the spectrum is driven by historical exposure to threats (scarcity, pandemics, environmental crises). Tight cultures value order and self-regulation, making them efficient at execution; loose cultures tolerate deviation, yielding creativity and adaptation. Managing this friction is critical for cross-border mergers, international teams, and injecting innovation into rigid cultures.",
+    zh:"Gelfand 揭開支配協作與衝突的隱形社會編碼。一個文化落在光譜何處，取決於歷史上面對威脅的多寡（匱乏、瘟疫、環境危機）。緊文化重視秩序與自我約束，因此擅長執行；鬆文化容忍偏離，因而帶來創意與適應力。對跨境併購、國際團隊，以及把創新注入僵化文化而言，管理這股摩擦至關重要。"},
+  frameworks:{en:`<p><strong>The Tight–Loose Diagnostic Axis</strong> — benchmark an organization on norm strength, sanctioning severity, institutional consensus, and variance tolerance.</p>
+  <p><strong>The Goldilocks Principle of Norm Strength</strong> — apply <em>structured looseness</em> to keep a rigid group from stalling, and <em>structured tightness</em> to keep a chaotic team focused.</p>`,
+    zh:`<p><strong>緊鬆診斷軸</strong> — 從規範強度、懲罰嚴厲度、制度共識與變異容忍度四個面向，為組織定位。</p>
+  <p><strong>規範強度的「金髮女孩」原則</strong> — 對僵化的群體施以<em>有結構的鬆</em>避免停滯，對混亂的團隊施以<em>有結構的緊</em>維持聚焦。</p>`},
+  contents:{verified:false,items:{en:["Tight vs. loose cultures","The threat hypothesis","Nations, states, and organizations","The costs of extremes","Finding the Goldilocks balance"],
+    zh:["緊文化 vs. 鬆文化","威脅假說","國家、地方與組織","走極端的代價","找到金髮女孩式的平衡"]}},
+  video:"Z4ELs54BmuY",
+  discussion:{en:["Is your organization (or country) more tight or loose — and what threats shaped it?","Where would 'structured looseness' help, and where would 'structured tightness' help more?","How have you seen tight-loose mismatches cause friction in cross-cultural teams?"],
+    zh:["你的組織（或國家）偏緊還是偏鬆？是什麼威脅形塑了它？","哪裡適合「有結構的鬆」，哪裡又更需要「有結構的緊」？","你在跨文化團隊中，看過緊鬆落差造成哪些摩擦？"]},
+  buyZH:null,
+  sources:[{label:{en:"Michele Gelfand on Tight & Loose Cultures (YouTube)",zh:"Michele Gelfand 談緊與鬆的文化（YouTube）"},url:"https://www.youtube.com/watch?v=Z4ELs54BmuY"},{label:{en:"Behavioral Scientist: A Conversation with Michele Gelfand",zh:"Behavioral Scientist：與 Michele Gelfand 的對話"},url:"https://behavioralscientist.org/tight-and-loose-cultures-a-conversation-with-michele-gelfand/"}]
+},
+{
+  num:13, year:2015, isbn:"9780465050727",
+  title:{en:"Getting (More of) What You Want",zh:"得到（更多）你想要的"},
+  subtitle:{en:"How the Secrets of Economics and Psychology Can Help You Negotiate Anything",zh:"運用經濟學與心理學的祕密，幫你談判任何事"},
+  author:"Margaret A. Neale & Thomas Z. Lys",
+  tags:["Negotiation"],
+  authorBio:{en:"Margaret A. Neale is a professor (emerita) at Stanford GSB and one of the most influential scholars and teachers of negotiation. Thomas Z. Lys is a professor of accounting at Northwestern Kellogg. They combine economics and psychology in their negotiation work.",
+    zh:"Margaret A. Neale 是史丹佛商學院榮譽教授，也是談判領域最具影響力的學者與教師之一。Thomas Z. Lys 是西北大學凱洛格商學院會計學教授。兩人在談判研究中融合了經濟學與心理學。"},
+  takeaway:{en:"Know your walk-away and your aspiration before you ever make an offer.",
+    zh:"在開出任何條件之前，先弄清楚你的離桌底線與期望目標。"},
+  concept:{en:"World-class negotiation requires combining economic game theory (maximizing structural value) with behavioral psychology (managing interpersonal perceptions and biases).",
+    zh:"世界級的談判，必須把經濟賽局理論（極大化結構性價值）與行為心理學（管理人際感受與偏誤）結合起來。"},
+  summary:{en:"Neale and Lys move past basic “win-win” clichés, offering an analytical framework for complex deals. Negotiation is not a zero-sum battle of wills but an exercise in collaborative problem-solving. Success depends on mapping the economic alternatives of all parties while managing psychological traps like anchoring, framing, and irrational escalation.",
+    zh:"Neale 與 Lys 跳脫陳腔濫調的「雙贏」，為複雜交易提供一套分析框架。談判不是零和的意志對決，而是一場協作式的解題。成功取決於是否能盤點各方的經濟替代方案，同時管理錨定、框架與非理性加碼等心理陷阱。"},
+  frameworks:{en:`<p><strong>The Negotiation Threshold Architecture</strong> — set three boundaries first: your <em>BATNA</em> (fallback if the deal collapses), your <em>reservation price</em> (the walk-away line), and your <em>aspiration value</em> (an ambitious, data-backed target).</p>
+  <p><strong>The Anchoring and Adjustment Paradigm</strong> — use a strategic first offer to set the anchor, and neutralize aggressive offers by reframing around your target metrics.</p>`,
+    zh:`<p><strong>談判門檻架構</strong> — 先設定三條界線：你的 <em>BATNA</em>（談判破局時的最佳替代方案）、你的<em>保留價格</em>（離桌底線），以及你的<em>期望價值</em>（有數據支撐的進取目標）。</p>
+  <p><strong>錨定與調整範式</strong> — 用策略性的第一個出價設下錨點，並透過把對話重新框定回你的目標指標，化解對方咄咄逼人的開價。</p>`},
+  figure:{caption:{en:"Your BATNA sets the reservation price (walk-away); aspiration marks the realistic ceiling. The gap is the bargaining range.",zh:"BATNA 決定保留價格（離桌底線），期望值則是合理的上限；兩者之間就是議價區間。"},
+    svg:{en:`<svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" role="img" aria-label="Negotiation Threshold Architecture"><rect width="720" height="250" fill="#ffffff"/><defs><marker id="arr13e" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#5f5b53"/></marker></defs><text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">Negotiation Threshold Architecture</text><text x="360" y="48" text-anchor="middle" font-size="11.5" fill="#5f5b53">Set your three boundaries before you talk</text><rect x="210" y="124" width="350" height="26" fill="#f1ece1"/><text x="385" y="116" text-anchor="middle" font-size="11.5" fill="#5f5b53">Bargaining range (ZOPA)</text><line x1="80" y1="137" x2="660" y2="137" stroke="#2e2d29" stroke-width="2" marker-end="url(#arr13e)"/><text x="595" y="176" font-size="11" fill="#5f5b53">More value to you →</text><text x="100" y="133" font-size="11" fill="#5f5b53">Walk away</text><line x1="210" y1="104" x2="210" y2="170" stroke="#8C1515" stroke-width="2.5"/><text x="210" y="92" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8C1515">Reservation Price</text><text x="210" y="192" text-anchor="middle" font-size="10.5" fill="#5f5b53">walk-away line · set by BATNA</text><line x1="560" y1="104" x2="560" y2="170" stroke="#8C1515" stroke-width="2.5"/><text x="560" y="92" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8C1515">Aspiration Value</text><text x="560" y="192" text-anchor="middle" font-size="10.5" fill="#5f5b53">ambitious, data-backed target</text></svg>`,
+    zh:`<svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" font-family="PingFang TC,Microsoft JhengHei,sans-serif" role="img" aria-label="談判門檻架構"><rect width="720" height="250" fill="#ffffff"/><defs><marker id="arr13z" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#5f5b53"/></marker></defs><text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">談判門檻架構</text><text x="360" y="48" text-anchor="middle" font-size="11.5" fill="#5f5b53">開口前先設定三條界線</text><rect x="210" y="124" width="350" height="26" fill="#f1ece1"/><text x="385" y="116" text-anchor="middle" font-size="11.5" fill="#5f5b53">議價區間（ZOPA）</text><line x1="80" y1="137" x2="660" y2="137" stroke="#2e2d29" stroke-width="2" marker-end="url(#arr13z)"/><text x="585" y="176" font-size="11" fill="#5f5b53">對你越有利 →</text><text x="100" y="133" font-size="11" fill="#5f5b53">離桌</text><line x1="210" y1="104" x2="210" y2="170" stroke="#8C1515" stroke-width="2.5"/><text x="210" y="92" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8C1515">保留價格</text><text x="210" y="192" text-anchor="middle" font-size="10.5" fill="#5f5b53">離桌底線 · 由 BATNA 決定</text><line x1="560" y1="104" x2="560" y2="170" stroke="#8C1515" stroke-width="2.5"/><text x="560" y="92" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8C1515">期望價值</text><text x="560" y="192" text-anchor="middle" font-size="10.5" fill="#5f5b53">有數據支撐的進取目標</text></svg>`}},
+  contents:{verified:false,items:{en:["Negotiation as collaborative problem-solving","BATNA, reservation price, and aspiration","Anchoring and the strategic first offer","Creating value vs. claiming value","Managing biases and emotion"],
+    zh:["談判作為協作式的解題","BATNA、保留價格與期望值","錨定與策略性的第一個出價","創造價值 vs. 取得價值","管理偏誤與情緒"]}},
+  video:"203Kt_jWTUI",
+  discussion:{en:["For a negotiation you're facing, what are your BATNA, reservation price, and aspiration?","When has an anchor (a first number) shaped a negotiation you were in — for better or worse?","Where could you 'make the pie bigger' instead of fighting over a fixed amount?"],
+    zh:["針對你正面對的一場談判，你的 BATNA、保留價格與期望值各是什麼？","哪一次談判被一個錨點（第一個數字）左右了 — 結果是好是壞？","哪裡你其實可以「把餅做大」，而不是為固定的數字爭奪？"]},
+  buyZH:null,
+  sources:[{label:{en:"Margaret Neale: Negotiating What You Want (YouTube)",zh:"Margaret Neale：談到你想要的（YouTube）"},url:"https://www.youtube.com/watch?v=203Kt_jWTUI"},{label:{en:"Stanford GSB Insights: Five Steps to Better Negotiation",zh:"史丹佛 GSB Insights：更好談判的五步驟"},url:"https://www.gsb.stanford.edu/insights/margaret-neale-five-steps-better-negotiation"}]
+},
+{
+  num:14, year:2014, isbn:"9780385347020",
+  title:{en:"Scaling Up Excellence",zh:"擴展卓越"},
+  subtitle:{en:"Getting to More Without Settling for Less",zh:"邁向更大規模，而不犧牲品質"},
+  author:"Robert I. Sutton & Huggy Rao",
+  tags:["Org Design","Leadership"],
+  authorBio:{en:"Robert I. Sutton (Stanford engineering, organizational psychologist) and Huggy Rao (Stanford GSB, organizational behavior) are long-time collaborators whose research focuses on how organizations spread excellence as they grow.",
+    zh:"Robert I. Sutton（史丹佛工學院，組織心理學家）與 Huggy Rao（史丹佛商學院，組織行為學）是長期合作的夥伴，研究組織在成長過程中如何擴散卓越。"},
+  takeaway:{en:"Scaling spreads a mindset, not just a footprint — and one bad apple costs more than many good ones.",
+    zh:"擴展擴散的是一種心態，而不只是版圖 — 一顆爛蘋果的代價，比好幾顆好蘋果的價值更大。"},
+  concept:{en:"Scaling an organization is not just a challenge of geographic expansion; it is a ground-level battle to spread a specific mindset while actively eliminating toxic behaviors.",
+    zh:"擴展組織不只是地理擴張的挑戰；它是一場在第一線進行的戰役 — 一邊擴散特定的心態，一邊主動清除有毒的行為。"},
+  summary:{en:"Sutton and Rao investigate the hidden friction encountered when organizations try to replicate local successes globally. Scaling often fails because companies focus purely on moving fast, which dilutes talent and multiplies bloat. Leaders must consciously choose between a cookie-cutter approach and a localized philosophy, and recognize that eliminating destructive behaviors matters more than celebrating small wins.",
+    zh:"Sutton 與 Rao 探討組織把在地的成功複製到全球時，所遭遇的隱形摩擦。擴展之所以常常失敗，是因為企業一味追求快，反而稀釋了人才、放大了臃腫。領導者必須有意識地在「一模一樣的複製」與「在地化的哲學」之間做選擇，並認清：清除破壞性的行為，比慶祝小勝更重要。"},
+  frameworks:{en:`<p><strong>The Catholicism vs. Buddhism Continuum</strong> — replicate an exact blueprint everywhere (Catholic) or disseminate core principles while letting local teams adapt execution (Buddhist).</p>
+  <p><strong>The Bad-to-Good Subtraction Ratio</strong> — one toxic teammate, complex rule, or broken process destroys value faster than many good ones create it; scaling means pruning the bad, not just amplifying the good.</p>`,
+    zh:`<p><strong>「天主教 vs. 佛教」光譜</strong> — 在各地複製一模一樣的藍圖（天主教式），或只擴散核心原則、讓在地團隊調整做法（佛教式）。</p>
+  <p><strong>壞與好的相減比</strong> — 一名有毒的隊友、一條複雜的規則或一個壞掉的流程，摧毀價值的速度，比許多好的東西創造價值的速度更快；擴展意味著修剪壞的，而不只是放大好的。</p>`},
+  contents:{verified:false,items:{en:["Scaling as spreading a mindset, not just a footprint","Catholicism vs. Buddhism: standardize or localize","Hot causes and cool solutions","Cutting cognitive load and bad behavior","Accountability: building an 'I own it' culture"],
+    zh:["擴展是擴散心態，而不只是版圖","天主教 vs. 佛教：標準化或在地化","熱情的理念與冷靜的解法","減少認知負荷與壞行為","當責：打造『我來扛』的文化"]}},
+  video:"R1WG_u0o9JM",
+  discussion:{en:["As you grow, are you a 'Catholic' (standardize) or 'Buddhist' (localize) organization — and is that right?","What single bad behavior or broken process is doing the most damage right now?","What would it take to spread your team's best practices without diluting them?"],
+    zh:["在成長中，你的組織偏「天主教式」（標準化）還是「佛教式」（在地化）？這樣對嗎？","現在哪一個壞行為或壞流程，正造成最大的傷害？","要把團隊的最佳做法擴散出去而不被稀釋，需要做到什麼？"]},
+  buyZH:null,
+  sources:[{label:{en:"Bob Sutton: Scaling Up Excellence — Entire Talk (YouTube)",zh:"Bob Sutton：Scaling Up Excellence 完整演講（YouTube）"},url:"https://www.youtube.com/watch?v=R1WG_u0o9JM"},{label:{en:"Stanford GSB Insights: Seven Mantras of Scaling",zh:"史丹佛 GSB Insights：擴展的七句箴言"},url:"https://www.gsb.stanford.edu/insights/robert-sutton-seven-mantras-scaling-up-excellence"}]
+},
+{
+  num:15, year:2008, isbn:"9780691131146",
+  title:{en:"The Red Queen among Organizations",zh:"組織中的紅皇后"},
+  subtitle:{en:"How Competitiveness Evolves",zh:"競爭力如何演化"},
+  author:"William P. Barnett",
+  tags:["Strategy","Innovation"],
+  authorBio:{en:"William P. Barnett is a professor of business leadership, strategy, and organizations at Stanford GSB. His research applies evolutionary “Red Queen” theory to how firms and industries compete and adapt over time.",
+    zh:"William P. Barnett 是史丹佛商學院商業領導、策略與組織學教授。他的研究把演化生物學的「紅皇后」理論，應用於企業與產業如何隨時間競爭與適應。"},
+  takeaway:{en:"You have to keep running just to stay in place — and winning can make you fragile.",
+    zh:"你得拚命奔跑才能留在原地 — 而勝利可能讓你變得脆弱。"},
+  concept:{en:"Long-term corporate viability is a relative metric forged through continuous market competition, but winning inside a specific historical niche can create “competency traps” when the market shifts.",
+    zh:"企業的長期存續是一種相對的指標，是在持續的市場競爭中錘鍊出來的；但在特定歷史利基中勝出，也可能在市場轉變時形成「能力陷阱」。"},
+  summary:{en:"Rooted in evolutionary biology's Red Queen hypothesis (“it takes all the running you can do to keep in the same place”), Barnett challenges traditional strategy assumptions. Organizations cannot become competitive in a vacuum or a protected incubator; they develop resilience only by surviving real market threats. But the more an organization adapts to win a specific historic race, the more specialized, rigid, and exposed it becomes to sudden disruption.",
+    zh:"本書根植於演化生物學的紅皇后假說（「你得使盡全力奔跑，才能停在原地」），Barnett 挑戰傳統策略的假設。組織無法在真空或受保護的孵化器中變得有競爭力；唯有在真實的市場威脅中存活，才能鍛鍊出韌性。然而，組織越是為了贏得某一場特定的歷史競賽而調適，就越專精、越僵化，也越容易在突如其來的顛覆中受創。"},
+  frameworks:{en:`<p><strong>The Red Queen Evolution Loop</strong> — competition triggers search and learning, which raises capability, which raises industry pressure, forcing all survivors to keep burning resources just to hold their position.</p>
+  <p><strong>The Competency Trap Identification Matrix</strong> — audit whether current strengths and past victories have made the company too rigid to survive macro-environment change.</p>`,
+    zh:`<p><strong>紅皇后演化迴圈</strong> — 競爭觸發搜尋與學習，進而提升能力，又抬高了產業壓力，逼得所有倖存者只能持續燃燒資源，才能守住原本的位置。</p>
+  <p><strong>能力陷阱辨識矩陣</strong> — 檢視當前的強項與過往的勝利，是否已讓公司僵化到無法在總體環境變動中存活。</p>`},
+  figure:{caption:{en:"Competing raises everyone's capability, which raises the bar again — a self-reinforcing loop.",zh:"競爭提升所有人的能力，又再次抬高門檻 — 一個自我強化的迴圈。"},
+    svg:{en:`<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" role="img" aria-label="The Red Queen Evolution Loop"><rect width="640" height="360" fill="#ffffff"/><defs><marker id="arr15e" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8C1515"/></marker></defs><text x="320" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">The Red Queen Evolution Loop</text><text x="320" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#8C1515">RED QUEEN</text><text x="320" y="195" text-anchor="middle" font-size="10.5" fill="#5f5b53">run to stay in place</text><rect x="245" y="48" width="150" height="48" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="320" y="77" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2e2d29">Competition</text><rect x="450" y="156" width="160" height="52" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="530" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">Triggered Search</text><text x="530" y="195" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">&amp; Learning</text><rect x="245" y="266" width="150" height="48" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="320" y="295" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2e2d29">Increased Capability</text><rect x="30" y="156" width="160" height="52" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="110" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">Heightened</text><text x="110" y="195" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">Industry Pressure</text><line x1="400" y1="80" x2="453" y2="158" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15e)"/><line x1="520" y1="212" x2="397" y2="282" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15e)"/><line x1="243" y1="288" x2="178" y2="212" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15e)"/><line x1="150" y1="152" x2="250" y2="86" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15e)"/></svg>`,
+    zh:`<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" font-family="PingFang TC,Microsoft JhengHei,sans-serif" role="img" aria-label="紅皇后演化迴圈"><rect width="640" height="360" fill="#ffffff"/><defs><marker id="arr15z" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8C1515"/></marker></defs><text x="320" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">紅皇后演化迴圈</text><text x="320" y="176" text-anchor="middle" font-size="12" font-weight="700" fill="#8C1515">紅皇后</text><text x="320" y="194" text-anchor="middle" font-size="10.5" fill="#5f5b53">拚命奔跑只為留在原地</text><rect x="245" y="48" width="150" height="48" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="320" y="77" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2e2d29">競爭</text><rect x="450" y="156" width="160" height="52" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="530" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">觸發搜尋</text><text x="530" y="195" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">與學習</text><rect x="245" y="266" width="150" height="48" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="320" y="295" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2e2d29">能力提升</text><rect x="30" y="156" width="160" height="52" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="110" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">產業壓力</text><text x="110" y="195" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">升高</text><line x1="400" y1="80" x2="453" y2="158" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15z)"/><line x1="520" y1="212" x2="397" y2="282" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15z)"/><line x1="243" y1="288" x2="178" y2="212" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15z)"/><line x1="150" y1="152" x2="250" y2="86" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15z)"/></svg>`}},
+  contents:{verified:false,items:{en:["The Red Queen hypothesis","Competition and organizational learning","The evolution of capability","Competency traps","Implications for strategy"],
+    zh:["紅皇后假說","競爭與組織學習","能力的演化","能力陷阱","對策略的啟示"]}},
+  video:null,
+  discussion:{en:["Where is your organization 'running to stay in place' against tougher competitors?","Has a past strength quietly become a competency trap as the market shifted?","How do you build resilience by facing real competition rather than avoiding it?"],
+    zh:["你的組織在哪裡正「拚命奔跑只為留在原地」，對抗更強的對手？","隨著市場轉變，某個過去的強項是否已悄悄變成能力陷阱？","你如何透過正面迎戰真實競爭、而非迴避，來建立韌性？"]},
+  buyZH:null,
+  sources:[{label:{en:"Princeton University Press Catalog Page",zh:"普林斯頓大學出版社書目頁面"},url:"https://press.princeton.edu/books/paperback/9780691173689/the-red-queen-among-organizations"},{label:{en:"Stanford GSB Faculty Book Archive",zh:"史丹佛 GSB 教師著作典藏"},url:"https://www.gsb.stanford.edu/faculty-research/books/red-queen-among-organizations-how-competitiveness-evolves"}]
+}
+];
+
+// ---- state ----
+let lang = 'en';
+const saved = (function(){ try{ const u=new URLSearchParams(location.search).get('lang'); if(u==='zh'||u==='en')return u; return localStorage.getItem('sep_lang'); }catch(e){return null;} })();
+if(saved==='zh'||saved==='en') lang = saved;
+let activeTags = new Set();
+
+const grid=document.getElementById('grid');
+const search=document.getElementById('search');
+const count=document.getElementById('count');
+const filtersEl=document.getElementById('filters');
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+const TAG_ORDER=["Leadership","Strategy","Innovation","Org Design","Culture","Power & Influence","Ethics","Communication","Negotiation","Wellbeing"];
+const allTags=TAG_ORDER.filter(t=>books.some(b=>b.tags.includes(t)));
+
+// build chips once
+allTags.forEach(t=>{
+  const c=document.createElement('span');
+  c.className='chip';c.dataset.tag=t;
+  c.addEventListener('click',()=>{
+    if(activeTags.has(t)){activeTags.delete(t);c.classList.remove('active');}
+    else{activeTags.add(t);c.classList.add('active');}
+    applyFilters();
+  });
+  filtersEl.appendChild(c);
+});
+
+function coverSources(isbn){
+  return [`https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg?default=false`,
+          `https://books.google.com/books/content?vid=ISBN:${isbn}&printsec=frontcover&img=1&zoom=1`];
+}
+function handleCoverError(img){
+  let i=parseInt(img.dataset.srcIdx||'0',10)+1;
+  const s=JSON.parse(img.dataset.sources);
+  if(i<s.length){img.dataset.srcIdx=i;img.src=s[i];}
+  else{img.style.display='none';img.nextElementSibling.style.display='flex';}
+}
+window.handleCoverError=handleCoverError;
+
+function renderFigure(b){
+  if(!b.figure) return '';
+  const svg=b.figure.svg[lang]||b.figure.svg.en;
+  const cap=b.figure.caption[lang]||b.figure.caption.en;
+  return `<figure class="figure">${svg}<figcaption>${esc(cap)}</figcaption></figure>`;
+}
+function renderContents(b){
+  const c=b.contents; if(!c) return '';
+  const u=UI[lang];
+  const badge=c.verified?`<span class="verified-badge">${u.verified}</span>`:'';
+  const heading=c.verified?u.toc:u.whatsInside;
+  const note=c.verified?'':`<p class="outline-note">${u.outlineNote}</p>`;
+  const items=c.items[lang].map(i=>`<li>${i}</li>`).join('');
+  const listTag=c.verified?'ol':'ul';
+  return `<details class="subtoggle"><summary>${heading} ${badge}<span class="tw">${u.show}</span></summary>
+    <div class="sub-inner">${note}<${listTag}>${items}</${listTag}>
+    <a class="preview-link" href="${PREVIEW(b.isbn)}" target="_blank" rel="noopener">${u.previewLink}</a></div></details>`;
+}
+function renderVideo(id){
+  if(!id) return `<p class="watch-note">${UI[lang].noVideo}</p>`;
+  return `<div class="video" data-vid="${id}"><img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="Play" loading="lazy"><div class="play"><svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.3.5 34 .5 34 .5S12.7.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 13 .2 24 .2 24s0 11 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.7 47.5 34 47.5 34 47.5s21.3 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35 67.8 24 67.8 24s0-11-1.3-16.3z" fill="#f00"/><path d="M27 34l18-10-18-10z" fill="#fff"/></svg></div></div>`;
+}
+
+function buildCards(){
+  const u=UI[lang];
+  // remove existing cards but keep grid element/listeners
+  grid.innerHTML='';
+  books.forEach(b=>{
+    const card=document.createElement('article');
+    card.className='card';
+    card.dataset.tags=JSON.stringify(b.tags);
+    card.dataset.text=(b.title[lang]+' '+b.title.en+' '+b.subtitle[lang]+' '+b.author+' '+b.year+' '+b.tags.map(t=>TAGS[t][lang]).join(' ')+' '+b.takeaway[lang]+' '+b.concept[lang]+' '+b.summary[lang]).toLowerCase();
+    const src=coverSources(b.isbn);
+    const buyZH=b.buyZH?`<a class="buy zh" href="${b.buyZH}" target="_blank" rel="noopener">${u.buyZh}</a>`:`<span class="buy none">${u.buyNone}</span>`;
+    const enSmall=(lang==='zh'&&b.title.en!==b.title.zh)?`<p class="title-en-sm">${esc(b.title.en)}</p>`:'';
+    card.innerHTML=`
+      <div class="card-head">
+        <div class="cover-wrap">
+          <img class="cover" src="${src[0]}" alt="${esc(b.title[lang])}" loading="lazy" data-src-idx="0" data-sources='${esc(JSON.stringify(src))}' onerror="handleCoverError(this)">
+          <div class="cover-fallback"><span>${esc(b.title[lang])}</span><small>${b.year}</small></div>
+        </div>
+        <div class="head-text">
+          <span class="num">No. ${String(b.num).padStart(2,'0')}</span>
+          <h2>${esc(b.title[lang])}</h2>${enSmall}
+          <p class="subtitle">${esc(b.subtitle[lang])}</p>
+          <p class="byline"><span>${esc(b.author)}</span><span class="year">${b.year}</span></p>
+          <div class="tagrow">${b.tags.map(t=>`<span class="t">${esc(TAGS[t][lang])}</span>`).join('')}</div>
+          <p class="takeaway"><b>${u.keyTakeaway}</b>${esc(b.takeaway[lang])}</p>
+          <div class="buyrow"><a class="buy en" href="${BUY(b.isbn)}" target="_blank" rel="noopener">${u.buyEn}</a>${buyZH}</div>
+          <span class="expand-row"><svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8C1515" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg><span class="expand-label">${u.readMore}</span></span>
+        </div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="section-label">${u.about}</div>
+        <p class="authorbio">${esc(b.authorBio[lang])}</p>
+        <div class="section-label">${u.concept}</div>
+        <p>${esc(b.concept[lang])}</p>
+        <div class="section-label">${u.summary}</div>
+        <p>${esc(b.summary[lang])}</p>
+        <div class="section-label">${u.frameworks}</div>
+        ${b.frameworks[lang]}${renderFigure(b)}
+        <div class="section-label">${u.contents}</div>
+        ${renderContents(b)}
+        <div class="section-label">${u.discussion}</div>
+        <ol class="discussion">${b.discussion[lang].map(q=>`<li>${esc(q)}</li>`).join('')}</ol>
+        <div class="section-label">${u.watch}</div>
+        ${renderVideo(b.video)}
+        <div class="section-label">${u.learn}</div>
+        <div class="sources">${b.sources.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${esc(s.label[lang])}</a>`).join('')}</div>
+      </div></div>`;
+    const er=card.querySelector('.expand-row');
+    er.addEventListener('click',()=>{
+      card.classList.toggle('open');
+      er.querySelector('.expand-label').textContent=card.classList.contains('open')?UI[lang].showLess:UI[lang].readMore;
+    });
+    grid.appendChild(card);
+  });
+  noRes=document.createElement('div');
+  noRes.className='no-results';noRes.textContent=UI[lang].noResults;noRes.style.display='none';
+  grid.appendChild(noRes);
+}
+
+let noRes;
+function setUIText(){
+  const u=UI[lang];
+  document.documentElement.lang = lang==='zh'?'zh-Hant':'en';
+  document.body.classList.toggle('zh',lang==='zh');
+  document.getElementById('hKicker').textContent=u.kicker;
+  document.getElementById('hTitle').textContent=u.h1;
+  document.getElementById('hIntro').textContent=u.intro;
+  search.placeholder=u.searchPh;
+  document.getElementById('expandAll').textContent=u.expandAll;
+  document.getElementById('collapseAll').textContent=u.collapseAll;
+  document.getElementById('clearFilters').textContent=u.clearFilters;
+  document.getElementById('footer').textContent=u.footer;
+  document.getElementById('langtoggle').textContent=u.langBtn;
+  filtersEl.querySelectorAll('.chip').forEach(c=>{c.textContent=TAGS[c.dataset.tag][lang];});
+}
+
+function updateCount(n){count.textContent = n===books.length?UI[lang].booksWord(n):UI[lang].ofBooks(n,books.length);}
+
+function applyFilters(){
+  const q=search.value.trim().toLowerCase();
+  const cards=grid.querySelectorAll('.card');
+  let visible=0;
+  cards.forEach(c=>{
+    const tags=JSON.parse(c.dataset.tags);
+    const tagOk=activeTags.size===0||tags.some(t=>activeTags.has(t));
+    const textOk=!q||c.dataset.text.includes(q);
+    const show=tagOk&&textOk;
+    c.classList.toggle('hidden',!show);
+    if(show) visible++;
+  });
+  if(noRes) noRes.style.display=visible===0?'block':'none';
+  updateCount(visible);
+}
+
+function render(){ setUIText(); buildCards(); applyFilters(); }
+
+search.addEventListener('input',applyFilters);
+document.getElementById('expandAll').addEventListener('click',()=>{
+  grid.querySelectorAll('.card').forEach(c=>{if(!c.classList.contains('hidden')){c.classList.add('open');const l=c.querySelector('.expand-label');if(l)l.textContent=UI[lang].showLess;}});
+});
+document.getElementById('collapseAll').addEventListener('click',()=>{
+  grid.querySelectorAll('.card').forEach(c=>{c.classList.remove('open');const l=c.querySelector('.expand-label');if(l)l.textContent=UI[lang].readMore;});
+});
+document.getElementById('clearFilters').addEventListener('click',()=>{
+  activeTags.clear();search.value='';
+  filtersEl.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  applyFilters();
+});
+document.getElementById('langtoggle').addEventListener('click',()=>{
+  lang = lang==='en'?'zh':'en';
+  try{localStorage.setItem('sep_lang',lang);}catch(e){}
+  render();
+});
+
+// video facade + figure lightbox (delegated on persistent grid)
+const lightbox=document.getElementById('lightbox');
+const lightboxInner=document.getElementById('lightboxInner');
+function closeLightbox(){lightbox.classList.remove('show');lightboxInner.innerHTML='';}
+grid.addEventListener('click',e=>{
+  const v=e.target.closest('.video');
+  if(v&&!v.querySelector('iframe')){
+    const id=v.dataset.vid;
+    v.innerHTML=`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" title="talk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    return;
+  }
+  const fig=e.target.closest('.figure');
+  if(fig){const art=fig.querySelector('svg, img'); if(art){lightboxInner.innerHTML=art.outerHTML;lightbox.classList.add('show');}}
+});
+lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});
+document.getElementById('lightboxClose').addEventListener('click',closeLightbox);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+
+render();
+</script>
+</body>
+</html>
