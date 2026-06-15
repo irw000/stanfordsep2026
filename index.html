@@ -20,9 +20,11 @@
   header.hero .kicker{font-family:var(--sans);text-transform:uppercase;letter-spacing:.22em;font-size:12px;font-weight:600;opacity:.85;margin:0 0 14px;}
   header.hero h1{margin:0;font-size:40px;font-weight:700;letter-spacing:-.5px;}
   header.hero p{margin:14px auto 0;max-width:640px;font-size:16px;opacity:.92;}
-  .langtoggle{position:absolute;top:18px;right:18px;font-family:var(--sans);font-size:14px;font-weight:700;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.5);border-radius:30px;padding:7px 16px;cursor:pointer;transition:background .15s ease;}
-  .langtoggle:hover{background:rgba(255,255,255,.26);}
-  @media(max-width:480px){.langtoggle{top:14px;right:14px;padding:6px 13px;font-size:13px;}header.hero h1{font-size:32px;}}
+  .langtoggle{position:absolute;top:16px;right:16px;display:inline-flex;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.75);border-radius:30px;padding:3px;gap:2px;box-shadow:0 2px 8px rgba(0,0,0,.15);}
+  .lang-opt{font-family:var(--sans);font-size:14px;font-weight:700;color:#fff;background:none;border:none;border-radius:24px;padding:6px 15px;cursor:pointer;line-height:1;transition:all .15s ease;}
+  .lang-opt:hover{background:rgba(255,255,255,.22);}
+  .lang-opt.active{background:#fff;color:var(--cardinal);}
+  @media(max-width:480px){.langtoggle{top:12px;right:12px;}.lang-opt{padding:5px 12px;font-size:13px;}header.hero h1{font-size:32px;}}
 
   .wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
   @media(max-width:760px){.wrap{padding:0 16px;}}
@@ -32,15 +34,17 @@
   .searchbar svg{flex:none;}
   .searchbar input{border:none;outline:none;width:100%;font-size:16px;font-family:inherit;color:var(--ink);background:transparent;}
   .filters{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
-  .chip{font-family:var(--sans);font-size:12.5px;border:1px solid var(--line);background:var(--paper);color:var(--muted);border-radius:30px;padding:5px 12px;cursor:pointer;transition:all .15s ease;user-select:none;}
-  .chip:hover{border-color:var(--cardinal);color:var(--cardinal);}
-  .chip.active{background:var(--cardinal);border-color:var(--cardinal);color:#fff;}
+  .chip{display:inline-flex;align-items:center;font-family:var(--sans);font-size:12.5px;border:1px solid var(--line);background:var(--paper);color:var(--muted);border-radius:30px;padding:5px 12px;cursor:pointer;transition:all .15s ease;user-select:none;}
+  .chip .dot{width:9px;height:9px;border-radius:50%;background:var(--c,var(--cardinal));display:inline-block;margin-right:7px;flex:none;}
+  .chip:hover{border-color:var(--c,var(--cardinal));color:var(--c,var(--cardinal));}
+  .chip.active{background:var(--c,var(--cardinal));border-color:var(--c,var(--cardinal));color:#fff;}
+  .chip.active .dot{background:#fff;}
+  .legend-note{font-family:var(--sans);font-size:11.5px;color:var(--muted);margin-top:8px;}
   .meta-row{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-family:var(--sans);font-size:13px;color:var(--muted);gap:12px;flex-wrap:wrap;}
   .actions button{font-family:inherit;font-size:13px;background:none;border:none;color:var(--cardinal);cursor:pointer;padding:4px 6px;}
   .actions button:hover{text-decoration:underline;}
 
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;padding-bottom:60px;}
-  @media(max-width:880px){.grid{grid-template-columns:1fr;}}
+  .grid{display:flex;flex-direction:column;gap:22px;padding-bottom:60px;}
 
   .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .18s ease, transform .18s ease;}
   .card:hover{box-shadow:0 6px 22px rgba(0,0,0,.07);transform:translateY(-1px);}
@@ -65,7 +69,7 @@
   .byline{font-family:var(--sans);font-size:12.5px;color:var(--muted);margin:2px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
   .year{background:var(--tag);color:var(--cardinal-dark);border-radius:20px;padding:1px 9px;font-weight:600;font-size:12px;}
   .tagrow{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px;}
-  .tagrow .t{font-family:var(--sans);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--cardinal);background:var(--tag);border-radius:4px;padding:2px 7px;font-weight:600;}
+  .tagrow .t{font-family:var(--sans);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--tc,var(--cardinal));background:color-mix(in srgb, var(--tc,#8C1515) 12%, #fff);border:1px solid color-mix(in srgb, var(--tc,#8C1515) 28%, #fff);border-radius:4px;padding:2px 7px;font-weight:700;}
   .takeaway{font-size:14px;margin:8px 0 0;padding:9px 12px;background:#fbf6ef;border-left:3px solid var(--cardinal);border-radius:0 6px 6px 0;color:var(--ink);}
   .takeaway b{font-family:var(--sans);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cardinal);display:block;margin-bottom:2px;font-weight:700;}
 
@@ -76,6 +80,17 @@
   .buy.zh{background:var(--paper);color:var(--cardinal);border:1px solid var(--cardinal);}
   .buy.zh:hover{background:#fbf4f4;}
   .buy.none{font-family:var(--sans);font-size:12px;color:var(--muted);padding:7px 0;}
+
+  .bonus-flag{display:inline-block;margin-top:10px;font-family:var(--sans);font-size:12.5px;font-weight:700;color:#fff;background:var(--green);border-radius:6px;padding:8px 13px;text-decoration:none;line-height:1.3;}
+  .bonus-flag:hover{background:#33543f;}
+  .bonus{background:#f1f6f2;border:1px solid #cfe0d4;border-left:4px solid var(--green);border-radius:8px;padding:14px 16px;margin:0 0 4px;}
+  .bonus-head{font-family:var(--sans);font-weight:700;font-size:13px;color:var(--green);margin:0 0 11px;}
+  .bonus-item{font-size:14px;margin:0 0 9px;line-height:1.55;}
+  .bonus-item strong{color:var(--ink);}
+  .bonus-item em{color:var(--green);font-style:italic;}
+  .bonus-tag{display:inline-block;font-family:var(--sans);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#fff;background:var(--green);border-radius:4px;padding:1px 7px;margin-right:7px;}
+  .bonus-more{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--green);text-decoration:none;display:inline-block;margin-top:4px;}
+  .bonus-more:hover{text-decoration:underline;}
 
   .expand-row{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:var(--sans);font-size:13px;font-weight:600;color:var(--cardinal);cursor:pointer;width:fit-content;}
   .chev{transition:transform .2s ease;}
@@ -139,13 +154,50 @@
   .lightbox-inner svg,.lightbox-inner img{width:100%;height:auto;}
   .lightbox-close{position:absolute;top:18px;right:24px;color:#fff;background:none;border:none;font-size:30px;line-height:1;cursor:pointer;font-family:Georgia,serif;}
 
-  .no-results{grid-column:1/-1;text-align:center;color:var(--muted);padding:50px 0;font-size:16px;}
+  /* ===== editorial one-per-row layout ===== */
+  .card{border-left:5px solid var(--accent,var(--cardinal));}
+  .card-top{display:grid;grid-template-columns:1fr;gap:0;padding:24px 26px;}
+  @media(min-width:820px){.card-top{grid-template-columns:1.3fr 0.95fr;gap:30px;align-items:center;}}
+  @media(max-width:480px){.card-top{padding:18px 16px;}}
+  .card-main{min-width:0;display:flex;flex-direction:column;gap:7px;}
+  .bookhead{display:flex;gap:14px;align-items:flex-start;}
+  .cover-sm{flex:none;width:52px;}
+  .cover-sm img{width:52px;height:78px;object-fit:cover;border-radius:4px;box-shadow:0 2px 6px rgba(0,0,0,.18);display:block;background:var(--tag);}
+  .cover-sm .cover-fallback{width:52px;height:78px;font-size:9px;}
+  .head-titles{min-width:0;}
+  .num{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--accent,var(--cardinal));}
+  .glance{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-family:var(--sans);font-size:11.5px;color:var(--muted);margin:2px 0 0;}
+  .glance .g{display:inline-flex;align-items:center;gap:4px;}
+  .glance .sep{opacity:.4;}
+  .glance .g-vid{color:var(--accent,var(--cardinal));font-weight:600;}
+
+  .card-media{min-width:0;}
+  .hero{width:100%;border-radius:10px;overflow:hidden;}
+  .hero .video{border-radius:10px;}
+  .hero .figure{margin:0;}
+  .hero .figure svg{border-radius:10px;}
+  .hero-cover{display:flex;justify-content:center;align-items:center;background:transparent;}
+  .hero-cover img.cover-big{width:auto;max-width:100%;max-height:300px;border-radius:8px;box-shadow:0 6px 22px rgba(0,0,0,.2);object-fit:contain;}
+  .hero-cover .cover-fallback{width:200px;height:300px;font-size:15px;}
+  @media(max-width:819px){.card-media{margin-top:16px;}.hero-cover img.cover-big{max-height:240px;}}
+
+  /* tabs */
+  .tabs{display:flex;flex-wrap:wrap;gap:2px;border-bottom:1px solid var(--line);padding:0 26px;margin-top:2px;}
+  @media(max-width:480px){.tabs{padding:0 12px;}}
+  .tab{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;padding:11px 14px;cursor:pointer;margin-bottom:-1px;}
+  .tab:hover{color:var(--ink);}
+  .tab.active{color:var(--accent,var(--cardinal));border-bottom-color:var(--accent,var(--cardinal));}
+  .tabpanel{display:none;padding:18px 26px 24px;}
+  .tabpanel.active{display:block;}
+  @media(max-width:480px){.tabpanel{padding:16px 16px 20px;}}
+
+  .no-results{text-align:center;color:var(--muted);padding:50px 0;font-size:16px;}
   footer{text-align:center;padding:30px 24px 50px;color:var(--muted);font-family:var(--sans);font-size:13px;border-top:1px solid var(--line);}
 </style>
 </head>
 <body>
 <header class="hero">
-  <button class="langtoggle" id="langtoggle">中文</button>
+  <div class="langtoggle" id="langtoggle" role="group" aria-label="Language"><button class="lang-opt" data-lang="en">EN</button><button class="lang-opt" data-lang="zh">中文</button></div>
   <p class="kicker" id="hKicker"></p>
   <h1 id="hTitle"></h1>
   <p id="hIntro"></p>
@@ -158,6 +210,7 @@
       <input id="search" type="text" autocomplete="off">
     </div>
     <div class="filters" id="filters"></div>
+    <div class="legend-note" id="legendNote"></div>
     <div class="meta-row">
       <span id="count"></span>
       <span class="actions">
@@ -198,6 +251,12 @@ const UI = {
     noVideo:"No embedded talk for this title — see the links below.",
     noResults:"No books match your search and filters.",
     footer:"Stanford SEP 2026 Reading List · Compiled reference notes · Covers via Open Library · Buy links via 博客來",
+    bonusFlag:"📎 Bonus: practical speaking structures + author materials",
+    bonusHead:"Bonus — Structures for Specific Situations (Appendix 1)",
+    bonusMore:"More practical materials from the author ↗",
+    chapters:"chapters", talk:"Talk", diagram:"Diagram",
+    tabOverview:"Overview", tabFrameworks:"Frameworks", tabContents:"Contents", tabDiscussion:"Discussion",
+    legendNote:"Tag colours mark each book's primary theme — and the tags are filters: click any to filter the list.",
     langBtn:"中文" },
   zh:{ kicker:"史丹佛高階主管課程 · SEP 2026", h1:"閱讀書單",
     intro:"十五本關於領導、策略與組織的書 — 內容摘要、架構、討論題、演講與購買連結。為讀書與研討小組打造。",
@@ -215,6 +274,12 @@ const UI = {
     noVideo:"此書無內嵌演講，請見下方連結。",
     noResults:"沒有符合搜尋與篩選的書籍。",
     footer:"史丹佛 SEP 2026 閱讀書單 · 整理筆記 · 書封來自 Open Library · 購買連結來自 博客來",
+    bonusFlag:"📎 額外收錄：實用表達架構＋作者資源",
+    bonusHead:"額外收錄 — 特定情境的實用架構（附錄 1）",
+    bonusMore:"作者提供的更多實作資源 ↗",
+    chapters:"章", talk:"演講", diagram:"圖解",
+    tabOverview:"總覽", tabFrameworks:"架構", tabContents:"目錄", tabDiscussion:"討論題",
+    legendNote:"標籤顏色代表每本書的主要主題 — 標籤同時也是篩選器，點擊任一標籤即可篩選清單。",
     langBtn:"EN" }
 };
 
@@ -261,7 +326,7 @@ const books = [
   discussion:{en:["Which of the five cross-pressures is hardest for you to hold both ends of, and why?","Think of a leader you admire — where do they sit on the Scorecard's seven behaviors?","Where in your organization is a department being optimized in a silo at the expense of the whole?"],
     zh:["五大交叉壓力中，哪一組讓你最難同時握住兩端？為什麼？","想一位你欣賞的領導者 — 他們在計分卡的七項行為上落在哪裡？","你的組織中，哪個部門正在穀倉裡做局部最佳化，卻犧牲了整體？"]},
   buyZH:null,
-  sources:[{label:{en:"Stanford GSBooks Lecture with Robert Siegel",zh:"史丹佛 GSBooks：Robert Siegel 講座"},url:"https://www.youtube.com/watch?v=v085nRsapyI"},{label:{en:"unSILOed Podcast Systems Leadership Interview",zh:"unSILOed Podcast：系統領導訪談"},url:"https://www.youtube.com/watch?v=gk--hCSOLlo"}]
+  sources:[{label:{en:"Stanford GSBooks Lecture with Robert Siegel",zh:"史丹佛 GSBooks：Robert Siegel 講座"},url:"https://www.youtube.com/watch?v=v085nRsapyI"},{label:{en:"unSILOed Podcast Systems Leadership Interview",zh:"unSILOed Podcast：系統領導訪談"},url:"https://www.youtube.com/watch?v=gk--hCSOLlo"},{label:{en:"The Systems Leader — Author's Official Page",zh:"系統領導者 — 作者官方網頁"},url:"https://www.robertesiegel.com/the-systems-leader"}]
 },
 {
   num:2, year:2021, isbn:"9780063064881",
@@ -289,7 +354,7 @@ const books = [
   discussion:{en:["Where in your own work do you optimize a single metric that quietly creates side effects?","Who should decide the trade-offs — engineers, ethicists, or regulators — and in what mix?","What's one 'guardrail' your organization could adopt before scaling its next technology?"],
     zh:["在你的工作中，哪裡正為了單一指標做最佳化，卻悄悄製造了副作用？","這些取捨該由誰決定 — 工程師、倫理學者，還是監理機關？比例又該如何？","在下一項技術規模化之前，你的組織可以先採用哪一道「護欄」？"]},
   buyZH:null,
-  sources:[{label:{en:"System Error, Live! (Stanford, YouTube)",zh:"System Error, Live!（史丹佛，YouTube）"},url:"https://www.youtube.com/watch?v=RC30ZcjQRuQ"},{label:{en:"Duke Sanford School Fireside Chat",zh:"杜克 Sanford 學院爐邊對談"},url:"https://sanford.duke.edu/event/system-error-where-big-tech-went-wrong-and-how-we-can-reboot/"}]
+  sources:[{label:{en:"System Error, Live! (Stanford, YouTube)",zh:"System Error, Live!（史丹佛，YouTube）"},url:"https://www.youtube.com/watch?v=RC30ZcjQRuQ"},{label:{en:"System Error — Official Book Site",zh:"System Error 官方網站"},url:"https://systemerrorbook.com/"}]
 },
 {
   num:3, year:2005, isbn:"9780060582746",
@@ -313,7 +378,7 @@ const books = [
   discussion:{en:["Which of the ten skills could you realistically build into a daily routine this week?","Where does chronic low-grade stress show up in your team — and what triggers it?","How might 'reframing' a recurring stressor at work change how you respond to it?"],
     zh:["這十項技能中，本週你能實際排進日常的有哪一項？","在你的團隊裡，長期的低度壓力出現在哪些地方？又是什麼引發的？","把工作中反覆出現的壓力源「重新框定」，會如何改變你的反應？"]},
   buyZH:null,
-  sources:[{label:{en:"Dr. Fred Luskin on stress & happiness (YouTube)",zh:"Fred Luskin 談壓力與幸福（YouTube）"},url:"https://www.youtube.com/watch?v=ERIiCiQyKxY"},{label:{en:"Apple Books Academic Profile",zh:"Apple Books 書籍頁面"},url:"https://books.apple.com/us/book/stress-free-for-good/id6479662525"}]
+  sources:[{label:{en:"Dr. Fred Luskin on stress & happiness (YouTube)",zh:"Fred Luskin 談壓力與幸福（YouTube）"},url:"https://www.youtube.com/watch?v=ERIiCiQyKxY"},{label:{en:"Apple Books Academic Profile",zh:"Apple Books 書籍頁面"},url:"https://books.apple.com/us/book/stress-free-for-good/id6479662525"},{label:{en:"Stanford GSB · Forgiveness & Communication (Think Fast, Talk Smart)",zh:"史丹佛 GSB · 寬恕與溝通（Think Fast, Talk Smart）"},url:"https://www.gsb.stanford.edu/insights/forgiveness-how-right-communication-repairs-relationships"}]
 },
 {
   num:4, year:2024, isbn:"9780593714232",
@@ -333,13 +398,13 @@ const books = [
   <p><strong>The Critical Flaw Approach</strong> — hunt for the single automatic deal-breaker early, instead of building multi-page pro/con lists.</p>`,
     zh:`<p><strong>創投思維九原則</strong>對比創投與企業的做法：為不對稱的上檔做最佳化、到圍牆之外尋找點子、為不確定做好心理準備、勇於拒絕一百次、賭騎師（看團隊）、歡迎異議、加碼或退場、把餅做大、給偉大的事情時間。</p>
   <p><strong>致命缺陷法</strong> — 及早找出那個會直接讓案子出局的關鍵缺陷，而不是寫好幾頁的優缺點清單。</p>`},
-  contents:{verified:true,items:{en:["1. Home Runs Matter, Strikeouts Don't","2. Get Outside the Four Walls","3. Prepare Your Mind","4. Say No 100 Times","5. Bet on the Jockey","6. Agree to Disagree","7. Double Down or Quit","8. Make the Pie Bigger","9. Great Things Take Time"],
-    zh:["1. 全壘打才重要，三振無妨","2. 走出圍牆之外","3. 預備好你的心態","4. 勇於拒絕一百次","5. 賭騎師（看團隊）","6. 容許彼此不同意","7. 加碼或退場","8. 把餅做大","9. 偉大的事情需要時間"]}},
-  video:"6UUtRbE_yMY",
+  contents:{verified:true,items:{en:["Introduction — What Is Saasbee and Why Does It Matter?","Chapter 1 — Home Runs Matter, Strikeouts Don't","Chapter 2 — Get Outside the Four Walls","Chapter 3 — Prepare Your Mind","Chapter 4 — Say No 100 Times","Chapter 5 — Bet on the Jockey","Chapter 6 — Agree to Disagree","Chapter 7 — Double Down or Quit","Chapter 8 — Make the Pie Bigger","Chapter 9 — Great Things Take Time"],
+    zh:["前言 — Saasbee 是什麼？又為何重要？","第 1 章 — 全壘打才重要，三振無妨","第 2 章 — 走出圍牆之外","第 3 章 — 預備好你的心態","第 4 章 — 勇於拒絕一百次","第 5 章 — 賭騎師（看團隊）","第 6 章 — 容許彼此不同意","第 7 章 — 加碼或退場","第 8 章 — 把餅做大","第 9 章 — 偉大的事情需要時間"]}},
+  video:"2fEyffMkUxA",
   discussion:{en:["Where does your organization optimize to avoid failure rather than to capture upside?","Recall a decision made by consensus — would 'agree to disagree' have produced a better one?","What's a current initiative you should either double down on or kill cleanly?"],
     zh:["你的組織在哪些地方為了避免失敗、而非掌握上檔，而做最佳化？","回想一個靠共識做出的決定 — 若「容許不同意」，結果會更好嗎？","目前有哪一項計畫，你應該果斷加碼、或乾脆收掉？"]},
   buyZH:"https://www.books.com.tw/products/0011047300", buyZHtitle:"試錯策略",
-  sources:[{label:{en:"The Venture Mindset talk (YouTube)",zh:"The Venture Mindset 演講（YouTube）"},url:"https://www.youtube.com/watch?v=6UUtRbE_yMY"},{label:{en:"Penguin Random House Book Page",zh:"Penguin Random House 書籍頁面"},url:"https://www.penguinrandomhouse.com/books/734114/the-venture-mindset-by-ilya-strebulaev-and-alex-dang/"}]
+  sources:[{label:{en:"Stanford GSB · The Art of Saying No (Think Fast, Talk Smart)",zh:"史丹佛 GSB · 勇於說不（Think Fast, Talk Smart）"},url:"https://www.gsb.stanford.edu/insights/art-saying-no-how-closing-wrong-doors-helps-you-open-right-ones"},{label:{en:"Penguin Random House Book Page",zh:"Penguin Random House 書籍頁面"},url:"https://www.penguinrandomhouse.com/books/734114/the-venture-mindset-by-ilya-strebulaev-and-alex-dang/"},{label:{en:"The Venture Mindset — Talk (YouTube)",zh:"The Venture Mindset — 演講（YouTube）"},url:"https://www.youtube.com/watch?v=SO0p3BYV42w"}]
 },
 {
   num:5, year:2024, isbn:"9781250284419",
@@ -362,8 +427,8 @@ const books = [
   figure:{caption:{en:"Friction fixers subtract sludge while adding good friction where the stakes are high.",zh:"摩擦修復者減去淤泥，並在高風險處刻意加入好摩擦。"},
     svg:{en:`<svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" role="img" aria-label="Friction as Cholesterol"><rect width="720" height="290" fill="#ffffff"/><text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">Friction as Cholesterol</text><text x="360" y="48" text-anchor="middle" font-size="11.5" fill="#5f5b53">Fix the harmful kind; keep the helpful kind</text><rect x="30" y="66" width="305" height="200" rx="10" fill="#fbf4f4" stroke="#e3ddd1"/><text x="50" y="96" font-size="13.5" font-weight="700" fill="#8C1515">BAD FRICTION — “Sludge”</text><line x1="50" y1="106" x2="315" y2="106" stroke="#e3ddd1"/><g font-size="12.5" fill="#2e2d29"><circle cx="56" cy="130" r="3" fill="#8C1515"/><text x="68" y="134">Red tape &amp; duplicate approvals</text><circle cx="56" cy="158" r="3" fill="#8C1515"/><text x="68" y="162">Status-meeting overload</text><circle cx="56" cy="186" r="3" fill="#8C1515"/><text x="68" y="190">Confusing communication</text><circle cx="56" cy="214" r="3" fill="#8C1515"/><text x="68" y="218">Administrative debt</text></g><text x="50" y="252" font-size="12" font-weight="700" fill="#8C1515">→ Subtract it</text><rect x="385" y="66" width="305" height="200" rx="10" fill="#f1f6f2" stroke="#e3ddd1"/><text x="405" y="96" font-size="13.5" font-weight="700" fill="#3f6b4f">GOOD FRICTION — “Speedbumps”</text><line x1="405" y1="106" x2="670" y2="106" stroke="#e3ddd1"/><g font-size="12.5" fill="#2e2d29"><circle cx="411" cy="130" r="3" fill="#3f6b4f"/><text x="423" y="134">Intentional pause points</text><circle cx="411" cy="158" r="3" fill="#3f6b4f"/><text x="423" y="162">Safety &amp; ethics checks</text><circle cx="411" cy="186" r="3" fill="#3f6b4f"/><text x="423" y="190">Multi-person sign-off on big bets</text></g><text x="405" y="252" font-size="12" font-weight="700" fill="#3f6b4f">→ Add it deliberately</text></svg>`,
     zh:`<svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" font-family="PingFang TC,Microsoft JhengHei,sans-serif" role="img" aria-label="摩擦如膽固醇"><rect width="720" height="290" fill="#ffffff"/><text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">摩擦如膽固醇</text><text x="360" y="48" text-anchor="middle" font-size="11.5" fill="#5f5b53">修掉有害的摩擦，保留有益的摩擦</text><rect x="30" y="66" width="305" height="200" rx="10" fill="#fbf4f4" stroke="#e3ddd1"/><text x="50" y="96" font-size="13" font-weight="700" fill="#8C1515">壞摩擦 —「淤泥」</text><line x1="50" y1="106" x2="315" y2="106" stroke="#e3ddd1"/><g font-size="12.5" fill="#2e2d29"><circle cx="56" cy="130" r="3" fill="#8C1515"/><text x="68" y="134">繁文縟節與重複簽核</text><circle cx="56" cy="158" r="3" fill="#8C1515"/><text x="68" y="162">過多的進度會議</text><circle cx="56" cy="186" r="3" fill="#8C1515"/><text x="68" y="190">含糊不清的溝通</text><circle cx="56" cy="214" r="3" fill="#8C1515"/><text x="68" y="218">行政負債</text></g><text x="50" y="252" font-size="12" font-weight="700" fill="#8C1515">→ 把它減去</text><rect x="385" y="66" width="305" height="200" rx="10" fill="#f1f6f2" stroke="#e3ddd1"/><text x="405" y="96" font-size="13" font-weight="700" fill="#3f6b4f">好摩擦 —「減速丘」</text><line x1="405" y1="106" x2="670" y2="106" stroke="#e3ddd1"/><g font-size="12.5" fill="#2e2d29"><circle cx="411" cy="130" r="3" fill="#3f6b4f"/><text x="423" y="134">刻意設置的停頓點</text><circle cx="411" cy="158" r="3" fill="#3f6b4f"/><text x="423" y="162">安全與倫理檢核</text><circle cx="411" cy="186" r="3" fill="#3f6b4f"/><text x="423" y="190">重大決策的多人簽核</text></g><text x="405" y="252" font-size="12" font-weight="700" fill="#3f6b4f">→ 刻意加入</text></svg>`}},
-  contents:{verified:false,items:{en:["Friction fixers as trustees of others' time","Friction forensics: telling good friction from bad","The help pyramid: how fixers do their work","Five friction troubles: oblivious leaders, addition sickness, broken connections, jargon monoxide, fast &amp; frenzied","Leading your own friction project"],
-    zh:["摩擦修復者：把別人的時間當作受託資產","摩擦鑑識：分辨好摩擦與壞摩擦","幫助金字塔：修復者如何工作","五種摩擦難題：盲目的領導者、加法上癮、斷裂的連結、術語廢氣、又快又慌","領導你自己的摩擦計畫"]}},
+  contents:{verified:true,items:{en:["## Part I · Setting the Stage","Introduction — Why Friction Is Terrible and Wonderful, and How You Can Fix It","## Part II · The Elements of Friction Fixing","1. A Trustee of Others' Time","2. Friction Forensics: The Easy Way or the Hard Way?","3. How Friction Fixers Do Their Work: The Help Pyramid","## Part III · The Friction Traps","4. Oblivious Leaders: Overcoming Power Poisoning","5. Addition Sickness: Putting the Subtraction Mindset to Work","6. Broken Connections: On Preventing Coordination Snafus","7. Jargon Monoxide: On the Drawbacks and (Limited) Virtues of Hollow and Impenetrable Babble","8. Fast and Frenzied: When and How to Apply Good Friction","## Part IV · The Wrap-Up","9. Your Friction Project"],
+    zh:["## 第一部 · 鋪陳舞台","前言 — 摩擦既糟糕又美好，以及你如何修復它","## 第二部 · 修復摩擦的要素","1. 他人時間的受託者","2. 摩擦鑑識：要走簡單的路還是困難的路？","3. 摩擦修復者如何工作：幫助金字塔","## 第三部 · 摩擦陷阱：修復者的介入點","4. 盲目的領導者：克服權力中毒","5. 加法上癮：讓減法心態發揮作用","6. 斷裂的連結：預防協調失誤","7. 術語廢氣：論空洞難懂廢話的弊與（有限的）益","8. 又快又慌：何時與如何運用好摩擦","## 第四部 · 總結","9. 你的摩擦計畫"]}},
   video:"79wHCuuqmHo",
   discussion:{en:["What's one recurring meeting or approval your team could remove this month (Rule of Two-for-One)?","Where is 'good friction' missing — a high-stakes decision that happens too fast?","Run a quick sludge audit: how many hours a week go to internal compliance vs. real work?"],
     zh:["依「二減一原則」，本月你的團隊可以拿掉哪一個固定會議或簽核？","哪裡缺了「好摩擦」 — 有哪個高風險決策做得太快了？","做一次快速的淤泥稽核：每週有多少小時花在內部合規、而非真正的工作？"]},
@@ -388,8 +453,21 @@ const books = [
   <p><strong>The Impromptu Structural Toolkit</strong> — plug-and-play templates: What? / So What? / Now What?; Problem → Solution → Benefit; the Q&amp;A “ADD” model; the “4I” feedback loop; and the “AAA” executive apology.</p>`,
     zh:`<p><strong>六步驟法：</strong>管理焦慮 → 防止完美主義 → 重新框定情境 → 積極聆聽 → 為內容建立結構 → 保持精簡。</p>
   <p><strong>即興結構工具箱</strong> — 隨插即用的範本：是什麼？／所以呢？／接下來？；問題 → 解方 → 益處；問答「ADD」模型；「4I」回饋迴圈；以及「AAA」主管道歉法。</p>`},
-  contents:{verified:false,items:{en:["Part 1 — A method for speaking in the moment","Manage anxiety · prevent perfectionism · reframe · listen · structure · be concise","Part 2 — Structures for specific situations","Small talk, toasts, feedback, pitches, Q&amp;A, and apologies"],
-    zh:["第一部 — 臨場開口的一套方法","管理焦慮 · 防止完美主義 · 重新框定 · 聆聽 · 建立結構 · 保持精簡","第二部 — 各種情境的結構","閒聊、致詞、回饋、提案、問答與道歉"]}},
+  bonus:{link:"https://mattabrahams.com/book-additionalmaterial/",
+    en:`<div class="bonus-item"><span class="bonus-tag">Small Talk</span><strong>What — So What — Now What:</strong> make a point (<strong>What</strong>); describe why it matters (<strong>So What</strong>); suggest what the audience can do with it (<strong>Now What</strong>).</div>
+<div class="bonus-item"><span class="bonus-tag">Toasts</span><strong>WHAT:</strong> explain <strong>w</strong>hy we're here; share <strong>h</strong>ow you're connected; offer <strong>a</strong>necdotes or lessons about the person/event; <strong>t</strong>hank them and offer well-wishes.</div>
+<div class="bonus-item"><span class="bonus-tag">Pitching</span><strong>Problem — Solution — Benefit:</strong> define the problem your audience shares; present a solution with specific steps; describe the benefits it yields. <em>Bonus starters:</em> &ldquo;What if you could&hellip;&rdquo;, &ldquo;So that&hellip;&rdquo;, &ldquo;For example&hellip;&rdquo;.</div>
+<div class="bonus-item"><span class="bonus-tag">Q&amp;A</span><strong>ADD:</strong> <strong>A</strong>nswer in a single sentence; <strong>D</strong>etail a supporting example; <strong>D</strong>escribe why it's relevant to the asker.</div>
+<div class="bonus-item"><span class="bonus-tag">Feedback</span><strong>The 4 I's:</strong> provide <strong>I</strong>nformation; explain the <strong>I</strong>mpact; extend an <strong>I</strong>nvitation; detail the <strong>I</strong>mplications.</div>
+<div class="bonus-item"><span class="bonus-tag">Apologies</span><strong>AAA:</strong> <strong>A</strong>cknowledge the behavior and take responsibility; <strong>A</strong>ppreciate how it impacted others; make <strong>A</strong>mends — what you'll do (or stop doing) to fix it.</div>`,
+    zh:`<div class="bonus-item"><span class="bonus-tag">閒聊</span><strong>是什麼 — 所以呢 — 接下來：</strong>提出重點（是什麼）；說明它為何重要（所以呢）；建議聽眾可以如何運用（接下來）。</div>
+<div class="bonus-item"><span class="bonus-tag">致詞／敬酒</span><strong>WHAT：</strong>說明我們為何在此（<strong>W</strong>hy）；分享你與對方的關係（<strong>H</strong>ow）；分享相關的軼事或心得（<strong>A</strong>necdotes）；感謝對方並獻上祝福（<strong>T</strong>hank）。</div>
+<div class="bonus-item"><span class="bonus-tag">提案</span><strong>問題 — 解方 — 益處：</strong>定義聽眾也有共鳴的問題；提出有具體步驟的解方；描述它帶來的益處。<em>加碼句型：</em>「如果你能夠&hellip;」、「以便&hellip;」、「例如&hellip;」。</div>
+<div class="bonus-item"><span class="bonus-tag">問答 Q&amp;A</span><strong>ADD：</strong>用一句話直接回答（<strong>A</strong>nswer）；舉一個支持的例子（<strong>D</strong>etail）；說明它為何與提問者相關（<strong>D</strong>escribe）。</div>
+<div class="bonus-item"><span class="bonus-tag">回饋</span><strong>4 I's：</strong>提供資訊（<strong>I</strong>nformation）；說明影響（<strong>I</strong>mpact）；提出邀請（<strong>I</strong>nvitation）；闡述後續意涵（<strong>I</strong>mplications）。</div>
+<div class="bonus-item"><span class="bonus-tag">道歉</span><strong>AAA：</strong>承認行為並負起責任（<strong>A</strong>cknowledge）；體認它對他人的影響（<strong>A</strong>ppreciate）；說明你將如何彌補（<strong>A</strong>mends）— 你會做什麼或停止做什麼來改善。</div>`},
+  contents:{verified:true,items:{en:["## Part I · The Methodology — Six Steps to Better Spontaneous Speaking","Chapter 1 — Calm: Tame the Anxiety Beast","Chapter 2 — Unlock: Maximize Mediocrity","Chapter 3 — Redefine: Mind Your Mindset","Chapter 4 — Listen: Don't Just Do Something… Stand There!","Chapter 5 — Structure: Structure Your Spontaneity","Chapter 6 — Focus: The F-Word of Spontaneous Speaking","## Part II · Talking Smarter in Specific Situations","Application #1 — Going Big on Small Talk","Application #2 — Toasts That Tantalize (and Tributes and Introductions, Too)","Application #3 — Make That (Im)perfect Pitch","Application #4 — Rocking the Q&amp;A","Application #5 — Feedback That Doesn't Flop","Application #6 — The Secrets to Saying We're Sorry"],
+    zh:["## 第一部 · 方法論 — 即興表達更上層樓的六步驟","第 1 章 — 冷靜：馴服焦慮這頭野獸","第 2 章 — 解鎖：把平庸最大化","第 3 章 — 重新定義：留意你的心態","第 4 章 — 聆聽：別急著做什麼……就站在那兒！","第 5 章 — 結構：為你的即興建立結構","第 6 章 — 聚焦：即興表達的關鍵字","## 第二部 · 在特定情境中說得更聰明","應用 #1 — 把閒聊做大","應用 #2 — 令人驚艷的致詞（也包括頌詞與介紹）","應用 #3 — 做出那個（不）完美的提案","應用 #4 — 駕馭問答（Q&amp;A）","應用 #5 — 不出包的回饋","應用 #6 — 說「對不起」的祕訣"]}},
   video:"o3K_HbpWNpg",
   discussion:{en:["What physically happens to you under speaking pressure — and which anxiety tactic could help?","Pick a recent tough question you faced; how would the ADD or What/So What/Now What structure have helped?","Where does chasing the 'perfect' answer get in the way of simply contributing?"],
     zh:["在說話壓力下，你的身體會出現什麼反應？哪一種管理焦慮的方法能幫上忙？","選一個你最近遇到的難題；ADD 或「是什麼／所以呢／接下來」的結構會如何幫你？","追求「完美」答案，在哪些時候反而妨礙了你單純地做出貢獻？"]},
@@ -414,13 +492,13 @@ const books = [
   <p><strong>Ethical Bias Audits</strong> — check whether metrics, quotas, or compensation loops are quietly encouraging teams to cut corners.</p>`,
     zh:`<p><strong>三大傳統整合模型</strong> — 同時用三個學科評估高風險決策：<em>哲學倫理</em>（義務、後果、德行）、<em>行為心理學</em>（造成倫理漂移的偏誤），以及<em>政治經濟</em>（市場與利害關係人的壓力）。</p>
   <p><strong>倫理偏誤稽核</strong> — 檢視指標、配額或獎酬機制，是否正悄悄鼓勵團隊抄捷徑、走偏門。</p>`},
-  contents:{verified:false,items:{en:["Why values are hard: legitimate disagreement","Philosophical ethics: duties, consequences, virtue","Behavioral psychology and ethical drift","Political economy and stakeholder pressure","Designing systems that protect values"],
-    zh:["價值為何困難：合理的歧見","哲學倫理：義務、後果與德行","行為心理學與倫理漂移","政治經濟與利害關係人壓力","設計能守護價值的制度"]}},
-  video:null,
+  contents:{verified:true,items:{en:["1. Core Values","2. Follow Your Gut?","3. Self-Deception and Rationalization","4. The Power of the Situation","5. Shareholders, Stakeholders, and Societal Institutions","6. Weighing Consequences","7. Perspective-Taking","8. Being Fair","9. What Are Your Core Values?"],
+    zh:["1. 核心價值","2. 跟著直覺走？","3. 自我欺騙與合理化","4. 情境的力量","5. 股東、利害關係人與社會制度","6. 權衡後果","7. 換位思考","8. 做到公平","9. 你的核心價值是什麼？"]}},
+  video:"bB98b_O9-XY",
   discussion:{en:["Describe a workplace dilemma where two 'right' answers genuinely conflicted — how was it resolved?","Which cognitive biases most often push teams toward cutting ethical corners?","Do any of your current metrics or incentives unintentionally reward the wrong behavior?"],
     zh:["描述一個職場兩難：兩個「都對」的答案真正相互衝突 — 後來怎麼解決？","哪些認知偏誤最常把團隊推向倫理上的抄捷徑？","你現有的指標或誘因，有沒有在無意間獎勵了錯誤的行為？"]},
   buyZH:null,
-  sources:[{label:{en:"Cambridge University Press Book Page",zh:"劍橋大學出版社書籍頁面"},url:"https://www.cambridge.org/9781108841191"},{label:{en:"Stanford GSB Faculty Book Hub",zh:"史丹佛 GSB 教師著作頁面"},url:"https://www.gsb.stanford.edu/faculty-research/books/leading-values-strategies-making-ethical-decisions-business-life"}]
+  sources:[{label:{en:"Cambridge University Press Book Page",zh:"劍橋大學出版社書籍頁面"},url:"https://www.cambridge.org/9781108841191"},{label:{en:"Stanford GSB Faculty Book Page",zh:"史丹佛 GSB 教師著作頁面"},url:"https://www.gsb.stanford.edu/faculty-research/books/leading-values"},{label:{en:"Stanford GSB · Leadership & Ethics (Think Fast, Talk Smart)",zh:"史丹佛 GSB · 領導與倫理（Think Fast, Talk Smart）"},url:"https://www.gsb.stanford.edu/insights/leadership-ethics-how-communicate-your-core-values"}]
 },
 {
   num:8, year:2016, isbn:"9780804798655",
@@ -443,13 +521,13 @@ const books = [
   figure:{caption:{en:"The senior team resources and legitimizes both tracks while keeping them structurally separate.",zh:"高層為兩條路線提供資源與正當性，同時維持結構上的分立。"},
     svg:{en:`<svg viewBox="0 0 720 310" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" role="img" aria-label="Organizational Ambidexterity"><rect width="720" height="310" fill="#ffffff"/><defs><marker id="arr8e" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8C1515"/></marker></defs><text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">Organizational Ambidexterity</text><text x="360" y="48" text-anchor="middle" font-size="11.5" fill="#5f5b53">One enterprise, two operating models, integrated at the top</text><rect x="140" y="66" width="440" height="50" rx="8" fill="#8C1515"/><text x="360" y="89" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Senior Executive Integration</text><text x="360" y="107" text-anchor="middle" font-size="10.5" fill="#f1ece1">Shared vision · Separate designs · Aligned governance</text><line x1="250" y1="116" x2="200" y2="160" stroke="#8C1515" stroke-width="2" marker-end="url(#arr8e)"/><line x1="470" y1="116" x2="520" y2="160" stroke="#8C1515" stroke-width="2" marker-end="url(#arr8e)"/><rect x="55" y="164" width="270" height="126" rx="10" fill="#fbf4f4" stroke="#e3ddd1"/><text x="75" y="190" font-size="13.5" font-weight="700" fill="#8C1515">EXPLOIT</text><g font-size="12" fill="#2e2d29"><text x="75" y="216">Optimize the mature business</text><text x="75" y="240">Control · low variance</text><text x="75" y="264">Predictable margins</text></g><rect x="395" y="164" width="270" height="126" rx="10" fill="#f1f4f6" stroke="#e3ddd1"/><text x="415" y="190" font-size="13.5" font-weight="700" fill="#1f4e79">EXPLORE</text><g font-size="12" fill="#2e2d29"><text x="415" y="216">Radical prototyping</text><text x="415" y="240">Autonomy · high risk tolerance</text><text x="415" y="264">Milestone-based funding</text></g></svg>`,
     zh:`<svg viewBox="0 0 720 310" xmlns="http://www.w3.org/2000/svg" font-family="PingFang TC,Microsoft JhengHei,sans-serif" role="img" aria-label="組織雙元能力"><rect width="720" height="310" fill="#ffffff"/><defs><marker id="arr8z" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8C1515"/></marker></defs><text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">組織雙元能力</text><text x="360" y="48" text-anchor="middle" font-size="11.5" fill="#5f5b53">一個企業，兩種運作模式，於高層整合</text><rect x="140" y="66" width="440" height="50" rx="8" fill="#8C1515"/><text x="360" y="89" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">高層主管整合</text><text x="360" y="107" text-anchor="middle" font-size="10.5" fill="#f1ece1">共同願景 · 分立設計 · 治理一致</text><line x1="250" y1="116" x2="200" y2="160" stroke="#8C1515" stroke-width="2" marker-end="url(#arr8z)"/><line x1="470" y1="116" x2="520" y2="160" stroke="#8C1515" stroke-width="2" marker-end="url(#arr8z)"/><rect x="55" y="164" width="270" height="126" rx="10" fill="#fbf4f4" stroke="#e3ddd1"/><text x="75" y="190" font-size="13.5" font-weight="700" fill="#8C1515">深耕</text><g font-size="12" fill="#2e2d29"><text x="75" y="216">優化成熟事業</text><text x="75" y="240">控制 · 低變異</text><text x="75" y="264">可預期的利潤</text></g><rect x="395" y="164" width="270" height="126" rx="10" fill="#f1f4f6" stroke="#e3ddd1"/><text x="415" y="190" font-size="13.5" font-weight="700" fill="#1f4e79">探索</text><g font-size="12" fill="#2e2d29"><text x="415" y="216">激進原型開發</text><text x="415" y="240">自主 · 高風險容忍</text><text x="415" y="264">里程碑式投資</text></g></svg>`}},
-  contents:{verified:false,items:{en:["The innovator's dilemma, revisited","Exploit vs. explore","Building organizational ambidexterity","The role of culture (2nd edition)","Ideation, incubation, and scaling","Leading change"],
-    zh:["重探創新者的兩難","深耕 vs. 探索","建立組織雙元能力","文化的角色（二版新增）","發想、孵化與規模化","領導變革"]}},
+  contents:{verified:true,items:{en:["## Part I · The Basics: Leading in the Face of Disruption","1. Today's Innovation Puzzle","2. Explore and Exploit","3. Achieving Balance with Innovation Streams","4. Culture as Competitive (Dis)Advantage","## Part II · Ambidexterity in Action: Solving the Innovator's Dilemma","5. Seven Innovation Stories","6. Getting It Right Versus Almost Right","7. The Three Disciplines of Ambidexterity: Ideation, Incubation, and Scaling","## Part III · Making the Leap: Bringing Ambidexterity Home","8. What It Takes to Become Ambidextrous","9. Leaders (and Their Teams) as Linchpins","10. Leading Change and Strategic Renewal"],
+    zh:["## 第一部 · 基礎：在顛覆中領導","1. 今日的創新難題","2. 探索與深耕","3. 以創新流取得平衡","4. 文化作為競爭（劣）勢","## 第二部 · 雙元能力的實踐：解決創新者的兩難","5. 七個創新故事","6. 做對 vs. 幾乎做對","7. 雙元能力的三項修練：發想、孵化與規模化","## 第三部 · 縱身一躍：把雙元能力帶回家","8. 成為雙元組織需要什麼","9. 領導者（與其團隊）作為關鍵樞紐","10. 領導變革與策略更新"]}},
   video:null,
   discussion:{en:["Does your organization protect its 'explore' efforts, or starve them to feed the core business?","What distinct KPIs and incentives would an exploratory unit need to survive?","Where has past success made your company too rigid to try something genuinely new?"],
     zh:["你的組織是保護「探索」的努力，還是把資源抽去餵養核心事業？","一個探索單位要存活，需要哪些不同的 KPI 與誘因？","過去的成功，在哪裡讓你的公司僵化到無法嘗試真正全新的事？"]},
   buyZH:null,
-  sources:[{label:{en:"Stanford University Press Book Page",zh:"史丹佛大學出版社書籍頁面"},url:"https://www.sup.org/books/business/lead-and-disrupt"},{label:{en:"Stanford GSB Insights: Ambidextrous Leadership",zh:"史丹佛 GSB Insights：雙元領導"},url:"https://www.gsb.stanford.edu/insights/how-ambidextrous-leaders-manage-present-future"}]
+  sources:[{label:{en:"Stanford University Press Book Page",zh:"史丹佛大學出版社書籍頁面"},url:"https://www.sup.org/books/business/lead-and-disrupt"},{label:{en:"Stanford GSB Faculty Book Page",zh:"史丹佛 GSB 教師著作頁面"},url:"https://www.gsb.stanford.edu/faculty-research/books/lead-disrupt-2nd-edition"}]
 },
 {
   num:9, year:2021, isbn:"9780231199483",
@@ -469,13 +547,13 @@ const books = [
   <p><strong>The “Arguing Blue” Metric</strong> — a protocol that strips out hand-waving and buzzwords, forcing claims to be backed by clear logic and data.</p>`,
     zh:`<p><strong>「策略即論證」系統</strong> — 把因果邏輯視覺化、形式化為可檢驗的前提，再透過建設性的辯論去壓力測試 — 攻擊假設，但不淪為辦公室政治。</p>
   <p><strong>「就事論事」原則</strong> — 一套去除空話與術語的規範，逼每個主張都要有清楚的邏輯與數據支撐。</p>`},
-  contents:{verified:false,items:{en:["Strategy as a logical argument","Visualization: mapping cause and effect","Formalization: testing the logic","Constructive argumentation","Building a strategy-making organization"],
-    zh:["策略作為一個邏輯論證","視覺化：描繪因果關係","形式化：檢驗邏輯","建設性的辯論","打造能制定策略的組織"]}},
+  contents:{verified:true,items:{en:["## Part I · Introduction","1. Arguing for Organizational Advantage","## Part II · Three Activities for Making Great Strategy","2. Mapping Strategy","3. Logic for Strategy","4. Arguing in Organizations","## Part III · Applying Strategy Arguments","5. Arguing About an Uncertain Future","6. Formulating Strategy","7. Communicating Strategy","## Part IV · Arguing Deeper","8. Elaborating the Strategy","9. Perceived Quality Strategies","## Part V · Conclusion","10. The Pillar of Strategy"],
+    zh:["## 第一部 · 導論","1. 為組織優勢進行論證","## 第二部 · 打造卓越策略的三項活動","2. 描繪策略地圖","3. 策略的邏輯","4. 在組織中論證","## 第三部 · 應用策略論證","5. 對不確定的未來進行論證","6. 制定策略","7. 溝通策略","## 第四部 · 更深入的論證","8. 深化策略論證","9. 認知品質策略","## 第五部 · 結論","10. 策略的支柱"]}},
   video:"RxcGLCbaqm0",
   discussion:{en:["Can you state your team's strategy as a logical argument — 'because X, we will win at Y'?","Where does your current plan rely on buzzwords instead of testable premises?","How do you create space to attack a strategy's assumptions without it turning political?"],
     zh:["你能把團隊的策略講成一個邏輯論證嗎 —「因為 X，所以我們會在 Y 上勝出」？","你目前的計畫，在哪裡靠的是術語、而不是可檢驗的前提？","你如何營造空間去攻擊策略的假設，而不讓它變成辦公室政治？"]},
   buyZH:null,
-  sources:[{label:{en:"Jesper Sørensen: Making Great Strategy (YouTube)",zh:"Jesper Sørensen：Making Great Strategy（YouTube）"},url:"https://www.youtube.com/watch?v=RxcGLCbaqm0"},{label:{en:"Stanford GSB Faculty Book Profile",zh:"史丹佛 GSB 教師著作頁面"},url:"https://www.gsb.stanford.edu/faculty-research/books/making-great-strategy-arguing-organizational-advantage"}]
+  sources:[{label:{en:"Jesper Sørensen: Making Great Strategy (YouTube)",zh:"Jesper Sørensen：Making Great Strategy（YouTube）"},url:"https://www.youtube.com/watch?v=RxcGLCbaqm0"},{label:{en:"Stanford GSB Faculty Book Profile",zh:"史丹佛 GSB 教師著作頁面"},url:"https://www.gsb.stanford.edu/faculty-research/books/making-great-strategy-arguing-organizational-advantage"},{label:{en:"Stanford GSB · Communicate Your Gameplan (Think Fast, Talk Smart)",zh:"史丹佛 GSB · 溝通你的策略（Think Fast, Talk Smart）"},url:"https://www.gsb.stanford.edu/insights/strategic-success-how-communicate-your-gameplan"}]
 },
 {
   num:10, year:2023, isbn:"9780062913005",
@@ -495,8 +573,8 @@ const books = [
   <p><strong>Social Tuning Assessment</strong> — measure how a leader's unspoken cues and status signals shape the psychological safety and self-worth of direct reports.</p>`,
     zh:`<p><strong>關係身分映射</strong> — 追蹤一位主管的行為、決策風格與風險容忍度，如何隨著不同的同儕群體或董事會組成而改變。</p>
   <p><strong>社會調頻評估</strong> — 衡量領導者未明說的暗示與地位訊號，如何形塑部屬的心理安全感與自我價值。</p>`},
-  contents:{verified:false,items:{en:["The illusion of the independent self","The self as a social creation","Relationships and the shaping of identity","Groups, inequality, and power","Implications for leaders"],
-    zh:["獨立自我的錯覺","自我作為一種社會建構","關係與身分的形塑","群體、不平等與權力","對領導者的啟示"]}},
+  contents:{verified:true,items:{en:["## Part I · You and Your Self","1. The Search for Self","2. False Promises","3. Freedom, Really?","## Part II · You and Them","4. Hugs and Straitjackets","5. Building Selves","6. I Am Because We Are","7. In or Out","8. (Re)Writing Self","## Part III · You and Everything","9. What's It All For?","10. The End?","Conclusion"],
+    zh:["## 第一部 · 你與你的自我","1. 尋找自我","2. 虛假的承諾","3. 真的自由嗎？","## 第二部 · 你與他人","4. 擁抱與緊身衣","5. 建構自我","6. 我之所以為我，因為有我們","7. 圈內或圈外","8. （重新）書寫自我","## 第三部 · 你與一切","9. 這一切是為了什麼？","10. 終點？","結語"]}},
   video:"qRPVjBbs0JA",
   discussion:{en:["How does your behavior change across different groups — team, peers, board? What does that reveal?","In what ways might you be co-creating a direct report's sense of their own capability?","If identity is social, what does that imply for how you design a team's environment?"],
     zh:["在不同群體中 — 團隊、同儕、董事會 — 你的行為如何改變？這透露了什麼？","你可能正以哪些方式，共同塑造一位部屬對自己能力的看法？","若身分是社會性的，這對你如何設計團隊環境有什麼啟示？"]},
@@ -521,8 +599,8 @@ const books = [
   <p><strong>The Actor's Executive Mindset Protocol</strong> — a rehearsal technique that separates personal self-worth from the professional role a leader must step into.</p>`,
     zh:`<p><strong>高／低權力行為矩陣</strong> — <em>演高</em>（身體張開、句句篤定、向前一步）能穩住危機、提供結構；<em>演低</em>（姿態放鬆、展現脆弱、仔細聆聽）能抬舉他人、鼓勵創新。</p>
   <p><strong>演員式主管心法</strong> — 一種把個人自我價值與必須扮演的專業角色分開的排練技巧。</p>`},
-  contents:{verified:false,items:{en:["Power as a role, not a trait","Playing high","Playing low","Using power well","Power, status, and presence"],
-    zh:["權力是角色，不是特質","演高","演低","善用權力","權力、地位與氣場"]}},
+  contents:{verified:true,items:{en:["Introduction — The Problem with Power","## Part I · When the Curtain Goes Up","Chapter 1 — The Truth About Power: What It Is, What It Isn't, and Why It Matters","## Part II · The Two Faces of Power","Chapter 2 — The Art and Science of Playing Power Up","Chapter 3 — The Art and Science of Playing Power Down","## Part III · Taking the Stage","Chapter 4 — Getting in Character: How to Be Yourself Without Losing the Plot","Chapter 5 — Riding Shotgun: How to Act with Power in a Supporting Role","Chapter 6 — The Show Must Go On: Making an Entrance and Owning the Spotlight","## Part IV · Understanding Abuses of Power, and How to Stop Them","Chapter 7 — When Power Corrupts (and When It Doesn't)","Chapter 8 — How to Wrangle a Bully: Alternatives to Playing the Victim","Chapter 9 — The Bystander Role and New Ways to Play It","Chapter 10 — How to Use Power While Playing the Lead"],
+    zh:["前言 — 權力的難題","## 第一部 · 當布幕升起","第 1 章 — 關於權力的真相：它是什麼、不是什麼，以及為何重要","## 第二部 · 權力的兩種面貌","第 2 章 — 「演高」的藝術與科學","第 3 章 — 「演低」的藝術與科學","## 第三部 · 登上舞台","第 4 章 — 入戲：如何做自己又不失分寸","第 5 章 — 當配角：如何在輔助角色中運用權力","第 6 章 — 戲必須繼續：如何登場並掌握聚光燈","## 第四部 · 認識權力的濫用，以及如何制止","第 7 章 — 當權力使人腐化（以及何時不會）","第 8 章 — 如何制伏霸凌者：受害者之外的選擇","第 9 章 — 旁觀者的角色與新演法：如何阻止壞演員搶戲","第 10 章 — 擔綱主角時如何運用權力"]}},
   video:"KdQHAeAnHmw",
   discussion:{en:["Do you tend to over-play high or freeze and play too low? In which situations?","Recall a moment that called for 'playing low' — did you take it, and what happened?","How could separating your self-worth from your role change how you show up under pressure?"],
     zh:["你比較容易「演過頭的高」，還是僵住而「演得太低」？在哪些情境？","回想一個需要「演低」的時刻 — 你做到了嗎？結果如何？","把自我價值與角色分開，會如何改變你在壓力下的表現？"]},
@@ -547,13 +625,13 @@ const books = [
   <p><strong>The Goldilocks Principle of Norm Strength</strong> — apply <em>structured looseness</em> to keep a rigid group from stalling, and <em>structured tightness</em> to keep a chaotic team focused.</p>`,
     zh:`<p><strong>緊鬆診斷軸</strong> — 從規範強度、懲罰嚴厲度、制度共識與變異容忍度四個面向，為組織定位。</p>
   <p><strong>規範強度的「金髮女孩」原則</strong> — 對僵化的群體施以<em>有結構的鬆</em>避免停滯，對混亂的團隊施以<em>有結構的緊</em>維持聚焦。</p>`},
-  contents:{verified:false,items:{en:["Tight vs. loose cultures","The threat hypothesis","Nations, states, and organizations","The costs of extremes","Finding the Goldilocks balance"],
-    zh:["緊文化 vs. 鬆文化","威脅假說","國家、地方與組織","走極端的代價","找到金髮女孩式的平衡"]}},
+  contents:{verified:true,items:{en:["## Part I · Foundations: The Power of a Primal Social Force","1. A Cure for Chaos","2. Past vs. Present: The More Things Change, the More They Stay the Same","3. The Yin and Yang of Tight and Loose","4. Disaster, Disease, and Diversity","## Part II · Analysis: Tight-Loose Here, There, and Everywhere","5. The War Between America's States","6. Working Class vs. Upper Class: The Hidden Cultural Fault Line","7. Is Your Organization Tight or Loose? It Matters More than You Think","8. Mirror Check: Are You a “T” or an “L”?","## Part III · Applications: Tight-Loose in a Changing World","9. Goldilocks Had It Right","10. Culture's Revenge and Global (Dis)Order","11. Harnessing the Power of Social Norms"],
+    zh:["## 第一部 · 基礎：一股原始社會力量的威力","1. 混亂的解方","2. 過去與現在：愈是改變，愈是不變","3. 緊與鬆的陰與陽","4. 災難、疾病與多元","## 第二部 · 分析：緊與鬆，無所不在","5. 美國各州之間的戰爭","6. 勞工階級 vs. 上層階級：隱藏的文化斷層","7. 你的組織偏緊還是偏鬆？影響比你想的更大","8. 照照鏡子：你是「T」還是「L」？","## 第三部 · 應用：變動世界中的緊與鬆","9. 金髮女孩說對了","10. 文化的反撲與全球（失）序","11. 駕馭社會規範的力量"]}},
   video:"Z4ELs54BmuY",
   discussion:{en:["Is your organization (or country) more tight or loose — and what threats shaped it?","Where would 'structured looseness' help, and where would 'structured tightness' help more?","How have you seen tight-loose mismatches cause friction in cross-cultural teams?"],
     zh:["你的組織（或國家）偏緊還是偏鬆？是什麼威脅形塑了它？","哪裡適合「有結構的鬆」，哪裡又更需要「有結構的緊」？","你在跨文化團隊中，看過緊鬆落差造成哪些摩擦？"]},
   buyZH:null,
-  sources:[{label:{en:"Michele Gelfand on Tight & Loose Cultures (YouTube)",zh:"Michele Gelfand 談緊與鬆的文化（YouTube）"},url:"https://www.youtube.com/watch?v=Z4ELs54BmuY"},{label:{en:"Behavioral Scientist: A Conversation with Michele Gelfand",zh:"Behavioral Scientist：與 Michele Gelfand 的對話"},url:"https://behavioralscientist.org/tight-and-loose-cultures-a-conversation-with-michele-gelfand/"}]
+  sources:[{label:{en:"Michele Gelfand on Tight & Loose Cultures (YouTube)",zh:"Michele Gelfand 談緊與鬆的文化（YouTube）"},url:"https://www.youtube.com/watch?v=Z4ELs54BmuY"},{label:{en:"Behavioral Scientist: A Conversation with Michele Gelfand",zh:"Behavioral Scientist：與 Michele Gelfand 的對話"},url:"https://behavioralscientist.org/tight-and-loose-cultures-a-conversation-with-michele-gelfand/"},{label:{en:"Stanford GSB · How Culture Affects Communication (Think Fast, Talk Smart)",zh:"史丹佛 GSB · 文化如何影響溝通（Think Fast, Talk Smart）"},url:"https://www.gsb.stanford.edu/insights/what-normal-how-culture-affects-communication-styles"}]
 },
 {
   num:13, year:2015, isbn:"9780465050727",
@@ -576,13 +654,13 @@ const books = [
   figure:{caption:{en:"Your BATNA sets the reservation price (walk-away); aspiration marks the realistic ceiling. The gap is the bargaining range.",zh:"BATNA 決定保留價格（離桌底線），期望值則是合理的上限；兩者之間就是議價區間。"},
     svg:{en:`<svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" role="img" aria-label="Negotiation Threshold Architecture"><rect width="720" height="250" fill="#ffffff"/><defs><marker id="arr13e" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#5f5b53"/></marker></defs><text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">Negotiation Threshold Architecture</text><text x="360" y="48" text-anchor="middle" font-size="11.5" fill="#5f5b53">Set your three boundaries before you talk</text><rect x="210" y="124" width="350" height="26" fill="#f1ece1"/><text x="385" y="116" text-anchor="middle" font-size="11.5" fill="#5f5b53">Bargaining range (ZOPA)</text><line x1="80" y1="137" x2="660" y2="137" stroke="#2e2d29" stroke-width="2" marker-end="url(#arr13e)"/><text x="595" y="176" font-size="11" fill="#5f5b53">More value to you →</text><text x="100" y="133" font-size="11" fill="#5f5b53">Walk away</text><line x1="210" y1="104" x2="210" y2="170" stroke="#8C1515" stroke-width="2.5"/><text x="210" y="92" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8C1515">Reservation Price</text><text x="210" y="192" text-anchor="middle" font-size="10.5" fill="#5f5b53">walk-away line · set by BATNA</text><line x1="560" y1="104" x2="560" y2="170" stroke="#8C1515" stroke-width="2.5"/><text x="560" y="92" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8C1515">Aspiration Value</text><text x="560" y="192" text-anchor="middle" font-size="10.5" fill="#5f5b53">ambitious, data-backed target</text></svg>`,
     zh:`<svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" font-family="PingFang TC,Microsoft JhengHei,sans-serif" role="img" aria-label="談判門檻架構"><rect width="720" height="250" fill="#ffffff"/><defs><marker id="arr13z" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#5f5b53"/></marker></defs><text x="360" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">談判門檻架構</text><text x="360" y="48" text-anchor="middle" font-size="11.5" fill="#5f5b53">開口前先設定三條界線</text><rect x="210" y="124" width="350" height="26" fill="#f1ece1"/><text x="385" y="116" text-anchor="middle" font-size="11.5" fill="#5f5b53">議價區間（ZOPA）</text><line x1="80" y1="137" x2="660" y2="137" stroke="#2e2d29" stroke-width="2" marker-end="url(#arr13z)"/><text x="585" y="176" font-size="11" fill="#5f5b53">對你越有利 →</text><text x="100" y="133" font-size="11" fill="#5f5b53">離桌</text><line x1="210" y1="104" x2="210" y2="170" stroke="#8C1515" stroke-width="2.5"/><text x="210" y="92" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8C1515">保留價格</text><text x="210" y="192" text-anchor="middle" font-size="10.5" fill="#5f5b53">離桌底線 · 由 BATNA 決定</text><line x1="560" y1="104" x2="560" y2="170" stroke="#8C1515" stroke-width="2.5"/><text x="560" y="92" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8C1515">期望價值</text><text x="560" y="192" text-anchor="middle" font-size="10.5" fill="#5f5b53">有數據支撐的進取目標</text></svg>`}},
-  contents:{verified:false,items:{en:["Negotiation as collaborative problem-solving","BATNA, reservation price, and aspiration","Anchoring and the strategic first offer","Creating value vs. claiming value","Managing biases and emotion"],
-    zh:["談判作為協作式的解題","BATNA、保留價格與期望值","錨定與策略性的第一個出價","創造價值 vs. 取得價值","管理偏誤與情緒"]}},
+  contents:{verified:true,items:{en:["## Part One · The Basics","1. Why Aren't You Negotiating?","2. Creating Common Ground","3. Creating and Claiming Value","4. Value Creating","5. Mapping Out the Negotiation","6. It Takes at Least Two to Tango","## Part Two · The Negotiation","7. Who Should Make the First Offer?","8. Managing the Negotiation","9. Concede or Else!","10. Should You Let Them See You Sweat (or Cry)?","11. Power","12. Multiparty Negotiations","13. Auctions","14. Bringing It Home"],
+    zh:["## 第一部 · 基礎","1. 你為什麼不談判？","2. 建立共同基礎","3. 創造與取得價值","4. 創造價值","5. 描繪談判全貌","6. 探戈至少需要兩個人","## 第二部 · 談判","7. 誰該先出價？","8. 管理談判過程","9. 讓步，否則……！","10. 該讓對方看見你流汗（或流淚）嗎？","11. 權力","12. 多方談判","13. 拍賣","14. 完成交易"]}},
   video:"203Kt_jWTUI",
   discussion:{en:["For a negotiation you're facing, what are your BATNA, reservation price, and aspiration?","When has an anchor (a first number) shaped a negotiation you were in — for better or worse?","Where could you 'make the pie bigger' instead of fighting over a fixed amount?"],
     zh:["針對你正面對的一場談判，你的 BATNA、保留價格與期望值各是什麼？","哪一次談判被一個錨點（第一個數字）左右了 — 結果是好是壞？","哪裡你其實可以「把餅做大」，而不是為固定的數字爭奪？"]},
   buyZH:null,
-  sources:[{label:{en:"Margaret Neale: Negotiating What You Want (YouTube)",zh:"Margaret Neale：談到你想要的（YouTube）"},url:"https://www.youtube.com/watch?v=203Kt_jWTUI"},{label:{en:"Stanford GSB Insights: Five Steps to Better Negotiation",zh:"史丹佛 GSB Insights：更好談判的五步驟"},url:"https://www.gsb.stanford.edu/insights/margaret-neale-five-steps-better-negotiation"}]
+  sources:[{label:{en:"Margaret Neale: Negotiating What You Want (YouTube)",zh:"Margaret Neale：談到你想要的（YouTube）"},url:"https://www.youtube.com/watch?v=203Kt_jWTUI"},{label:{en:"Stanford GSB · The Art of Negotiation (Think Fast, Talk Smart)",zh:"史丹佛 GSB · 談判的藝術（Think Fast, Talk Smart）"},url:"https://www.gsb.stanford.edu/insights/art-negotiation-how-get-more-what-you-want"}]
 },
 {
   num:14, year:2014, isbn:"9780385347020",
@@ -602,13 +680,13 @@ const books = [
   <p><strong>The Bad-to-Good Subtraction Ratio</strong> — one toxic teammate, complex rule, or broken process destroys value faster than many good ones create it; scaling means pruning the bad, not just amplifying the good.</p>`,
     zh:`<p><strong>「天主教 vs. 佛教」光譜</strong> — 在各地複製一模一樣的藍圖（天主教式），或只擴散核心原則、讓在地團隊調整做法（佛教式）。</p>
   <p><strong>壞與好的相減比</strong> — 一名有毒的隊友、一條複雜的規則或一個壞掉的流程，摧毀價值的速度，比許多好的東西創造價值的速度更快；擴展意味著修剪壞的，而不只是放大好的。</p>`},
-  contents:{verified:false,items:{en:["Scaling as spreading a mindset, not just a footprint","Catholicism vs. Buddhism: standardize or localize","Hot causes and cool solutions","Cutting cognitive load and bad behavior","Accountability: building an 'I own it' culture"],
-    zh:["擴展是擴散心態，而不只是版圖","天主教 vs. 佛教：標準化或在地化","熱情的理念與冷靜的解法","減少認知負荷與壞行為","當責：打造『我來扛』的文化"]}},
+  contents:{verified:true,items:{en:["Preface — The Problem of More","## Part I · Setting the Stage","1. It's a Ground War, Not Just an Air War: Going Slower to Scale Faster (and Better) Later","2. Buddhism Versus Catholicism: Choosing a Path","## Part II · Scaling Principles","3. Hot Causes, Cool Solutions: Stoking the Scaling Engine","4. Cut Cognitive Load: But Deal with Necessary Complexity","5. The People Who Propel Scaling: “I Own the Place and the Place Owns Me”","6. Connect People and Cascade Excellence: Using Social Bonds to Spread the Right Mindset","7. Bad Is Stronger Than Good: Clearing the Way for Excellence","## Part III · Parting Points","8. Did This, Not That: Imagine You've Already Succeeded (or Failed)"],
+    zh:["序 — 「更多」的難題","## 第一部 · 鋪陳舞台","1. 這是地面戰，不只是空戰：放慢腳步，日後才能更快（更好）地擴展","2. 佛教 vs. 天主教：選擇一條路","## 第二部 · 擴展原則","3. 熱情的理念、冷靜的解法：點燃擴展引擎","4. 減少認知負荷：但要處理必要的複雜","5. 推動擴展的人：打造「我擁有這地方，這地方也擁有我」的組織","6. 連結人並讓卓越層層擴散：用社會連結傳播對的心態","7. 壞比好更強大：為卓越掃除障礙","## 第三部 · 臨別要點","8. 做了這個，而非那個：想像你已經成功（或失敗）"]}},
   video:"R1WG_u0o9JM",
   discussion:{en:["As you grow, are you a 'Catholic' (standardize) or 'Buddhist' (localize) organization — and is that right?","What single bad behavior or broken process is doing the most damage right now?","What would it take to spread your team's best practices without diluting them?"],
     zh:["在成長中，你的組織偏「天主教式」（標準化）還是「佛教式」（在地化）？這樣對嗎？","現在哪一個壞行為或壞流程，正造成最大的傷害？","要把團隊的最佳做法擴散出去而不被稀釋，需要做到什麼？"]},
   buyZH:null,
-  sources:[{label:{en:"Bob Sutton: Scaling Up Excellence — Entire Talk (YouTube)",zh:"Bob Sutton：Scaling Up Excellence 完整演講（YouTube）"},url:"https://www.youtube.com/watch?v=R1WG_u0o9JM"},{label:{en:"Stanford GSB Insights: Seven Mantras of Scaling",zh:"史丹佛 GSB Insights：擴展的七句箴言"},url:"https://www.gsb.stanford.edu/insights/robert-sutton-seven-mantras-scaling-up-excellence"}]
+  sources:[{label:{en:"Bob Sutton: Scaling Up Excellence — Entire Talk (YouTube)",zh:"Bob Sutton：Scaling Up Excellence 完整演講（YouTube）"},url:"https://www.youtube.com/watch?v=R1WG_u0o9JM"},{label:{en:"Stanford GSB Insights · How Do You Scale Excellence?",zh:"史丹佛 GSB Insights · 如何擴展卓越？"},url:"https://www.gsb.stanford.edu/insights/hayagreeva-rao-robert-sutton-how-do-you-scale-excellence"}]
 },
 {
   num:15, year:2008, isbn:"9780691131146",
@@ -631,8 +709,8 @@ const books = [
   figure:{caption:{en:"Competing raises everyone's capability, which raises the bar again — a self-reinforcing loop.",zh:"競爭提升所有人的能力，又再次抬高門檻 — 一個自我強化的迴圈。"},
     svg:{en:`<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" role="img" aria-label="The Red Queen Evolution Loop"><rect width="640" height="360" fill="#ffffff"/><defs><marker id="arr15e" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8C1515"/></marker></defs><text x="320" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">The Red Queen Evolution Loop</text><text x="320" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#8C1515">RED QUEEN</text><text x="320" y="195" text-anchor="middle" font-size="10.5" fill="#5f5b53">run to stay in place</text><rect x="245" y="48" width="150" height="48" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="320" y="77" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2e2d29">Competition</text><rect x="450" y="156" width="160" height="52" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="530" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">Triggered Search</text><text x="530" y="195" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">&amp; Learning</text><rect x="245" y="266" width="150" height="48" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="320" y="295" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2e2d29">Increased Capability</text><rect x="30" y="156" width="160" height="52" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="110" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">Heightened</text><text x="110" y="195" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">Industry Pressure</text><line x1="400" y1="80" x2="453" y2="158" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15e)"/><line x1="520" y1="212" x2="397" y2="282" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15e)"/><line x1="243" y1="288" x2="178" y2="212" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15e)"/><line x1="150" y1="152" x2="250" y2="86" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15e)"/></svg>`,
     zh:`<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" font-family="PingFang TC,Microsoft JhengHei,sans-serif" role="img" aria-label="紅皇后演化迴圈"><rect width="640" height="360" fill="#ffffff"/><defs><marker id="arr15z" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8C1515"/></marker></defs><text x="320" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#5e0e0e">紅皇后演化迴圈</text><text x="320" y="176" text-anchor="middle" font-size="12" font-weight="700" fill="#8C1515">紅皇后</text><text x="320" y="194" text-anchor="middle" font-size="10.5" fill="#5f5b53">拚命奔跑只為留在原地</text><rect x="245" y="48" width="150" height="48" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="320" y="77" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2e2d29">競爭</text><rect x="450" y="156" width="160" height="52" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="530" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">觸發搜尋</text><text x="530" y="195" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">與學習</text><rect x="245" y="266" width="150" height="48" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="320" y="295" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2e2d29">能力提升</text><rect x="30" y="156" width="160" height="52" rx="8" fill="#fbf4f4" stroke="#8C1515"/><text x="110" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">產業壓力</text><text x="110" y="195" text-anchor="middle" font-size="12" font-weight="700" fill="#2e2d29">升高</text><line x1="400" y1="80" x2="453" y2="158" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15z)"/><line x1="520" y1="212" x2="397" y2="282" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15z)"/><line x1="243" y1="288" x2="178" y2="212" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15z)"/><line x1="150" y1="152" x2="250" y2="86" stroke="#8C1515" stroke-width="2" marker-end="url(#arr15z)"/></svg>`}},
-  contents:{verified:false,items:{en:["The Red Queen hypothesis","Competition and organizational learning","The evolution of capability","Competency traps","Implications for strategy"],
-    zh:["紅皇后假說","競爭與組織學習","能力的演化","能力陷阱","對策略的啟示"]}},
+  contents:{verified:true,items:{en:["1. Why Are Some Organizations More Competitive Than Others?","2. Logics of Competition","3. The Red Queen","4. Empirically Modeling the Red Queen","5. Red Queen Competition Among Commercial Banks","6. Red Queen Competition Among Computer Manufacturers","7. The Red Queen and Organizational Inertia","8. Some Implications of Red Queen Competition"],
+    zh:["1. 為何有些組織比其他組織更有競爭力？","2. 競爭的邏輯","3. 紅皇后","4. 以實證為紅皇后建模","5. 商業銀行間的紅皇后競爭","6. 電腦製造商間的紅皇后競爭","7. 紅皇后與組織惰性","8. 紅皇后競爭的一些啟示"]}},
   video:null,
   discussion:{en:["Where is your organization 'running to stay in place' against tougher competitors?","Has a past strength quietly become a competency trap as the market shifted?","How do you build resilience by facing real competition rather than avoiding it?"],
     zh:["你的組織在哪裡正「拚命奔跑只為留在原地」，對抗更強的對手？","隨著市場轉變，某個過去的強項是否已悄悄變成能力陷阱？","你如何透過正面迎戰真實競爭、而非迴避，來建立韌性？"]},
@@ -660,6 +738,7 @@ const allTags=TAG_ORDER.filter(t=>books.some(b=>b.tags.includes(t)));
 allTags.forEach(t=>{
   const c=document.createElement('span');
   c.className='chip';c.dataset.tag=t;
+  c.innerHTML='<i class="dot"></i><span class="lab"></span>';
   c.addEventListener('click',()=>{
     if(activeTags.has(t)){activeTags.delete(t);c.classList.remove('active');}
     else{activeTags.add(t);c.classList.add('active');}
@@ -697,58 +776,90 @@ function renderContents(b){
     <div class="sub-inner">${note}<div class="toc">${items}</div>
     <a class="preview-link" href="${PREVIEW(b.isbn)}" target="_blank" rel="noopener">${u.previewLink}</a></div></details>`;
 }
+function renderBonus(b){
+  if(!b.bonus) return '';
+  const u=UI[lang];
+  return `<div class="bonus"><div class="bonus-head">${u.bonusHead}</div>${b.bonus[lang]}<a class="bonus-more" href="${b.bonus.link}" target="_blank" rel="noopener">${u.bonusMore}</a></div>`;
+}
 function renderVideo(id){
   if(!id) return `<p class="watch-note">${UI[lang].noVideo}</p>`;
   return `<div class="video" data-vid="${id}"><img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="Play" loading="lazy"><div class="play"><svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.5 7.7c-.8-2.9-3-5.1-5.9-5.9C55.3.5 34 .5 34 .5S12.7.5 7.4 1.8C4.5 2.6 2.3 4.8 1.5 7.7.2 13 .2 24 .2 24s0 11 1.3 16.3c.8 2.9 3 5.1 5.9 5.9C12.7 47.5 34 47.5 34 47.5s21.3 0 26.6-1.3c2.9-.8 5.1-3 5.9-5.9C67.8 35 67.8 24 67.8 24s0-11-1.3-16.3z" fill="#f00"/><path d="M27 34l18-10-18-10z" fill="#fff"/></svg></div></div>`;
 }
 
+const ACCENT={"Leadership":"#8C1515","Strategy":"#1f4e79","Innovation":"#2e7d6b","Org Design":"#6b4e9e","Culture":"#b5651d","Power & Influence":"#7a1f5c","Ethics":"#4a6b52","Communication":"#c2410c","Negotiation":"#0e7490","Wellbeing":"#3f6b4f"};
+function chapterCount(b){
+  return b.contents.items.en.filter(i=>!i.startsWith('## ') && !/^(Foreword|Introduction|Conclusion|Afterword|Preface)\b/.test(i)).length;
+}
+function smallCover(b){
+  const src=coverSources(b.isbn);
+  return `<div class="cover-sm"><img src="${src[0]}" alt="${esc(b.title[lang])}" loading="lazy" data-src-idx="0" data-sources='${esc(JSON.stringify(src))}' onerror="handleCoverError(this)"><div class="cover-fallback"><span>${esc(b.title[lang])}</span><small>${b.year}</small></div></div>`;
+}
+function renderHero(b){
+  if(b.video) return `<div class="hero">${renderVideo(b.video)}</div>`;
+  if(b.figure) return `<div class="hero">${renderFigure(b)}</div>`;
+  return '';
+}
+
 function buildCards(){
   const u=UI[lang];
-  // remove existing cards but keep grid element/listeners
   grid.innerHTML='';
   books.forEach(b=>{
     const card=document.createElement('article');
     card.className='card';
+    card.style.setProperty('--accent', ACCENT[b.tags[0]]||'var(--cardinal)');
     card.dataset.tags=JSON.stringify(b.tags);
     card.dataset.text=(b.title[lang]+' '+b.title.en+' '+b.subtitle[lang]+' '+b.author+' '+b.year+' '+b.tags.map(t=>TAGS[t][lang]).join(' ')+' '+b.takeaway[lang]+' '+b.concept[lang]+' '+b.summary[lang]).toLowerCase();
-    const src=coverSources(b.isbn);
     const buyZH=b.buyZH?`<a class="buy zh" href="${b.buyZH}" target="_blank" rel="noopener">${u.buyZh}</a>`:`<span class="buy none">${u.buyNone}</span>`;
     const enSmall=(lang==='zh'&&b.title.en!==b.title.zh)?`<p class="title-en-sm">${esc(b.title.en)}</p>`:'';
+    const headCover=smallCover(b);
+    const glance=`<div class="glance"><span class="g">${b.year}</span><span class="sep">·</span><span class="g">${chapterCount(b)} ${u.chapters}</span>${b.video?`<span class="sep">·</span><span class="g g-vid">▶ ${u.talk}</span>`:(b.figure?`<span class="sep">·</span><span class="g">◆ ${u.diagram}</span>`:'')}</div>`;
+    const tabFigure=(b.figure&&b.video)?renderFigure(b):'';
     card.innerHTML=`
-      <div class="card-head">
-        <div class="cover-wrap">
-          <img class="cover" src="${src[0]}" alt="${esc(b.title[lang])}" loading="lazy" data-src-idx="0" data-sources='${esc(JSON.stringify(src))}' onerror="handleCoverError(this)">
-          <div class="cover-fallback"><span>${esc(b.title[lang])}</span><small>${b.year}</small></div>
-        </div>
-        <div class="head-text">
-          <span class="num">No. ${String(b.num).padStart(2,'0')}</span>
-          <h2>${esc(b.title[lang])}</h2>${enSmall}
-          <p class="subtitle">${esc(b.subtitle[lang])}</p>
-          <p class="byline"><span>${esc(b.author)}</span><span class="year">${b.year}</span></p>
-          <div class="tagrow">${b.tags.map(t=>`<span class="t">${esc(TAGS[t][lang])}</span>`).join('')}</div>
+      <div class="card-top">
+        <div class="card-main">
+          <div class="bookhead">
+            ${headCover}
+            <div class="head-titles">
+              <span class="num">No. ${String(b.num).padStart(2,'0')}</span>
+              <h2>${esc(b.title[lang])}</h2>${enSmall}
+              <p class="subtitle">${esc(b.subtitle[lang])}</p>
+              <p class="byline"><span>${esc(b.author)}</span></p>
+              ${glance}
+            </div>
+          </div>
+          <div class="tagrow">${b.tags.map(t=>`<span class="t" style="--tc:${ACCENT[t]||'#8C1515'}">${esc(TAGS[t][lang])}</span>`).join('')}</div>
           <p class="takeaway"><b>${u.keyTakeaway}</b>${esc(b.takeaway[lang])}</p>
+          ${b.bonus?`<a class="bonus-flag" href="${b.bonus.link}" target="_blank" rel="noopener">${u.bonusFlag}</a>`:''}
           <div class="buyrow"><a class="buy en" href="${BUY(b.isbn)}" target="_blank" rel="noopener">${u.buyEn}</a>${buyZH}</div>
-          <span class="expand-row"><svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8C1515" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg><span class="expand-label">${u.readMore}</span></span>
+          <span class="expand-row"><svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg><span class="expand-label">${u.readMore}</span></span>
         </div>
+        <div class="card-media">${renderHero(b)}</div>
       </div>
-      <div class="card-body"><div class="card-body-inner">
-        <div class="section-label">${u.about}</div>
-        <p class="authorbio">${esc(b.authorBio[lang])}</p>
-        <div class="section-label">${u.concept}</div>
-        <p>${esc(b.concept[lang])}</p>
-        <div class="section-label">${u.summary}</div>
-        <p>${esc(b.summary[lang])}</p>
-        <div class="section-label">${u.frameworks}</div>
-        ${b.frameworks[lang]}${renderFigure(b)}
-        <div class="section-label">${u.contents}</div>
-        ${renderContents(b)}
-        <div class="section-label">${u.discussion}</div>
-        <ol class="discussion">${b.discussion[lang].map(q=>`<li>${esc(q)}</li>`).join('')}</ol>
-        <div class="section-label">${u.watch}</div>
-        ${renderVideo(b.video)}
-        <div class="section-label">${u.learn}</div>
-        <div class="sources">${b.sources.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${esc(s.label[lang])}</a>`).join('')}</div>
-      </div></div>`;
+      <div class="card-body">
+        <div class="tabs">
+          <button class="tab active" data-tab="0">${u.tabOverview}</button>
+          <button class="tab" data-tab="1">${u.tabFrameworks}</button>
+          <button class="tab" data-tab="2">${u.tabContents}</button>
+          <button class="tab" data-tab="3">${u.tabDiscussion}</button>
+        </div>
+        <div class="tabpanel active" data-panel="0">
+          ${renderBonus(b)}
+          <div class="section-label">${u.concept}</div><p>${esc(b.concept[lang])}</p>
+          <div class="section-label">${u.summary}</div><p>${esc(b.summary[lang])}</p>
+          <div class="section-label">${u.about}</div><p class="authorbio">${esc(b.authorBio[lang])}</p>
+          <div class="section-label">${u.learn}</div>
+          <div class="sources">${b.sources.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${esc(s.label[lang])}</a>`).join('')}</div>
+        </div>
+        <div class="tabpanel" data-panel="1">
+          ${b.frameworks[lang]}${tabFigure}
+        </div>
+        <div class="tabpanel" data-panel="2">
+          ${renderContents(b)}
+        </div>
+        <div class="tabpanel" data-panel="3">
+          <ol class="discussion">${b.discussion[lang].map(q=>`<li>${esc(q)}</li>`).join('')}</ol>
+        </div>
+      </div>`;
     const er=card.querySelector('.expand-row');
     er.addEventListener('click',()=>{
       card.classList.toggle('open');
@@ -774,8 +885,9 @@ function setUIText(){
   document.getElementById('collapseAll').textContent=u.collapseAll;
   document.getElementById('clearFilters').textContent=u.clearFilters;
   document.getElementById('footer').textContent=u.footer;
-  document.getElementById('langtoggle').textContent=u.langBtn;
-  filtersEl.querySelectorAll('.chip').forEach(c=>{c.textContent=TAGS[c.dataset.tag][lang];});
+  filtersEl.querySelectorAll('.chip').forEach(c=>{c.style.setProperty('--c',ACCENT[c.dataset.tag]||'#8C1515');c.querySelector('.lab').textContent=TAGS[c.dataset.tag][lang];});
+  const ln=document.getElementById('legendNote'); if(ln) ln.textContent=u.legendNote;
+  document.querySelectorAll('#langtoggle .lang-opt').forEach(o=>o.classList.toggle('active',o.dataset.lang===lang));
 }
 
 function updateCount(n){count.textContent = n===books.length?UI[lang].booksWord(n):UI[lang].ofBooks(n,books.length);}
@@ -810,8 +922,10 @@ document.getElementById('clearFilters').addEventListener('click',()=>{
   filtersEl.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
   applyFilters();
 });
-document.getElementById('langtoggle').addEventListener('click',()=>{
-  lang = lang==='en'?'zh':'en';
+document.getElementById('langtoggle').addEventListener('click',e=>{
+  const opt=e.target.closest('.lang-opt'); if(!opt) return;
+  const nl=opt.dataset.lang; if(nl===lang) return;
+  lang=nl;
   try{localStorage.setItem('sep_lang',lang);}catch(e){}
   render();
 });
@@ -821,10 +935,17 @@ const lightbox=document.getElementById('lightbox');
 const lightboxInner=document.getElementById('lightboxInner');
 function closeLightbox(){lightbox.classList.remove('show');lightboxInner.innerHTML='';}
 grid.addEventListener('click',e=>{
+  const tab=e.target.closest('.tab');
+  if(tab){
+    const card=tab.closest('.card'); const idx=tab.dataset.tab;
+    card.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t===tab));
+    card.querySelectorAll('.tabpanel').forEach(p=>p.classList.toggle('active',p.dataset.panel===idx));
+    return;
+  }
   const v=e.target.closest('.video');
   if(v&&!v.querySelector('iframe')){
     const id=v.dataset.vid;
-    v.innerHTML=`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" title="talk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    v.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1" title="talk" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
     return;
   }
   const fig=e.target.closest('.figure');
