@@ -170,6 +170,9 @@
   .glance .g{display:inline-flex;align-items:center;gap:4px;}
   .glance .sep{opacity:.4;}
   .glance .g-vid{color:var(--accent,var(--cardinal));font-weight:600;}
+  .glance a.g-wl{color:var(--accent,var(--cardinal));font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+  .glance a.g-wl:hover{text-decoration:underline;}
+  .glance a.g-wl svg{flex:none;}
 
   .card-media{min-width:0;}
   .hero{width:100%;border-radius:10px;overflow:hidden;}
@@ -257,6 +260,7 @@ const UI = {
     chapters:"chapters", talk:"Talk", diagram:"Diagram",
     tabOverview:"Overview", tabFrameworks:"Frameworks", tabContents:"Contents", tabDiscussion:"Discussion",
     legendNote:"Tag colours mark each book's primary theme — and the tags are filters: click any to filter the list.",
+    wlNotes:"WL's Notes",
     langBtn:"中文" },
   zh:{ kicker:"史丹佛高階主管課程 · SEP 2026", h1:"閱讀書單",
     intro:"十五本關於領導、策略與組織的書 — 內容摘要、架構、討論題、演講與購買連結。為讀書與研討小組打造。",
@@ -280,6 +284,7 @@ const UI = {
     chapters:"章", talk:"演講", diagram:"圖解",
     tabOverview:"總覽", tabFrameworks:"架構", tabContents:"目錄", tabDiscussion:"討論題",
     legendNote:"標籤顏色代表每本書的主要主題 — 標籤同時也是篩選器，點擊任一標籤即可篩選清單。",
+    wlNotes:"WL's文章",
     langBtn:"EN" }
 };
 
@@ -298,7 +303,7 @@ const TAGS = {
 
 const books = [
 {
-  num:1, year:2025, isbn:"9780593800041",
+  num:1, year:2025, isbn:"9780593800041", wl:"https://docs.google.com/document/d/10yxbv7IxVGe8J6xwHpjGK4EpfspOavr9madZe4wAojs/edit?usp=sharing",
   title:{en:"The Systems Leader",zh:"系統領導者"},
   subtitle:{en:"Mastering the Cross-Pressures That Make or Break Today's Companies",zh:"駕馭決定當今企業成敗的交叉壓力"},
   author:"Robert E. Siegel",
@@ -329,7 +334,7 @@ const books = [
   sources:[{label:{en:"Stanford GSBooks Lecture with Robert Siegel",zh:"史丹佛 GSBooks：Robert Siegel 講座"},url:"https://www.youtube.com/watch?v=v085nRsapyI"},{label:{en:"unSILOed Podcast Systems Leadership Interview",zh:"unSILOed Podcast：系統領導訪談"},url:"https://www.youtube.com/watch?v=gk--hCSOLlo"},{label:{en:"The Systems Leader — Author's Official Page",zh:"系統領導者 — 作者官方網頁"},url:"https://www.robertesiegel.com/the-systems-leader"}]
 },
 {
-  num:2, year:2021, isbn:"9780063064881",
+  num:2, year:2021, isbn:"9780063064881", wl:"https://docs.google.com/document/d/1ENd5YWe4IYNM1DAh464UeqtKxQv4Llsh-7ng0Pjv-yQ/edit?usp=sharing",
   title:{en:"System Error",zh:"系統錯誤"},
   subtitle:{en:"Where Big Tech Went Wrong and How We Can Reboot",zh:"大型科技公司哪裡走錯了，我們如何重啟"},
   author:"Rob Reich, Mehran Sahami & Jeremy Weinstein",
@@ -357,7 +362,7 @@ const books = [
   sources:[{label:{en:"System Error, Live! (Stanford, YouTube)",zh:"System Error, Live!（史丹佛，YouTube）"},url:"https://www.youtube.com/watch?v=RC30ZcjQRuQ"},{label:{en:"System Error — Official Book Site",zh:"System Error 官方網站"},url:"https://systemerrorbook.com/"}]
 },
 {
-  num:3, year:2005, isbn:"9780060582746",
+  num:3, year:2005, isbn:"9780060582746", wl:"https://docs.google.com/document/d/1NYMhF2SbXWak6GEh1o9h1HqcP1XjYv7ITHi8DzKx_Og/edit?usp=sharing",
   title:{en:"Stress Free for Good",zh:"永久擺脫壓力"},
   subtitle:{en:"10 Scientifically Proven Life Skills for Health and Happiness",zh:"通往健康與幸福、經科學實證的 10 項生活技能"},
   author:"Fred Luskin & Kenneth R. Pelletier",
@@ -381,7 +386,7 @@ const books = [
   sources:[{label:{en:"Dr. Fred Luskin on stress & happiness (YouTube)",zh:"Fred Luskin 談壓力與幸福（YouTube）"},url:"https://www.youtube.com/watch?v=ERIiCiQyKxY"},{label:{en:"Apple Books Academic Profile",zh:"Apple Books 書籍頁面"},url:"https://books.apple.com/us/book/stress-free-for-good/id6479662525"},{label:{en:"Stanford GSB · Forgiveness & Communication (Think Fast, Talk Smart)",zh:"史丹佛 GSB · 寬恕與溝通（Think Fast, Talk Smart）"},url:"https://www.gsb.stanford.edu/insights/forgiveness-how-right-communication-repairs-relationships"}]
 },
 {
-  num:4, year:2024, isbn:"9780593714232",
+  num:4, year:2024, isbn:"9780593714232", wl:"https://docs.google.com/document/d/1MSXl-4kSj-n71VkL3PN3szTzdvV5N_l7TNGqspkYOHE/edit?usp=sharing",
   title:{en:"The Venture Mindset",zh:"試錯策略"},
   subtitle:{en:"How to Make Smarter Bets and Achieve Extraordinary Growth",zh:"史丹佛天使投資人的決斷心法，在高風險世界正確止損、掌握勝算"},
   author:"Ilya Strebulaev & Alex Dang",
@@ -407,7 +412,7 @@ const books = [
   sources:[{label:{en:"Stanford GSB · The Art of Saying No (Think Fast, Talk Smart)",zh:"史丹佛 GSB · 勇於說不（Think Fast, Talk Smart）"},url:"https://www.gsb.stanford.edu/insights/art-saying-no-how-closing-wrong-doors-helps-you-open-right-ones"},{label:{en:"Penguin Random House Book Page",zh:"Penguin Random House 書籍頁面"},url:"https://www.penguinrandomhouse.com/books/734114/the-venture-mindset-by-ilya-strebulaev-and-alex-dang/"},{label:{en:"The Venture Mindset — Talk (YouTube)",zh:"The Venture Mindset — 演講（YouTube）"},url:"https://www.youtube.com/watch?v=SO0p3BYV42w"}]
 },
 {
-  num:5, year:2024, isbn:"9781250284419",
+  num:5, year:2024, isbn:"9781250284419", wl:"https://docs.google.com/document/d/1khcVW5lNqBlpli_vNgTQriq5F1A6HV_wX3EcZigC6j0/edit?usp=sharing",
   title:{en:"The Friction Project",zh:"摩擦計畫"},
   subtitle:{en:"How Smart Leaders Make the Right Things Easier and the Wrong Things Harder",zh:"史丹佛教授的零內耗管理，讓正確的事變簡單、錯誤的事變難"},
   author:"Robert I. Sutton & Huggy Rao",
@@ -436,7 +441,7 @@ const books = [
   sources:[{label:{en:"Stanford GSB: The Art of Friction (YouTube)",zh:"史丹佛 GSB：摩擦的藝術（YouTube）"},url:"https://www.youtube.com/watch?v=79wHCuuqmHo"},{label:{en:"Stanford GSB Insights: Fixing Bad Friction",zh:"史丹佛 GSB Insights：修復壞摩擦"},url:"https://www.gsb.stanford.edu/insights/fixing-bad-friction-finding-good-friction"}]
 },
 {
-  num:6, year:2023, isbn:"9781668010303",
+  num:6, year:2023, isbn:"9781668010303", wl:"https://docs.google.com/document/d/1880J5zgYzqJ2HuFqeBEl7BDFxh_o94FWMu1v0V3EzRI/edit?usp=sharing",
   title:{en:"Think Faster, Talk Smarter",zh:"思考更敏捷，說話更機智"},
   subtitle:{en:"How to Speak Successfully When You're Put on the Spot",zh:"史丹佛 MBA 必修溝通課"},
   author:"Matt Abrahams",
@@ -475,7 +480,7 @@ const books = [
   sources:[{label:{en:"Matt Abrahams TEDx: Think Fast, Talk Smart (YouTube)",zh:"Matt Abrahams TEDx：Think Fast, Talk Smart（YouTube）"},url:"https://www.youtube.com/watch?v=o3K_HbpWNpg"},{label:{en:"Stanford GSB Think Fast, Talk Smart Podcast",zh:"史丹佛 GSB「Think Fast, Talk Smart」Podcast"},url:"https://www.gsb.stanford.edu/business-podcasts/think-fast-talk-smart"}]
 },
 {
-  num:7, year:2022, isbn:"9781108841191",
+  num:7, year:2022, isbn:"9781108841191", wl:"https://docs.google.com/document/d/1mfPRGc6WOAON44WWB8rskQqUf4J4qOR2S_1T5lCilVs/edit?usp=sharing",
   title:{en:"Leading With Values",zh:"以價值領導"},
   subtitle:{en:"Strategies for Making Ethical Decisions in Business and Life",zh:"在商業與人生中做出合乎倫理決策的策略"},
   author:"Neil Malhotra & Ken Shotts",
@@ -501,7 +506,7 @@ const books = [
   sources:[{label:{en:"Cambridge University Press Book Page",zh:"劍橋大學出版社書籍頁面"},url:"https://www.cambridge.org/9781108841191"},{label:{en:"Stanford GSB Faculty Book Page",zh:"史丹佛 GSB 教師著作頁面"},url:"https://www.gsb.stanford.edu/faculty-research/books/leading-values"},{label:{en:"Stanford GSB · Leadership & Ethics (Think Fast, Talk Smart)",zh:"史丹佛 GSB · 領導與倫理（Think Fast, Talk Smart）"},url:"https://www.gsb.stanford.edu/insights/leadership-ethics-how-communicate-your-core-values"}]
 },
 {
-  num:8, year:2016, isbn:"9780804798655",
+  num:8, year:2016, isbn:"9780804798655", wl:"https://docs.google.com/document/d/1njfVi6jSUO_7J9rXOthlxAjotVWuiSnvpX972BEOEM4/edit?usp=sharing",
   title:{en:"Lead and Disrupt",zh:"領導與顛覆"},
   subtitle:{en:"How to Solve the Innovator's Dilemma",zh:"如何解決創新者的兩難"},
   author:"Charles A. O'Reilly & Michael L. Tushman",
@@ -530,7 +535,7 @@ const books = [
   sources:[{label:{en:"Stanford University Press Book Page",zh:"史丹佛大學出版社書籍頁面"},url:"https://www.sup.org/books/business/lead-and-disrupt"},{label:{en:"Stanford GSB Faculty Book Page",zh:"史丹佛 GSB 教師著作頁面"},url:"https://www.gsb.stanford.edu/faculty-research/books/lead-disrupt-2nd-edition"}]
 },
 {
-  num:9, year:2021, isbn:"9780231199483",
+  num:9, year:2021, isbn:"9780231199483", wl:"https://docs.google.com/document/d/1pgoWTpZqsiXXyMBYYn36o6ASNO_5tlcYGnl8y4WD-uc/edit?usp=sharing",
   title:{en:"Making Great Strategy",zh:"打造卓越策略"},
   subtitle:{en:"Arguing for Organizational Advantage",zh:"為組織優勢進行論證"},
   author:"Jesper B. Sørensen & Glenn R. Carroll",
@@ -556,7 +561,7 @@ const books = [
   sources:[{label:{en:"Jesper Sørensen: Making Great Strategy (YouTube)",zh:"Jesper Sørensen：Making Great Strategy（YouTube）"},url:"https://www.youtube.com/watch?v=RxcGLCbaqm0"},{label:{en:"Stanford GSB Faculty Book Profile",zh:"史丹佛 GSB 教師著作頁面"},url:"https://www.gsb.stanford.edu/faculty-research/books/making-great-strategy-arguing-organizational-advantage"},{label:{en:"Stanford GSB · Communicate Your Gameplan (Think Fast, Talk Smart)",zh:"史丹佛 GSB · 溝通你的策略（Think Fast, Talk Smart）"},url:"https://www.gsb.stanford.edu/insights/strategic-success-how-communicate-your-gameplan"}]
 },
 {
-  num:10, year:2023, isbn:"9780062913005",
+  num:10, year:2023, isbn:"9780062913005", wl:"https://docs.google.com/document/d/1soLBlyAuqjMpAq0ydtOy-40A04MVRLtqZ6Z9dHOkX7k/edit?usp=sharing",
   title:{en:"Selfless",zh:"無我"},
   subtitle:{en:"The Social Creation of “You”",zh:"「你」是一種社會建構"},
   author:"Brian Lowery",
@@ -582,7 +587,7 @@ const books = [
   sources:[{label:{en:"Brian Lowery: Selfless (YouTube)",zh:"Brian Lowery：Selfless（YouTube）"},url:"https://www.youtube.com/watch?v=qRPVjBbs0JA"},{label:{en:"Stanford GSB Insights: You May Not Be Who You Think You Are",zh:"史丹佛 GSB Insights：你或許不是你以為的那個人"},url:"https://www.gsb.stanford.edu/insights/you-may-not-be-who-you-think-you-are"}]
 },
 {
-  num:11, year:2020, isbn:"9781101903957",
+  num:11, year:2020, isbn:"9781101903957", wl:"https://docs.google.com/document/d/12gj5TphxID9Amb4G0r4pg-oYnoO4tb9RnHFUY14zdCY/edit?usp=sharing",
   title:{en:"Acting with Power",zh:"懂權力，在每個角色上發光"},
   subtitle:{en:"Why We Are More Powerful Than We Believe",zh:"史丹佛 MBA 爆棚選修課，讓你被需要就能自信發揮影響力"},
   author:"Deborah Gruenfeld",
@@ -608,7 +613,7 @@ const books = [
   sources:[{label:{en:"Deborah Gruenfeld on Power & Influence (YouTube)",zh:"Deborah Gruenfeld 談權力與影響力（YouTube）"},url:"https://www.youtube.com/watch?v=KdQHAeAnHmw"},{label:{en:"Penguin Random House Book Page",zh:"Penguin Random House 書籍頁面"},url:"https://www.penguinrandomhouse.com/books/253096/acting-with-power-by-deborah-gruenfeld/"}]
 },
 {
-  num:12, year:2018, isbn:"9781501152931",
+  num:12, year:2018, isbn:"9781501152931", wl:"https://docs.google.com/document/d/1AJ7F_SZxpjwI8a7QN7mGZW2E8rYv6ACf89ub4-Rq7_8/edit?usp=sharing",
   title:{en:"Rule Makers, Rule Breakers",zh:"規則制定者，規則打破者"},
   subtitle:{en:"How Tight and Loose Cultures Wire Our World",zh:"緊與鬆的文化如何形塑我們的世界"},
   author:"Michele Gelfand",
@@ -634,7 +639,7 @@ const books = [
   sources:[{label:{en:"Michele Gelfand on Tight & Loose Cultures (YouTube)",zh:"Michele Gelfand 談緊與鬆的文化（YouTube）"},url:"https://www.youtube.com/watch?v=Z4ELs54BmuY"},{label:{en:"Behavioral Scientist: A Conversation with Michele Gelfand",zh:"Behavioral Scientist：與 Michele Gelfand 的對話"},url:"https://behavioralscientist.org/tight-and-loose-cultures-a-conversation-with-michele-gelfand/"},{label:{en:"Stanford GSB · How Culture Affects Communication (Think Fast, Talk Smart)",zh:"史丹佛 GSB · 文化如何影響溝通（Think Fast, Talk Smart）"},url:"https://www.gsb.stanford.edu/insights/what-normal-how-culture-affects-communication-styles"}]
 },
 {
-  num:13, year:2015, isbn:"9780465050727",
+  num:13, year:2015, isbn:"9780465050727", wl:"https://docs.google.com/document/d/1PUuGYkIE-DIYFweJjFRONQuDBZtkqWBHNdKzypvYX4M/edit?usp=sharing",
   title:{en:"Getting (More of) What You Want",zh:"得到（更多）你想要的"},
   subtitle:{en:"How the Secrets of Economics and Psychology Can Help You Negotiate Anything",zh:"運用經濟學與心理學的祕密，幫你談判任何事"},
   author:"Margaret A. Neale & Thomas Z. Lys",
@@ -663,7 +668,7 @@ const books = [
   sources:[{label:{en:"Margaret Neale: Negotiating What You Want (YouTube)",zh:"Margaret Neale：談到你想要的（YouTube）"},url:"https://www.youtube.com/watch?v=203Kt_jWTUI"},{label:{en:"Stanford GSB · The Art of Negotiation (Think Fast, Talk Smart)",zh:"史丹佛 GSB · 談判的藝術（Think Fast, Talk Smart）"},url:"https://www.gsb.stanford.edu/insights/art-negotiation-how-get-more-what-you-want"}]
 },
 {
-  num:14, year:2014, isbn:"9780385347020",
+  num:14, year:2014, isbn:"9780385347020", wl:"https://docs.google.com/document/d/1nvyRSKp3yAx_wFef83VU9kYDIFD_BLqkHcuCEWbs_zM/edit?usp=sharing",
   title:{en:"Scaling Up Excellence",zh:"擴展卓越"},
   subtitle:{en:"Getting to More Without Settling for Less",zh:"邁向更大規模，而不犧牲品質"},
   author:"Robert I. Sutton & Huggy Rao",
@@ -689,7 +694,7 @@ const books = [
   sources:[{label:{en:"Bob Sutton: Scaling Up Excellence — Entire Talk (YouTube)",zh:"Bob Sutton：Scaling Up Excellence 完整演講（YouTube）"},url:"https://www.youtube.com/watch?v=R1WG_u0o9JM"},{label:{en:"Stanford GSB Insights · How Do You Scale Excellence?",zh:"史丹佛 GSB Insights · 如何擴展卓越？"},url:"https://www.gsb.stanford.edu/insights/hayagreeva-rao-robert-sutton-how-do-you-scale-excellence"}]
 },
 {
-  num:15, year:2008, isbn:"9780691131146",
+  num:15, year:2008, isbn:"9780691131146", wl:"https://docs.google.com/document/d/1G4IcY8gMMgX7r6y-_b4-kVIQgSGRFyJfvcAZ5UOEq9g/edit?usp=sharing",
   title:{en:"The Red Queen among Organizations",zh:"組織中的紅皇后"},
   subtitle:{en:"How Competitiveness Evolves",zh:"競爭力如何演化"},
   author:"William P. Barnett",
@@ -720,7 +725,7 @@ const books = [
 ];
 
 // ---- state ----
-let lang = 'en';
+let lang = 'zh';
 const saved = (function(){ try{ const u=new URLSearchParams(location.search).get('lang'); if(u==='zh'||u==='en')return u; return localStorage.getItem('sep_lang'); }catch(e){return null;} })();
 if(saved==='zh'||saved==='en') lang = saved;
 let activeTags = new Set();
@@ -812,7 +817,7 @@ function buildCards(){
     const buyZH=b.buyZH?`<a class="buy zh" href="${b.buyZH}" target="_blank" rel="noopener">${u.buyZh}</a>`:`<span class="buy none">${u.buyNone}</span>`;
     const enSmall=(lang==='zh'&&b.title.en!==b.title.zh)?`<p class="title-en-sm">${esc(b.title.en)}</p>`:'';
     const headCover=smallCover(b);
-    const glance=`<div class="glance"><span class="g">${b.year}</span><span class="sep">·</span><span class="g">${chapterCount(b)} ${u.chapters}</span>${b.video?`<span class="sep">·</span><span class="g g-vid">▶ ${u.talk}</span>`:(b.figure?`<span class="sep">·</span><span class="g">◆ ${u.diagram}</span>`:'')}</div>`;
+    const glance=`<div class="glance"><span class="g">${b.year}</span><span class="sep">·</span><span class="g">${chapterCount(b)} ${u.chapters}</span>${b.wl?`<span class="sep">·</span><a class="g g-wl" href="${b.wl}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg> ${u.wlNotes}</a>`:''}</div>`;
     const tabFigure=(b.figure&&b.video)?renderFigure(b):'';
     card.innerHTML=`
       <div class="card-top">
